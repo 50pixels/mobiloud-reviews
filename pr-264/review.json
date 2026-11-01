@@ -1,0 +1,94 @@
+{
+  "pr": "264",
+  "title": "Comparisons: position MobiLoud as the brand's own app, not a copy of the site",
+  "head": "pr/264",
+  "headSha": "42a7655bbef32c224597248ecb1d39ce3bb94740",
+  "base": "be2939d07e4751673f56b40bbe1c5245f9fcce46",
+  "baseSha": "be2939d07e4751673f56b40bbe1c5245f9fcce46",
+  "comparedTo": "current tip",
+  "builtAt": "2026-11-01T21:34:33.178Z",
+  "routes": [
+    {
+      "route": "/comparisons/appmysite-alternative/",
+      "isNew": false,
+      "changes": 3
+    },
+    {
+      "route": "/comparisons/apptile-alternative/",
+      "isNew": false,
+      "changes": 1
+    },
+    {
+      "route": "/comparisons/best-tapcart-alternatives/",
+      "isNew": false,
+      "changes": 3
+    },
+    {
+      "route": "/comparisons/buildfire-alternative/",
+      "isNew": false,
+      "changes": 13
+    },
+    {
+      "route": "/comparisons/drobile-alternative/",
+      "isNew": false,
+      "changes": 1
+    },
+    {
+      "route": "/comparisons/evlop-alternative/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/fuego-alternative/",
+      "isNew": false,
+      "changes": 12
+    },
+    {
+      "route": "/comparisons/goodbarber-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/hulk-mobile-app-builder-alternative/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/jmango360-alternative/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/magenative-alternative/",
+      "isNew": false,
+      "changes": 3
+    },
+    {
+      "route": "/comparisons/newstore-alternative/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/tapcart-vs-mobiloud/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/twinr-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/vajro-alternative/",
+      "isNew": false,
+      "changes": 5
+    },
+    {
+      "route": "/comparisons/venn-apps/",
+      "isNew": false,
+      "changes": 3
+    }
+  ],
+  "skipped": [],
+  "removedPages": []
+}

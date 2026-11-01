@@ -1,0 +1,793 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"> <head><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow"><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://hooks.zapier.com https://calendly.com https://assets.calendly.com; form-action 'self' https://hooks.zapier.com https://calendly.com; frame-src 'self' https://calendly.com https://www.youtube.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com"><script id="ml-env-guard">window.__ML_SITE_ENV__="preview";window.__ML_PREVIEW_CSP__="connect-src 'self' https://hooks.zapier.com https://calendly.com https://assets.calendly.com; form-action 'self' https://hooks.zapier.com https://calendly.com; frame-src 'self' https://calendly.com https://www.youtube.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com";
+(function () {
+  var PRODUCTION_HOSTS = ['www.mobiloud.com', 'mobiloud.com'];
+  var host = window.location.hostname;
+  var active = window.__ML_SITE_ENV__ !== 'production' || PRODUCTION_HOSTS.indexOf(host) === -1;
+  window.__ML_PREVIEW__ = active;
+  if (!active) return;
+
+  
+  if (!document.querySelector('meta[http-equiv="Content-Security-Policy"]')) {
+    var policy = document.createElement('meta');
+    policy.httpEquiv = 'Content-Security-Policy';
+    policy.content = window.__ML_PREVIEW_CSP__;
+    document.head.appendChild(policy);
+  }
+
+  var origin = window.location.origin;
+  function allowedRequest(url) {
+    try {
+      var target = new URL(String(url), window.location.href);
+      return target.origin === origin || (target.protocol === 'https:' && target.hostname === 'hooks.zapier.com');
+    } catch (err) {
+      return false;
+    }
+  }
+
+  var nativeFetch = window.fetch;
+  if (typeof nativeFetch === 'function') {
+    window.fetch = function (input) {
+      var url = input && typeof input === 'object' && 'url' in input ? input.url : input;
+      if (allowedRequest(url)) return nativeFetch.apply(this, arguments);
+      return Promise.resolve(new Response(null, { status: 204 }));
+    };
+  }
+
+  if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
+    var nativeBeacon = window.navigator.sendBeacon;
+    window.navigator.sendBeacon = function (url) {
+      if (allowedRequest(url)) return nativeBeacon.apply(this, arguments);
+      return true;
+    };
+  }
+
+  
+  if (window.XMLHttpRequest) {
+    var proto = window.XMLHttpRequest.prototype;
+    var nativeOpen = proto.open;
+    var nativeSend = proto.send;
+    proto.open = function (method, url) {
+      if (this.__mlBlocked) {
+        delete this.readyState;
+        delete this.status;
+      }
+      this.__mlBlocked = !allowedRequest(url);
+      return nativeOpen.apply(this, arguments);
+    };
+    proto.send = function () {
+      if (!this.__mlBlocked) return nativeSend.apply(this, arguments);
+      var xhr = this;
+      setTimeout(function () {
+        try {
+          Object.defineProperty(xhr, 'readyState', { value: 4, configurable: true });
+          Object.defineProperty(xhr, 'status', { value: 0, configurable: true });
+        } catch (err) {  }
+        xhr.dispatchEvent(new Event('readystatechange'));
+        xhr.dispatchEvent(new ProgressEvent('error'));
+        xhr.dispatchEvent(new ProgressEvent('loadend'));
+      }, 0);
+    };
+  }
+
+  function badge() {
+    if (document.getElementById('ml-preview-badge') || !document.body) return;
+    var b = document.createElement('div');
+    b.id = 'ml-preview-badge';
+    b.textContent = 'Staging preview. Forms are live for testing.';
+    b.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483647;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:8px 10px;border-radius:6px;opacity:.92;pointer-events:none';
+    document.body.appendChild(b);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', badge);
+  } else {
+    badge();
+  }
+})();</script><!-- OpenAI Ads pixel. Production builds only, and off at runtime wherever the guard is active. --><!-- X Ads pixel. Same gating as the OpenAI Ads pixel. --><title>Review preview · MobiLoud vs Twinr: Choosing the Right Website-to-App Solution | MobiLoud</title><meta name="description" content="MobiLoud and Twinr are two popular ways to turn websites into native mobile apps. But their scope is quite different. Read on to learn the key differences, and when to chose MobiLoud over Twinr to create your mobile app."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://www.mobiloud.com/comparisons/twinr-alternative/"><!-- Favicons --><link rel="icon" href="/mobiloud-reviews/pr-264/images/favicon.png" type="image/png"><link rel="icon" href="/mobiloud-reviews/pr-264/images/favicon.png" sizes="32x32"><link rel="apple-touch-icon" href="/mobiloud-reviews/pr-264/images/webclip.png"><!-- Open Graph --><meta property="og:title" content="MobiLoud vs Twinr: Choosing the Right Website-to-App Solution | MobiLoud"><meta property="og:description" content="MobiLoud and Twinr are two popular ways to turn websites into native mobile apps. But their scope is quite different. Read on to learn the key differences, and when to chose MobiLoud over Twinr to create your mobile app."><meta property="og:type" content="website"><meta property="og:url" content="https://www.mobiloud.com/comparisons/twinr-alternative/"><meta property="og:site_name" content="MobiLoud"><meta property="og:image" content="https://www.mobiloud.com/images/og-default.png"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="MobiLoud vs Twinr: Choosing the Right Website-to-App Solution | MobiLoud"><meta name="twitter:description" content="MobiLoud and Twinr are two popular ways to turn websites into native mobile apps. But their scope is quite different. Read on to learn the key differences, and when to chose MobiLoud over Twinr to create your mobile app."><meta name="twitter:image" content="https://www.mobiloud.com/images/og-default.png"><!-- Open the connections the page genuinely waits on, while it is still parsing HTML. --><!-- Calendly. The stylesheet is loaded without blocking render: as a plain
+       <link rel="stylesheet"> it sat on the critical path of every page, and
+       nothing paints until a third-party host answers. Measured 2026-09-01
+       across 6 pages x 3 passes: removing it from that path took median LCP
+       from 2892ms to 1896ms and cut sub-70 runs from 6/18 to 2/18. The widget
+       only appears seconds after a form submit, so applying its CSS a beat
+       late costs nothing.
+
+       Absent from preview builds, and injected rather than written into the
+       markup so that production output opened on a preview alias never reaches
+       the host either: as static tags the preload scanner fetches them before
+       any script on the page runs, including the guard. Same tags, same async
+       and preload attributes, appended while the head is still parsing. --><script>{
+    var mlHead = document.head;
+    var mlPre = document.createElement('link');
+    mlPre.rel = 'preconnect'; mlPre.href = 'https://assets.calendly.com'; mlPre.crossOrigin = '';
+    mlHead.appendChild(mlPre);
+    var mlCss = document.createElement('link');
+    mlCss.rel = 'preload'; mlCss.as = 'style'; mlCss.href = 'https://assets.calendly.com/assets/external/widget.css';
+    mlCss.onload = function () { this.onload = null; this.rel = 'stylesheet'; };
+    mlHead.appendChild(mlCss);
+    var mlJs = document.createElement('script');
+    mlJs.src = 'https://assets.calendly.com/assets/external/widget.js'; mlJs.async = true;
+    mlHead.appendChild(mlJs);
+  }</script><noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript><!-- Google Tag Manager (also loads Hotjar and the ads tags). Not in preview
+       builds at all; in production it stays off when the guard above found a
+       hostname that is not the live site. --><!-- Conversion-event bridge. Keep identical to subsites/landing's copy. --><script>
+    (function () {
+      var MAP = {
+        'contact-form':                      { legacyId: 'wf-form-Contact-Form' },
+        'demo-consult-form':                 { legacyId: 'wf-form-Demo-Form',        alsoSubmit: true },
+        'report-ecommerce-benchmark-report': { legacyId: 'wf-form-Benchmark-Report', alsoSubmit: true }
+      };
+
+      window.mlLegacyConversion = function (formId) {
+        var id = String(formId || '');
+        var m = MAP[id] || { legacyId: id };
+        var dl = window.dataLayer = window.dataLayer || [];
+        dl.push({ event: 'webflow-form-success', webflow_form_id: m.legacyId });
+        if (m.alsoSubmit) {
+          dl.push({ event: 'form_submit', 'gtm.elementId': m.legacyId });
+        }
+      };
+    })();
+  </script><!-- Lead-form submit guard. Keep identical to subsites/landing's copy. --><script>(function(){const BLOCKED_EMAIL_DOMAINS = ["gmail.co","gmail.cm","gmail.con","gmail.om","gmailc.om","gmial.com","gmai.com","gmal.com","gmil.com","gamil.com","gnail.com","gmaill.com","gmails.com","gmaul.com","hotmai.com","hotmial.com","hotmall.com","hotamail.com","hotmil.com","hotmaill.com","homail.com","hotmail.co","hotmail.con","outlok.com","outllok.com","outloook.com","outlook.con","otulook.com","yaho.com","yahooo.com","yhoo.com","yahoo.con","yahoo.cm","iclod.com","iclould.com","icloud.co"];
+
+    (function () {
+      // Six lead forms post to one Zapier catch hook, each from its own inline
+      // script, and every one of those scripts only tested that a required
+      // field was non-empty. That let through "red" and "houda.de.vicuna" as
+      // email addresses, "https://a", "https:/Good Access/" and
+      // "https://clothing app.com" as websites. Running on submit
+      // capture puts one check ahead of all six handlers, and covers any lead
+      // form added later.
+      //
+      // What this does NOT stop: a bot POSTing the Zapier hook URL directly,
+      // which is where the fully blank "New Lead" notifications come from. The
+      // hook URL is in the page source and accepts anything. That one needs a
+      // filter step on the Zap itself.
+      var HOSTNAME = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*\.[a-z]{2,}$/;
+      var BAD_EMAIL = 'Please enter a valid email address, like john@yourcompany.com.';
+      var BAD_URL = 'Please enter your website as a full address, like https://yourcompany.com.';
+
+      function domainOf(value) {
+        var at = value.lastIndexOf('@');
+        return at === -1 ? '' : value.slice(at + 1).toLowerCase();
+      }
+
+      // Empty returns '' on purpose: each form already has its own "required"
+      // message, and two errors under one field reads as a broken page.
+      function checkEmail(value) {
+        var e = String(value || '').trim();
+        if (!e) return '';
+        if (e.length > 254 || !/^[^\s@]+@[^\s@]+$/.test(e)) return BAD_EMAIL;
+        var d = domainOf(e);
+        if (!HOSTNAME.test(d)) return BAD_EMAIL;
+        if (BLOCKED_EMAIL_DOMAINS.indexOf(d) !== -1) return 'That email domain looks like a typo. Please check the spelling.';
+        return '';
+      }
+
+      function checkWebsite(value) {
+        var u = String(value || '').trim();
+        if (!u || u === 'https://') return '';
+        if (/\s/.test(u)) return 'Please enter your website as one address, with no spaces in it.';
+        if (/https?:\/\/[^\s]*https?:\/\//i.test(u)) return 'Please enter one website address.';
+        if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+        try {
+          if (!HOSTNAME.test(new URL(u).hostname.toLowerCase())) return BAD_URL;
+        } catch (err) {
+          return BAD_URL;
+        }
+        return '';
+      }
+
+      function errorSlot(field) {
+        var wrapper = field.closest('div') || field.parentNode;
+        var el = wrapper.querySelector('.ml-guard-error') || wrapper.querySelector('.fp-field > .field-error');
+        if (!el) {
+          el = document.createElement('p');
+          el.className = 'ml-guard-error text-xs mt-1 text-red-600';
+          wrapper.appendChild(el);
+        }
+        return el;
+      }
+
+      function clearError(field) {
+        var wrapper = field.closest('div') || field.parentNode;
+        var el = wrapper ? wrapper.querySelector('.ml-guard-error') : null;
+        if (el) el.classList.add('hidden');
+        if (wrapper.classList.contains('fp-field')) field.removeAttribute('aria-invalid');
+      }
+
+      // A lead form is any form carrying both an Email and a website field.
+      // That is the shape all six share, so a new one is covered on arrival.
+      function isLeadForm(form) {
+        return !!(form.querySelector('input[name="Email"]') && form.querySelector('input[name="website"]'));
+      }
+
+      document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || form.tagName !== 'FORM' || !isLeadForm(form)) return;
+
+        // The per-form handlers test `!field.value`, which a single space
+        // satisfies. Trimming here makes a whitespace-only field read as empty
+        // to them, and strips the trailing space that bounces an email.
+        form.querySelectorAll('input').forEach(function (f) {
+          if (f.type !== 'hidden' && typeof f.value === 'string') f.value = f.value.trim();
+        });
+
+        var blocked = null;
+        [
+          [form.querySelector('input[name="Email"]'), checkEmail],
+          [form.querySelector('input[name="website"]'), checkWebsite]
+        ].forEach(function (pair) {
+          var field = pair[0];
+          if (!field) return;
+          var message = pair[1](field.value);
+          if (!message) {
+            clearError(field);
+            return;
+          }
+          var slot = errorSlot(field);
+          slot.classList.add('ml-guard-error');
+          slot.textContent = message;
+          if (field.closest('.fp-field')) field.setAttribute('aria-invalid', 'true');
+          slot.classList.remove('hidden');
+          field.classList.add('border-red-500');
+          if (!blocked) blocked = field;
+        });
+
+        if (blocked) {
+          e.preventDefault();
+          e.stopPropagation();
+          blocked.focus();
+        }
+      }, true);
+
+      document.addEventListener('input', function (e) {
+        var f = e.target;
+        if (f && (f.name === 'Email' || f.name === 'website')) clearError(f);
+      }, true);
+    })();
+  })();</script><!-- PostHog. Same gating as GTM. --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"OnlineBusiness","@id":"https://www.mobiloud.com/#organization","url":"https://www.mobiloud.com","name":"MobiLoud","legalName":"Fifty Pixels Ltd","description":"MobiLoud turns the site you already have into native iOS and Android apps, built and managed by our team.","logo":"https://www.mobiloud.com/branding/mobiloud-logo-dark.png","sameAs":["https://www.linkedin.com/company/mobiloud/","https://www.facebook.com/mobiloudapp","https://x.com/mobiloud","https://www.youtube.com/@Mobiloud","https://www.capterra.com/p/181364/MobiLoud","https://www.g2.com/products/mobiloud/reviews","https://www.getapp.ca/software/116687/mobiloud"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","telephone":"+44 020 8798 0959","email":"support@mobiloud.com"},{"@type":"ContactPoint","contactType":"sales","telephone":"+1 888 697 6807","email":"sales@mobiloud.com"}],"address":[{"@type":"PostalAddress","streetAddress":"209 High Road","addressLocality":"London","postalCode":"N2 8AN","addressCountry":"GB"},{"@type":"PostalAddress","streetAddress":"5455 De Gaspe Avenue, Suite 710","addressLocality":"Montreal","addressRegion":"QC","postalCode":"H2T 3B3","addressCountry":"CA"}]},{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.mobiloud.com/comparisons/twinr-alternative/#webpage","url":"https://www.mobiloud.com/comparisons/twinr-alternative/","name":"MobiLoud vs Twinr: Choosing the Right Website-to-App Solution","dateModified":"2026-11-01"}]</script><!-- Global styles loaded via import in pages --><link rel="stylesheet" href="/mobiloud-reviews/pr-264/_astro/global.atRKU5SQ.css">
+<link rel="stylesheet" href="/mobiloud-reviews/pr-264/_astro/Footer.CnfnNcYl.css">
+<style>.cmp-list{list-style:none;padding:0;margin:0;font-size:.95rem}.cmp-list li{position:relative;padding-left:1.6rem;margin-top:.5rem;color:var(--color-neutral-700);line-height:1.5}.cmp-pro li:before{content:"✓";position:absolute;left:0;color:var(--color-primary-600);font-weight:700}.cmp-con li:before{content:"–";position:absolute;left:0;color:var(--color-neutral-400);font-weight:700}.cmp-rich img{max-width:320px;margin-left:auto;margin-right:auto}
+</style></head> <body class="overflow-x-hidden">   <!-- data-nosnippet keeps Google from quoting menu labels as a page's search
+     snippet. Google honours it only on div, span and section, so it sits on
+     the bar and the drawer rather than on header or nav. Links are still
+     crawled and followed. --><header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" data-astro-cid-rxxavq4o> <div data-nosnippet id="site-header-inner" class="mx-auto flex items-center justify-between h-16 sm:h-18 px-5 sm:px-8 lg:px-6 xl:px-10 transition-all duration-300" data-astro-cid-rxxavq4o> <!-- Logo: swap between white (initial, over dark hero) and dark (floating pill) --> <a href="/mobiloud-reviews/pr-264/" class="flex items-center flex-shrink-0" aria-label="MobiLoud home" data-astro-cid-rxxavq4o> <img class="logo-white h-5 sm:h-6 w-auto" src="/mobiloud-reviews/pr-264/branding/mobiloud-logo-white.svg" alt="MobiLoud" width="701" height="128" loading="eager" data-astro-cid-rxxavq4o> <img class="logo-dark h-5 sm:h-6 w-auto" src="/mobiloud-reviews/pr-264/branding/mobiloud-logo-dark.png" alt="MobiLoud" width="367" height="67" loading="eager" data-astro-cid-rxxavq4o> </a> <!-- Desktop nav --> <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-sm" aria-label="Primary" data-astro-cid-rxxavq4o> <div class="nav-dropdown relative group" data-astro-cid-rxxavq4o> <button type="button" id="nav-solutions-trigger" class="nav-dropdown-trigger nav-link flex items-center gap-1 px-2 xl:px-4 py-2 font-medium" aria-expanded="false" aria-controls="nav-solutions-panel" data-astro-cid-rxxavq4o>
+Solutions
+<svg class="nav-dropdown-chevron w-4 h-4 transition-transform" viewBox="0 0 20 20" fill="currentColor" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div id="nav-solutions-panel" class="nav-dropdown-panel absolute left-0 top-full pt-3" data-astro-cid-rxxavq4o> <div class="nav-panel w-[480px] xl:w-[560px] rounded-2xl p-5" data-astro-cid-rxxavq4o> <div class="grid grid-cols-2 gap-4 xl:gap-6" data-astro-cid-rxxavq4o> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>By Industry</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Ecommerce</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/enterprise-mobile-apps" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Enterprise</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/marketplaces" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Marketplaces</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Fashion &amp; Apparel</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Beauty &amp; Cosmetics</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Supplements &amp; Nutrition</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Grocery</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Pharmacy</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>B2B</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/news-publishing-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>News &amp; Publishing</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/community-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Communities</a></li> </ul> </div> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>By Platform</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/shopify.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Shopify </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/shopify-plus.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Shopify Plus </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/bigcommerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> BigCommerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/convert-adobe-commerce-site-to-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/adobe-commerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Adobe Commerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/wordpress-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/wordpress.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> WordPress </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/woocommerce-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/woocommerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> WooCommerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/convert-salesforce-commerce-cloud-site-to-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/salesforce-commerce-cloud.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Salesforce Commerce Cloud </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/prestashop.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> PrestaShop </a> </li> </ul> </div> </div> </div> </div> </div> <a href="https://www.mobiloud.com/case-studies" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Case Studies</a> <a href="https://www.mobiloud.com/reviews" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Reviews</a> <a href="https://www.mobiloud.com/pricing" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Pricing</a> <div class="nav-dropdown relative group" data-astro-cid-rxxavq4o> <button type="button" id="nav-resources-trigger" class="nav-dropdown-trigger nav-link flex items-center gap-1 px-2 xl:px-4 py-2 font-medium" aria-expanded="false" aria-controls="nav-resources-panel" data-astro-cid-rxxavq4o>
+Resources
+<svg class="nav-dropdown-chevron w-4 h-4 transition-transform" viewBox="0 0 20 20" fill="currentColor" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div id="nav-resources-panel" class="nav-dropdown-panel absolute right-0 top-full pt-3" data-astro-cid-rxxavq4o> <div class="nav-panel w-[540px] xl:w-[680px] rounded-2xl p-5" data-astro-cid-rxxavq4o> <div class="grid grid-cols-3 gap-3 xl:gap-6" data-astro-cid-rxxavq4o> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Product</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/how-it-works" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>How It Works</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/features" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Features</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/integrations" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Integrations</a></li> </ul> </div><div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Learn</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/blog" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Blog</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Benchmark Report</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/faqs" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Help Center</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/answers" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Buyer Answers</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/docs" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Documentation</a></li> </ul> </div><div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Company</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/about" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>About Us</a></li> </ul> </div> </div> </div> </div> </div> <a href="https://www.mobiloud.com/contact" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Contact</a> </nav> <!-- CTAs - state-aware via CSS --> <div class="hidden lg:flex items-center gap-2" data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/demo" class="nav-cta-secondary inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold text-sm px-3 xl:px-4 py-2 rounded-lg transition-all" data-astro-cid-rxxavq4o>Book a Demo</a> <a href="https://www.mobiloud.com/free-preview" class="nav-cta-primary inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold text-sm px-3 xl:px-4 py-2 rounded-lg bg-primary-700 text-white hover:bg-primary-800 shadow-md hover:-translate-y-0.5 transition-all" data-astro-cid-rxxavq4o>Free App Preview</a> </div> <!-- Mobile hamburger --> <button id="mobile-menu-toggle" type="button" class="nav-link lg:hidden p-2 -mr-2 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-astro-cid-rxxavq4o> <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-rxxavq4o><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" data-astro-cid-rxxavq4o></path></svg> </button> </div> <!-- Mobile drawer --> <div id="mobile-backdrop" class="mobile-backdrop lg:hidden fixed inset-0 z-40 bg-neutral-950/50 backdrop-blur-[2px]" hidden data-astro-cid-rxxavq4o></div> <div data-nosnippet id="mobile-menu" class="mobile-drawer lg:hidden fixed top-0 right-0 z-50 flex h-dvh w-[min(92vw,25rem)] flex-col bg-white shadow-2xl" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-astro-cid-rxxavq4o> <div class="flex items-center justify-between border-b border-neutral-200 px-5 h-16 flex-shrink-0" data-astro-cid-rxxavq4o> <a href="/mobiloud-reviews/pr-264/" class="-ml-2 flex items-center rounded-lg px-2 py-3" aria-label="MobiLoud home" data-astro-cid-rxxavq4o> <img class="h-5 w-auto" src="/mobiloud-reviews/pr-264/branding/mobiloud-logo-dark.png" alt="MobiLoud" width="367" height="67" loading="lazy" data-astro-cid-rxxavq4o> </a> <button id="mobile-menu-close" type="button" class="-mr-2 rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors" aria-label="Close menu" data-astro-cid-rxxavq4o> <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-rxxavq4o><path d="M6 6l12 12M6 18L18 6" stroke-linecap="round" data-astro-cid-rxxavq4o></path></svg> </button> </div> <nav class="flex-1 overflow-y-auto overscroll-contain px-3 py-3" aria-label="Mobile" data-astro-cid-rxxavq4o> <!-- Solutions, split so neither list runs long --> <div class="ml-acc" data-astro-cid-rxxavq4o> <button type="button" class="ml-acc-trigger" aria-expanded="false" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Solutions</span> <svg class="ml-acc-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div class="ml-acc-panel" inert data-astro-cid-rxxavq4o> <div class="ml-acc-inner" data-astro-cid-rxxavq4o> <p class="ml-group-label" data-astro-cid-rxxavq4o>By platform</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/shopify.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Shopify</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/shopify-plus.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Shopify Plus</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/bigcommerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>BigCommerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/convert-adobe-commerce-site-to-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/adobe-commerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Adobe Commerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/wordpress-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/wordpress.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>WordPress</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/woocommerce-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/woocommerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>WooCommerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/convert-salesforce-commerce-cloud-site-to-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/salesforce-commerce-cloud.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Salesforce Commerce Cloud</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-264/platform-icons/prestashop.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>PrestaShop</span> </a> </li> </ul> <p class="ml-group-label" data-astro-cid-rxxavq4o>By industry</p> <ul class="grid grid-cols-2 gap-x-2 pb-2" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Ecommerce</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/enterprise-mobile-apps" class="ml-chip-link" data-astro-cid-rxxavq4o>Enterprise</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/marketplaces" class="ml-chip-link" data-astro-cid-rxxavq4o>Marketplaces</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Fashion &amp; Apparel</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Beauty &amp; Cosmetics</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Supplements &amp; Nutrition</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Grocery</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Pharmacy</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>B2B</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/news-publishing-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>News &amp; Publishing</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/community-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Communities</a></li> </ul> </div> </div> </div> <a href="https://www.mobiloud.com/case-studies" class="ml-flat-link" data-astro-cid-rxxavq4o>Case Studies</a> <a href="https://www.mobiloud.com/reviews" class="ml-flat-link" data-astro-cid-rxxavq4o>Reviews</a> <a href="https://www.mobiloud.com/pricing" class="ml-flat-link" data-astro-cid-rxxavq4o>Pricing</a> <!-- Resources --> <div class="ml-acc" data-astro-cid-rxxavq4o> <button type="button" class="ml-acc-trigger" aria-expanded="false" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Resources</span> <svg class="ml-acc-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div class="ml-acc-panel" inert data-astro-cid-rxxavq4o> <div class="ml-acc-inner" data-astro-cid-rxxavq4o>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Product</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/how-it-works" class="ml-chip-link" data-astro-cid-rxxavq4o>How It Works</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/features" class="ml-chip-link" data-astro-cid-rxxavq4o>Features</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/integrations" class="ml-chip-link" data-astro-cid-rxxavq4o>Integrations</a></li> </ul>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Learn</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/blog" class="ml-chip-link" data-astro-cid-rxxavq4o>Blog</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="ml-chip-link" data-astro-cid-rxxavq4o>Benchmark Report</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/faqs" class="ml-chip-link" data-astro-cid-rxxavq4o>Help Center</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/answers" class="ml-chip-link" data-astro-cid-rxxavq4o>Buyer Answers</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/docs" class="ml-chip-link" data-astro-cid-rxxavq4o>Documentation</a></li> </ul>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Company</p> <ul class="pb-2" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/about" class="ml-chip-link" data-astro-cid-rxxavq4o>About Us</a></li> </ul>  </div> </div> </div> <a href="https://www.mobiloud.com/contact" class="ml-flat-link" data-astro-cid-rxxavq4o>Contact</a> </nav> <div class="flex flex-col gap-2 border-t border-neutral-200 bg-white px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex-shrink-0" data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/free-preview" class="inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 font-semibold text-sm text-white" data-astro-cid-rxxavq4o>Free App Preview</a> <a href="https://www.mobiloud.com/demo" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 py-3 font-semibold text-sm text-neutral-900" data-astro-cid-rxxavq4o>Book a Demo</a> </div> </div> </header>  <script type="module" src="/mobiloud-reviews/pr-264/_astro/Nav.astro_astro_type_script_index_0_lang.BS4qZR3D.js"></script> <header class="relative bg-neutral-900 pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-20 overflow-hidden" style="background: linear-gradient(135deg, #1a1a2e 0%, #171717 50%, #0f2016 100%)"> <div class="absolute inset-0 dot-grid opacity-40 pointer-events-none" aria-hidden="true"></div> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <nav class="relative max-w-3xl mx-auto mb-5 text-xs text-neutral-400 flex items-center justify-center gap-1.5" aria-label="Breadcrumb"> <a href="/mobiloud-reviews/pr-264/" class="hover:text-neutral-200">Home</a><span>/</span> <a href="/mobiloud-reviews/pr-264/comparisons" class="hover:text-neutral-200">Comparisons</a> </nav> <div class="relative max-w-3xl mx-auto text-center"> <img src="/mobiloud-reviews/pr-264/comparison-images/67e66d6038d281cd8fa11503_twinrbuilder_logo.jpg" alt="Twinr" width="56" height="56" class="w-14 h-14 rounded-2xl object-cover mx-auto mb-5"> <h1 class="font-display text-display-2 text-white leading-[1.12]">MobiLoud vs Twinr: Choosing the Right Website-to-App Solution</h1> <p class="text-neutral-400 text-lg leading-relaxed mt-5 max-w-2xl mx-auto">Twinr lets you turn a website into an app you build and manage yourself, with plans from $25 a month, for founders, small teams and agencies. MobiLoud builds a fully custom mobile app from your store. Everything on your site works in the app, there&#39;s no second store to manage, and our team builds and grows it with you.</p> <p class="text-sm text-neutral-400 mt-5 ">Last reviewed: <time datetime="2026-11-01">November 1, 2026</time></p> </div>  </div> </header> <article class="bg-white py-14 lg:py-20"> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <div class="max-w-3xl mx-auto"> <div class="blog-prose"><p id>For businesses looking to extend their digital presence into the mobile app space, <a href="https://www.mobiloud.com/use-cases/website-to-app/" id>building a native mobile app from their existing website</a> offers a cost-effective alternative to building from scratch.</p>
+<p id>Two popular solutions in this space are MobiLoud and Twinr.</p>
+<p id>While both platforms enable the transformation of websites into mobile apps, they differ in their approaches and service models. MobiLoud provides a fully managed, service-driven solution focused on long-term success, far beyond just converting your site. Twinr, in contrast, offers a DIY platform centered on quick deployment and self-serve customization.</p>
+<p id>This comparison explores the key differences between MobiLoud and Twinr to help you determine which platform better aligns with your business requirements, with particular attention to performance, user experience, maintenance, and how your features carry over.</p>
+<blockquote id>Want to see what's possible with MobiLoud?&nbsp;<a href="https://www.mobiloud.com/free-preview/" id>Get a free preview of your app</a> (and view an interactive demo) now.</blockquote>
+<h2 id>Overview: MobiLoud vs Twinr</h2>
+<p id><a href="https://www.mobiloud.com/" id><strong id>MobiLoud</strong></a> is a full service that builds your brand's own native mobile apps from your existing website, with minimal effort on your part.</p>
+<figure id class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:2240px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="2240px">
+  <div id>
+    <img src="/mobiloud-reviews/pr-264/comparison-images/6865a4f433ea14e2477d15fc_20250702T0915-cf15e07e-eca4-4367-a503-b7807f601f5d.webp" loading="lazy" alt="" width="auto" height="auto" id>
+  </div>
+  <figcaption id>Just some of the <a href="https://www.mobiloud.com/case-studies/" id>mobile apps</a> built with MobiLoud</figcaption>
+</figure>
+<p id>Unlike DIY tools, MobiLoud's team handles the entire conversion process, ensuring your website's exact functionality is preserved in the app. It operates as a turnkey solution, with experienced experts configuring, building, and maintaining your app.</p>
+<p id><strong id>Twinr</strong> is a no-code app builder platform that allows businesses to convert their websites into mobile apps through a user-friendly interface.</p>
+<p id>Twinr focuses on ease of use, quick deployment, and customization options that let you adjust how your website appears and functions within the app environment.</p>
+<h2 id>Key Differences Between MobiLoud and Twinr</h2>
+<p id>While MobiLoud and Twinr both build a mobile app from your website, their core philosophies and execution models differ.</p>
+<p id>These differences influence whether your app becomes a simple presence in app stores or a strong channel for retention and revenue.</p>
+<h3 id>1. Service Model: Fully Managed vs DIY Platform</h3>
+<p id>MobiLoud acts as an extension of your team.</p>
+<p id>From kickoff to post-launch growth, the MobiLoud experts build, test, launch, and maintain your mobile app for you. There’s no learning curve or technical setup required on your part.</p>
+<p id>You work directly with app specialists for launch guidance and ongoing support. On Enterprise, MobiLoud also provides a dedicated success manager, Slack access and recurring strategy and performance reviews.</p>
+<p id>This is a full service for teams that value expert guidance and results.</p>
+<p id>Twinr, by contrast, is a self-service tool. You configure and launch the app on your own, using a no-code editor and supporting documentation.</p>
+<p id>While Twinr provides responsive support, you remain responsible for building, customizing, updating, and optimizing the app over time.</p>
+<h3 id>2. Post-Launch Growth: Strategic Partnership vs Self-Guided Path</h3>
+<p id>MobiLoud continues to support you after launch. The team guides you through app store optimization, retention strategy, and push notification automation.</p>
+<p id>MobiLoud experts monitor your app’s health and help improve ROI over time. Whether crafting cart abandonment push flows or analyzing app analytics, the focus is on turning your app into a revenue channel.</p>
+<p id>With Twinr, post-launch success depends on your planning and management. You’ll need to develop your own engagement strategy, troubleshoot issues, and drive adoption and retention without a dedicated partner.</p>
+<h3 id>3. Maintenance &amp; App Store Management: We Handle It vs You Do It</h3>
+<p id>MobiLoud manages all ongoing updates, including OS changes, bug fixes, SDK updates, compliance reviews, and app submissions. You can focus on your website while the team takes care of your app.</p>
+<p id>Twinr provides tools to manage and update your app via its dashboard, including over-the-air configuration. But handling app rejections, bugs, or adapting to new Apple or Google guidelines is your responsibility.</p>
+<h3 id>4. Features &amp; Flexibility: Built on Your Site vs Built to Tweak</h3>
+<p id>MobiLoud builds native apps on your existing website, keeping checkout flows, login systems, content and third-party integrations. MobiLoud includes custom app design, while website changes reach the app automatically.</p>
+<p id>No replatforming or content duplication is needed. MobiLoud supports custom native features and third-party SDK integrations on Enterprise.</p>
+<p id>Twinr uses your website but relies on a visual editor for UI customization. While you can tailor visuals and inject code, replicating complex or dynamic functionality may require additional effort, especially for custom-built or heavily integrated sites.</p>
+<h3 id>5. Who It's Built For: Businesses with Goals vs Builders with Time</h3>
+<p id>MobiLoud is designed for businesses that want a mobile app with impact. Whether you’re a mid-sized ecommerce brand, a growing SaaS company, or a media brand focused on retention, MobiLoud helps you launch faster, smarter, and with less risk.</p>
+<p id>Twinr suits founders or marketers interested in a hands-on approach. It provides tools to quickly establish a mobile presence. But if your app requires high performance or your team has limited time for platform management, this DIY approach may require more ongoing effort.</p>
+<h2 id>Real-World Use Cases</h2>
+<h3 id>Ecommerce Brands</h3>
+<p id>For ecommerce companies, MobiLoud provides more than just a mobile storefront. It creates a conversion-optimized, retention-ready mobile experience.</p>
+<p id>With native tab navigation, deep linking, push automation (e.g., abandoned cart flows), and integrations with platforms like Shopify and Adobe Commerce, your mobile app becomes a true revenue engine.</p>
+<p id>You don’t have to duplicate your tech stack or maintain separate product catalogs. Everything stays in sync with your site, while the MobiLoud team handles setup, submission, and scaling.</p>
+<p id>Twinr may suit newer or lower-volume ecommerce brands wanting to explore mobile, offering a functional basic app. Advanced ecommerce tools and strategies will need to be self-built or adapted.</p>
+<figure id class="w-richtext-figure-type-image w-richtext-align-fullwidth" style="max-width:2240px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="2240px">
+  <div id>
+    <img src="/mobiloud-reviews/pr-264/comparison-images/6865a4f376e06e08bf7d6a29_20250702T0913-cc627ec2-99cc-46f6-81fd-923171fb4f1b.webp" loading="lazy" alt="" width="auto" height="auto" id>
+  </div>
+  <figcaption id>Examples of some of the ecommerce apps built with MobiLoud.&nbsp;Check out more case studies <a href="https://www.mobiloud.com/case-studies/" id>here</a></figcaption>
+</figure>
+<h3 id>Digital Publishers</h3>
+<p id>For content-heavy websites and media brands, MobiLoud offers a solution to drive reader engagement and retention.</p>
+<p id>You can send breaking news alerts via push notifications, monetize with ads, and deliver a native-feeling reading experience without reauthoring content or adding new workflows.</p>
+<p id>Our <a href="https://www.mobiloud.com/case-studies/" id>users</a> include large-scale publishers and content platforms, with support designed for high-volume, fast-moving editorial teams.</p>
+<p id>Twinr may appeal to smaller independent publishers or personal blogs by providing a straightforward way to launch feed-based content apps.</p>
+<p id>Without strategic push planning or revenue-focused support, long-term value beyond mobile access depends on your approach.</p>
+<h3 id>SaaS and Web Applications</h3>
+<p id>If you operate a SaaS platform or complex web app, MobiLoud helps you go mobile without rewriting your frontend or managing a new codebase.</p>
+<p id>We’ve supported platforms with secure login systems, dynamic dashboards, and user-specific content to launch mobile experiences with full functionality. We also ensure compliance with app store policies around dynamic apps, a key factor for SaaS companies going mobile.</p>
+<p id>Twinr can turn lightweight SaaS tools or internal applications into apps and may suit MVPs or early-stage products.</p>
+<p id>For core products, relying on DIY management and a basic app may require additional work to maintain UX and reliability.</p>
+<h3 id>Marketplaces, Membership Sites, and Communities</h3>
+<p id>For complex platforms with user accounts, multiple roles, and interactive flows, MobiLoud is a strong fit.</p>
+<p id>We’ve worked with marketplaces, online communities, and subscription sites needing features like user logins, gated content, messaging, and custom navigation to function smoothly on mobile.</p>
+<p id>Because these features just work in a MobiLoud app, your community gets a consistent experience without duplicating development work.</p>
+<p id>Twinr is generally not designed for this level of complexity. While it can turn the site into an app, supporting user-specific functionality, real-time content, or multiple user flows may require workarounds or lead to differences in experience.</p>
+<h2>When to Choose MobiLoud Over Twinr</h2>
+<ol start="1" id>
+  <li id><strong id>You Need a Full-Service Solution</strong>: MobiLoud handles everything, from kickoff to launch to post-launch growth. You save time, avoid technical setup, and gain a team focused on your app’s performance and success.</li>
+  <li id><strong id>You Value Hands-Off Implementation and Maintenance</strong>: MobiLoud apps update automatically with your site. Their team manages platform updates, OS compliance, bug fixes, and store submissions. You don’t need to intervene.</li>
+  <li id><strong id>You Have Complex Website Functionality</strong>: If your site has custom features or third party integrations, MobiLoud makes sure they keep working in the app, with nothing to rebuild.</li>
+  <li id><strong id>You Need Expert App Store Guidance</strong>: App Store policies can be complex. MobiLoud handles rejections, resubmissions, and optimization for you.</li>
+  <li id><strong id>You Want a Partner in Long-Term Success</strong>: MobiLoud helps promote your app, automate push campaigns, and drive ROI. You get a team focused on retention, not just a product.</li>
+</ol>
+<h2>When to Choose Twinr Over MobiLoud</h2>
+<ol start="1" id>
+  <li id><strong id>You Prefer a DIY Approach with Support When Needed</strong>: Twinr is ideal if you want to build and tweak your app hands-on, with the freedom to experiment.</li>
+  <li id><strong id>You Need Extensive Customization of the Mobile Experience</strong>: Twinr gives you granular control over how your content looks and behaves inside the app.</li>
+  <li id><strong id>You're Working with a Tight Budget</strong>: Twinr’s plans start at $25 a month, plus a usage fee based on app sessions, which may suit small businesses or solo entrepreneurs.</li>
+  <li id><strong id>You Need Rapid Deployment and Iteration</strong>: If speed is critical and you want to launch in hours or days, Twinr supports that timeline.</li>
+  <li id><strong id>You Want Built-In Monetization Tools</strong>: Twinr includes native ad integrations, such as AdMob, which may be useful for content-based apps.</li>
+</ol>
+<p id><strong id>Important Consideration</strong>: While Twinr offers fast and flexible setup, the long-term responsibility for adoption, user engagement, and app quality rests with you.</p>
+<blockquote id>Wondering if your site will work as an app?&nbsp;Get a free preview of your app <a href="https://www.mobiloud.com/free-preview/" id>here</a>, and see for yourself.</blockquote>
+<h2 id>Conclusion: Making the Right Decision When&nbsp;Building Your Mobile App</h2>
+<p id>The choice between MobiLoud and Twinr depends on your business priorities, technical resources, and budget.</p>
+<p id>Choose MobiLoud if:</p>
+<ul id>
+  <li id>You prefer a hands-off, fully managed service</li>
+  <li id>Your website has complex or custom functionality</li>
+  <li id>You need expert guidance through the app development and submission process</li>
+  <li id>Your business generates consistent revenue and can justify a monthly investment in a managed app, as shown on our <a href="https://www.mobiloud.com/pricing/">pricing</a> page</li>
+  <li id>You're a medium-sized business with an established digital presence</li>
+</ul>
+<p id>Choose Twinr if:</p>
+<ul id>
+  <li id>You prefer a DIY approach with strong support available</li>
+  <li id>You want more direct control over customization</li>
+  <li id>You're working with a limited budget</li>
+  <li id>You need rapid deployment and iteration</li>
+  <li id>You're a small business or startup establishing a mobile presence</li>
+</ul>
+<p id>Both platforms offer advantages over building native apps from scratch, allowing businesses to establish a mobile presence quickly and cost-effectively. By understanding your needs and resources, you can select the solution that balances service, control, and value best for you.</p>
+<p id>For businesses seeking a turnkey solution with minimal involvement, MobiLoud's full-service approach offers peace of mind and efficiency.</p>
+<p id>Ready to dive deeper and see MobiLoud in action? <a href="https://www.mobiloud.com/free-preview/" id>Get a free preview of your app now</a>.</p></div>   </div>  </div> </article> <section id="book-consultation" data-hm-expand class="relative bg-neutral-900 py-28 lg:py-36 overflow-hidden" style="background: linear-gradient(135deg, #1a1a2e 0%, #171717 50%, #0f2016 100%)"> <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] radial-glow-primary opacity-50 pointer-events-none" aria-hidden="true"></div> <div class="absolute inset-0 dot-grid opacity-60 pointer-events-none" aria-hidden="true"></div> <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, transparent 55%, #171717 100%)" aria-hidden="true"></div> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <div class="relative max-w-3xl mx-auto text-center"> <h2 class="font-display text-display-2 text-white mb-6 leading-[1.05] text-balance">
+Get a <span class="stat-accent">free preview</span> of your app
+</h2> <p class="text-lg text-neutral-300 leading-relaxed mb-10 max-w-xl mx-auto">
+See how your store would look and feel as a mobile app, before deciding whether to build.
+</p> <div class="flex flex-wrap justify-center gap-3"> <a href="https://www.mobiloud.com/free-preview" target="_self" class="inline-flex items-center justify-center gap-2 font-semibold transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out active:scale-[0.98] motion-reduce:active:scale-100 px-8 py-4 text-lg rounded-2xl bg-primary-700 text-white shadow-btn hover:bg-primary-800 hover:-translate-y-0.5 hover:shadow-lg "> Start my free preview → </a>  </div> <p class="text-sm text-neutral-400 leading-relaxed mt-6 max-w-xl mx-auto text-balance">
+No credit card required.
+ </p> </div>  </div> </section> <footer class="bg-neutral-900 text-neutral-100 pt-20 pb-12"> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">   <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-14 mb-16"> <a href="https://www.capterra.com/p/181364/MobiLoud/" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-264/images/capterra-rating-badge_1.svg" alt="Capterra rating 4.7 out of 5 from 109 reviews" class="h-14 w-auto" loading="lazy"> </a> <a href="https://www.g2.com/products/mobiloud/reviews" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-264/images/G2-Review-Badge.svg" alt="G2 Users Love Us badge" class="h-16 w-auto" loading="lazy"> </a> <a href="https://www.producthunt.com/posts/mobiloud-2" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-264/images/producthunt-product-of-the-day.svg" alt="Product Hunt - Product of the Day, 2nd" class="h-14 w-auto" loading="lazy"> </a> </div>   <div data-nosnippet class="relative bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/60 rounded-2xl px-8 py-10 lg:px-12 lg:py-12 mb-20 max-w-5xl mx-auto overflow-hidden"> <div class="absolute -top-24 -right-24 w-72 h-72 radial-glow-primary opacity-50 pointer-events-none" aria-hidden="true"></div> <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"> <div class="lg:max-w-md"> <p class="text-xs font-bold uppercase tracking-wider text-primary-400 mb-2">Retention Edge newsletter</p> <p class="font-display text-2xl text-white leading-snug">
+Get weekly insights on retention and growth. Subscribe now.
+</p> </div> <div class="w-full lg:w-auto lg:flex-shrink-0 lg:min-w-[380px]"> <!-- loading="lazy" is load-bearing here, not a tidy-up. The footer is
+               on every page, and this one embed pulled in four third-party
+               hosts (the newsletter platform, a bot-defence script, a second
+               API host and Google Fonts) for about 284 KB on every page load,
+               whether or not anyone scrolled this far. Measured 2026-09-01:
+               those four appear on exactly the 18 page types carrying this
+               footer and on none of the 4 that use a different one. Deferring
+               the frame defers everything inside it. --> <p class="text-sm text-white">Form submissions are disabled on staging.</p> </div> </div> </div>  <div data-nosnippet class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 text-sm"> <div> <p class="font-semibold text-white mb-4">Company</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/about" class="text-neutral-400 hover:text-white transition-colors">About MobiLoud</a></li><li><a href="https://www.mobiloud.com/contact" class="text-neutral-400 hover:text-white transition-colors">Contact Us</a></li><li><a href="https://www.mobiloud.com/case-studies" class="text-neutral-400 hover:text-white transition-colors">Case Studies</a></li><li><a href="https://www.mobiloud.com/reviews" class="text-neutral-400 hover:text-white transition-colors">Reviews</a></li><li><a href="https://www.mobiloud.com/blog" class="text-neutral-400 hover:text-white transition-colors">Blog</a></li><li><a href="https://www.mobiloud.com/press" class="text-neutral-400 hover:text-white transition-colors">Press</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons" class="text-neutral-400 hover:text-white transition-colors">Comparisons</a></li><li><a href="https://www.mobiloud.com/use-cases" class="text-neutral-400 hover:text-white transition-colors">Use Cases</a></li><li><a href="https://www.mobiloud.com/how-it-works" class="text-neutral-400 hover:text-white transition-colors">How It Works</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Product</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/pricing" class="text-neutral-400 hover:text-white transition-colors">Pricing</a></li><li><a href="https://www.mobiloud.com/answers" class="text-neutral-400 hover:text-white transition-colors">Buyer Answers</a></li><li><a href="https://www.mobiloud.com/docs" class="text-neutral-400 hover:text-white transition-colors">Documentation</a></li><li><a href="https://www.mobiloud.com/faqs" class="text-neutral-400 hover:text-white transition-colors">Help Center</a></li><li><a href="https://www.mobiloud.com/free-preview" class="text-neutral-400 hover:text-white transition-colors">Test Your App for Free</a></li><li><a href="https://www.mobiloud.com/demo" class="text-neutral-400 hover:text-white transition-colors">Book a Demo</a></li> </ul>  <p class="font-semibold text-white mt-8 mb-4">Customer Case Studies</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/customers/john-varvatos" class="text-neutral-400 hover:text-white transition-colors">John Varvatos</a></li><li><a href="https://www.mobiloud.com/customers/jack-jones" class="text-neutral-400 hover:text-white transition-colors">Jack &amp; Jones</a></li><li><a href="https://www.mobiloud.com/customers/tadashi-shoji" class="text-neutral-400 hover:text-white transition-colors">Tadashi Shoji</a></li><li><a href="https://www.mobiloud.com/customers/vero-moda" class="text-neutral-400 hover:text-white transition-colors">Vero Moda</a></li><li><a href="https://www.mobiloud.com/customers/gourmet-gift-baskets" class="text-neutral-400 hover:text-white transition-colors">Gourmet Gift Baskets</a></li><li><a href="https://www.mobiloud.com/customers/pharmazone" class="text-neutral-400 hover:text-white transition-colors">Pharmazone</a></li><li><a href="https://www.mobiloud.com/customers/kiokii" class="text-neutral-400 hover:text-white transition-colors">Kiokii</a></li><li><a href="https://www.mobiloud.com/customers/sleefs" class="text-neutral-400 hover:text-white transition-colors">Sleefs</a></li><li><a href="https://www.mobiloud.com/case-studies" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Features</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/features" class="text-neutral-400 hover:text-white transition-colors">All Features</a></li><li><a href="https://www.mobiloud.com/features/push-notifications" class="text-neutral-400 hover:text-white transition-colors">Push Notifications</a></li><li><a href="https://www.mobiloud.com/features/retain-website-features" class="text-neutral-400 hover:text-white transition-colors">Retain Website Features</a></li><li><a href="https://www.mobiloud.com/features/real-time-sync" class="text-neutral-400 hover:text-white transition-colors">Real-Time Sync</a></li><li><a href="https://www.mobiloud.com/features/native-app-features" class="text-neutral-400 hover:text-white transition-colors">Native App Features</a></li><li><a href="https://www.mobiloud.com/features/in-app-exclusive-products-content" class="text-neutral-400 hover:text-white transition-colors">In-App Exclusive Products &amp; Content</a></li><li><a href="https://www.mobiloud.com/features/promotion" class="text-neutral-400 hover:text-white transition-colors">App Promotion</a></li><li><a href="https://www.mobiloud.com/features/analytics-cro" class="text-neutral-400 hover:text-white transition-colors">Analytics &amp; CRO</a></li><li><a href="https://www.mobiloud.com/features/multi-language-multi-currency-support" class="text-neutral-400 hover:text-white transition-colors">Multi-Language &amp; Multi-Currency Support</a></li><li><a href="https://www.mobiloud.com/integrations" class="text-neutral-400 hover:text-white transition-colors">Integrations</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Comparisons</p> <ul class="space-y-2.5"> <li><a href="/mobiloud-reviews/pr-264/comparisons/tapcart-vs-mobiloud" class="text-neutral-400 hover:text-white transition-colors">Tapcart vs MobiLoud</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons/plobal-apps-alternative" class="text-neutral-400 hover:text-white transition-colors">Plobal Apps Alternative</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons/shopney-alternative" class="text-neutral-400 hover:text-white transition-colors">Shopney Alternative</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons/median-alternative" class="text-neutral-400 hover:text-white transition-colors">Median Alternative</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons/mobiloud-vs-custom-development" class="text-neutral-400 hover:text-white transition-colors">MobiLoud vs Custom Development</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons/mobiloud-vs-in-house-mobile-app-team" class="text-neutral-400 hover:text-white transition-colors">MobiLoud vs In-House Development</a></li><li><a href="/mobiloud-reviews/pr-264/comparisons" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Platforms</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Shopify</a></li><li><a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Shopify Plus</a></li><li><a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app" class="text-neutral-400 hover:text-white transition-colors">BigCommerce</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-adobe-commerce-site-to-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Adobe Commerce</a></li><li><a href="https://www.mobiloud.com/use-cases/magento-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Magento</a></li><li><a href="https://www.mobiloud.com/use-cases/wordpress-app-builder" class="text-neutral-400 hover:text-white transition-colors">WordPress</a></li><li><a href="https://www.mobiloud.com/use-cases/woocommerce-app-builder" class="text-neutral-400 hover:text-white transition-colors">WooCommerce</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-salesforce-commerce-cloud-site-to-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Salesforce Commerce Cloud</a></li><li><a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app" class="text-neutral-400 hover:text-white transition-colors">PrestaShop</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">By Industry</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Ecommerce</a></li><li><a href="https://www.mobiloud.com/marketplaces" class="text-neutral-400 hover:text-white transition-colors">Marketplaces</a></li><li><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Fashion &amp; Apparel</a></li><li><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Beauty &amp; Cosmetics</a></li><li><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Supplements &amp; Nutrition</a></li><li><a href="https://www.mobiloud.com/use-cases/food-beverage-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Food &amp; Beverage</a></li><li><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Grocery</a></li><li><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Pharmacy</a></li><li><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="text-neutral-400 hover:text-white transition-colors">B2B</a></li><li><a href="https://www.mobiloud.com/industries" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Popular Resources</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/blog/how-much-does-it-cost-to-build-an-ecommerce-app" class="text-neutral-400 hover:text-white transition-colors">How Much Does it Cost to Build an App?</a></li><li><a href="https://www.mobiloud.com/blog/shopify-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Shopify Mobile App Development</a></li><li><a href="https://www.mobiloud.com/blog/magento-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Magento Mobile App Development</a></li><li><a href="https://www.mobiloud.com/blog/bigcommerce-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">BigCommerce Mobile App Development</a></li><li><a href="https://www.mobiloud.com/blog/enterprise-ecommerce-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Enterprise Mobile App Development</a></li><li><a href="https://www.mobiloud.com/blog/push-notifications-for-ecommerce" class="text-neutral-400 hover:text-white transition-colors">Push Notifications for Ecommerce</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Frameworks</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/react-mobile-app" class="text-neutral-400 hover:text-white transition-colors">React</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-javascript-to-apps" class="text-neutral-400 hover:text-white transition-colors">JavaScript</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-a-laravel-web-app-to-a-native-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Laravel</a></li><li><a href="https://www.mobiloud.com/use-cases/php-mobile-apps" class="text-neutral-400 hover:text-white transition-colors">PHP</a></li><li><a href="https://www.mobiloud.com/use-cases/next-js-mobile-apps" class="text-neutral-400 hover:text-white transition-colors">Next.js</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Free Tools</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/app-store-description-generator" class="text-neutral-400 hover:text-white transition-colors">AI App Store Description Generator</a></li><li><a href="https://www.mobiloud.com/tools/app-name-generator" class="text-neutral-400 hover:text-white transition-colors">AI App Name Generator</a></li><li><a href="https://www.mobiloud.com/ecom-app-revenue-calculator" class="text-neutral-400 hover:text-white transition-colors">Ecom App Revenue Calculator</a></li> </ul>  <p class="font-semibold text-white mt-8 mb-4">Reports</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="text-neutral-400 hover:text-white transition-colors">Ecom Mobile App Benchmark Report</a></li><li><a href="https://www.mobiloud.com/reports/ecommerce-push-notification-report" class="text-neutral-400 hover:text-white transition-colors">Ecom Push Notification Report</a></li><li><a href="https://www.mobiloud.com/reports/black-friday-mobile-app-playbook" class="text-neutral-400 hover:text-white transition-colors">Black Friday App Playbook</a></li><li><a href="https://www.mobiloud.com/reports" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div> </div>  <div class="h-px bg-neutral-700 my-12"></div>  <div data-nosnippet class="flex flex-col gap-6"> <a href="/mobiloud-reviews/pr-264/" class="block" aria-label="MobiLoud home"> <img src="/mobiloud-reviews/pr-264/branding/mobiloud-logo-white.svg" alt="MobiLoud" class="h-6 w-auto" loading="lazy"> </a> <div class="flex flex-col md:flex-row md:items-center justify-between gap-6"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-neutral-400"> <span>©2026 Fifty Pixels Ltd.</span> <a href="https://www.mobiloud.com/terms" class="hover:text-white transition-colors">Terms of Service</a> <a href="https://www.mobiloud.com/privacy" class="hover:text-white transition-colors">Privacy Policy</a> <a href="https://www.mobiloud.com/gdpr-compliance" class="hover:text-white transition-colors">GDPR Compliance</a> <a href="https://www.mobiloud.com/dpa" class="hover:text-white transition-colors">DPA</a> <a href="https://www.mobiloud.com/subprocessors" class="hover:text-white transition-colors">Subprocessors</a> </div> <div class="flex items-center gap-2.5"> <a href="https://twitter.com/mobiloud" target="_blank" rel="noopener" aria-label="Twitter" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg> </a><a href="https://www.facebook.com/mobiloudapp" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg> </a><a href="https://www.linkedin.com/company/mobiloud/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg> </a><a href="https://www.youtube.com/@Mobiloud" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg> </a> </div> </div> <p class="text-xs text-neutral-400 max-w-3xl leading-relaxed">
+MobiLoud® is a registered trademark of Fifty Pixels, registered in the European and U.S. Patent and Trademark Office.
+</p> </div>  </div> </footer>  <!-- Hash link scroll + scroll reveal --> <script>
+    (function() {
+      var NAV_OFFSET = 88;
+      function getScrollTop(el) {
+        return Math.max(0, el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET);
+      }
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+        var target = document.getElementById(hash.slice(1));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: getScrollTop(target), behavior: 'smooth' });
+        setTimeout(function() {
+          window.scrollTo({ top: getScrollTop(target), behavior: 'smooth' });
+        }, 600);
+      });
+
+      // Scroll-reveal: only tag sections currently below the fold.
+      // Sections in viewport on load show immediately - no flash, no fade.
+      // The homepage runs its own staged reveal (HomeMotion.astro).
+      if (document.documentElement.hasAttribute('data-home-motion')) return;
+      var sections = document.querySelectorAll('main section, body > section');
+      var vpH = window.innerHeight;
+      var toReveal = [];
+      sections.forEach(function (s) {
+        var top = s.getBoundingClientRect().top;
+        // section is below the viewport bottom - hide and observe
+        if (top > vpH * 0.85) {
+          s.classList.add('reveal');
+          toReveal.push(s);
+        }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        toReveal.forEach(function (s) { io.observe(s); });
+      } else {
+        toReveal.forEach(function (s) { s.classList.add('is-visible'); });
+      }
+    })();
+  </script> <script id="prh-data" type="application/json">{"pr":"264","route":"/mobiloud-reviews/pr-264/comparisons/twinr-alternative/","label":"PR #264 · /mobiloud-reviews/pr-264/comparisons/twinr-alternative/","headSha":"42a7655bbef32c224597248ecb1d39ce3bb94740","baseSha":"be2939d07e4751673f56b40bbe1c5245f9fcce46","changes":[{"type":"changed","before":"For businesses looking to extend their digital presence into the mobile app space, converting their existing website into a native mobile app offers a cost-effective alternative to building from scratch.","after":"For businesses looking to extend their digital presence into the mobile app space, building a native mobile app from their existing website offers a cost-effective alternative to building from scratch.","tokens":[{"t":"same","v":"For businesses looking to extend their digital presence into the mobile app space, "},{"t":"del","v":"converting their existing website into"},{"t":"add","v":"building"},{"t":"same","v":" a native mobile app "},{"t":"add","v":"from their existing website "},{"t":"same","v":"offers a cost-effective alternative to building from scratch."}]},{"type":"changed","before":"This comparison explores the key differences between MobiLoud and Twinr to help you determine which platform better aligns with your business requirements, with particular attention to performance, user experience, maintenance, and feature replication.","after":"This comparison explores the key differences between MobiLoud and Twinr to help you determine which platform better aligns with your business requirements, with particular attention to performance, user experience, maintenance, and how your features carry over.","tokens":[{"t":"same","v":"This comparison explores the key differences between MobiLoud and Twinr to help you determine which platform better aligns with your business requirements, with particular attention to performance, user experience, maintenance, and "},{"t":"del","v":"feature replication"},{"t":"add","v":"how your features carry over"},{"t":"same","v":"."}]},{"type":"changed","before":"MobiLoud is a full-service \"website-to-app\" platform that transforms your existing website into native mobile apps with minimal effort on your part.","after":"MobiLoud is a full service that builds your brand's own native mobile apps from your existing website, with minimal effort on your part.","tokens":[{"t":"same","v":"MobiLoud is a full "},{"t":"del","v":"-"},{"t":"same","v":"service "},{"t":"del","v":"\"website-to-app\" platform "},{"t":"same","v":"that "},{"t":"del","v":"transforms"},{"t":"add","v":"builds"},{"t":"same","v":" your "},{"t":"del","v":"existing website into"},{"t":"add","v":"brand's own"},{"t":"same","v":" native mobile apps "},{"t":"add","v":"from your existing website, "},{"t":"same","v":"with minimal effort on your part."}]},{"type":"changed","before":"While MobiLoud and Twinr both convert your website into a mobile app, their core philosophies and execution models differ.","after":"While MobiLoud and Twinr both build a mobile app from your website, their core philosophies and execution models differ.","tokens":[{"t":"same","v":"While MobiLoud and Twinr both "},{"t":"del","v":"convert your website into"},{"t":"add","v":"build"},{"t":"same","v":" a mobile app "},{"t":"add","v":"from your website"},{"t":"same","v":", their core philosophies and execution models differ."}]},{"type":"changed","before":"4. Feature Parity & Flexibility: Built to Match vs Built to Tweak","after":"4. Features & Flexibility: Built on Your Site vs Built to Tweak","tokens":[{"t":"same","v":"4. "},{"t":"del","v":"Feature Parity"},{"t":"add","v":"Features"},{"t":"same","v":" & Flexibility: Built "},{"t":"del","v":"to Match"},{"t":"add","v":"on Your Site"},{"t":"same","v":" vs Built to Tweak"}]},{"type":"changed","before":"Because MobiLoud matches your website's functionality directly, your community gets a consistent experience without duplicating development work.","after":"Because these features just work in a MobiLoud app, your community gets a consistent experience without duplicating development work.","tokens":[{"t":"same","v":"Because "},{"t":"add","v":"these features just work in a "},{"t":"same","v":"MobiLoud "},{"t":"del","v":"matches your website's functionality directly"},{"t":"add","v":"app"},{"t":"same","v":", your community gets a consistent experience without duplicating development work."}]}],"isNew":false}</script><script>// Opens collapsed content (closed <details>, accordion panels, hidden tabs) in REVIEW
+// copies and headless captures only. Never part of the site repo.
+// window.__prhReveal.all()      open every collapsed panel (used before text extraction)
+// window.__prhReveal.forEl(el)  open only the panels that contain el (used by the overlay)
+(function () {
+  'use strict';
+  if (window.__prhReveal) return;
+  var SKIP = 'header,nav,[role=dialog],[aria-modal="true"],[role=menu],[role=listbox],#prh-ui,#prh-layer,#prh-top';
+  var styled = false;
+  function addStyle() {
+    if (styled) return; styled = true;
+    var s = document.createElement('style'); s.id = 'prh-reveal-css';
+    s.textContent = '[data-prh-open]{grid-template-rows:1fr!important;max-height:none!important;height:auto!important;visibility:visible!important;opacity:1!important;overflow:visible!important}' +
+      '[data-prh-open][hidden],[data-prh-open].hidden{display:block!important}' +
+      '[data-prh-open]>*,[data-prh-open]>*>*{opacity:1!important;visibility:visible!important;max-height:none!important}';
+    (document.head || document.documentElement).appendChild(s);
+  }
+  function triggerFor(a) {
+    if (a.id) { var t = document.querySelector('[aria-controls~="' + a.id.replace(/"/g, '\\"') + '"]'); if (t) return t; }
+    var p = a.parentElement; if (!p) return null;
+    for (var i = 0; i < p.children.length; i++) {
+      var c = p.children[i];
+      if (c !== a && c.hasAttribute('aria-expanded') && (c.tagName === 'BUTTON' || c.getAttribute('role') === 'button' || c.tagName === 'A')) return c;
+    }
+    return null;
+  }
+  function collapsible(a) {
+    if (!a || a.nodeType !== 1 || a === document.body || a === document.documentElement) return false;
+    if (a.closest(SKIP)) return false;
+    if (a.tagName === 'DETAILS') return !a.open;
+    if (a.getAttribute('role') === 'tabpanel') return true;
+    return !!triggerFor(a);
+  }
+  function open(a) {
+    if (a.tagName === 'DETAILS') { a.open = true; return; }
+    addStyle();
+    a.setAttribute('data-prh-open', '');
+    if (getComputedStyle(a).display === 'none') a.style.setProperty('display', 'block', 'important');
+    var t = triggerFor(a);
+    if (t && t.getAttribute('aria-expanded') === 'false') t.setAttribute('aria-expanded', 'true');
+    if (a.classList.contains('faq-answer')) { a.classList.add('open'); var ar = t && t.querySelector('.faq-arrow'); if (ar) ar.classList.add('open'); }
+  }
+  function forEl(el) {
+    var n = 0;
+    for (var a = el && el.parentElement; a && a !== document.body; a = a.parentElement) {
+      if (collapsible(a)) { open(a); n++; }
+    }
+    return n;
+  }
+  function all() {
+    var c = new Set();
+    document.querySelectorAll('details:not([open]),[role=tabpanel]').forEach(function (e) { c.add(e); });
+    document.querySelectorAll('[aria-expanded]').forEach(function (t) {
+      (t.getAttribute('aria-controls') || '').split(/\s+/).forEach(function (id) { var e = id && document.getElementById(id); if (e) c.add(e); });
+      var p = t.parentElement; if (p) for (var i = 0; i < p.children.length; i++) if (p.children[i] !== t) c.add(p.children[i]);
+    });
+    var n = 0;
+    c.forEach(function (a) { if (collapsible(a)) { open(a); n++; } });
+    return n;
+  }
+  window.__prhReveal = { all: all, forEl: forEl, collapsible: collapsible };
+})();
+
+// Review overlay. Injected ONLY into copies under /workspace/web/review-builds/.
+// Never part of the site repo. Reads its data from <script id="prh-data">.
+(function () {
+  'use strict';
+  var D = JSON.parse(document.getElementById('prh-data').textContent);
+
+  // Forms are switched off: a review copy must never send a lead, booking or webhook.
+  var OFF_MSG = 'Forms are switched off in this review preview.';
+  function toast(msg) {
+    var t = document.getElementById('prh-toast');
+    if (!t) { t = document.createElement('div'); t.id = 'prh-toast'; t.style.cssText = 'position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:2147483647;background:#dc2626;color:#fff;font:600 14px/1.3 system-ui,-apple-system,sans-serif;padding:10px 14px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.3);max-width:90vw;text-align:center'; document.body.appendChild(t); }
+    t.textContent = msg; t.style.display = 'block'; clearTimeout(t.__h); t.__h = setTimeout(function () { t.style.display = 'none'; }, 3500);
+  }
+  var sameOrigin = function (u) { try { return new URL(u, location.href).origin === location.origin; } catch (e) { return false; } };
+  var realFetch = window.fetch;
+  window.fetch = function (input, init) {
+    var url = typeof input === 'string' ? input : (input && input.url) || String(input);
+    var method = ((init && init.method) || (input && input.method) || 'GET').toUpperCase();
+    if (method !== 'GET' && method !== 'HEAD') { toast(OFF_MSG); return Promise.reject(new Error(OFF_MSG)); }
+    return realFetch.apply(this, arguments);
+  };
+  var realOpen = XMLHttpRequest.prototype.open, realSend = XMLHttpRequest.prototype.send;
+  XMLHttpRequest.prototype.open = function (m) { this.__prhBlock = String(m).toUpperCase() !== 'GET'; return realOpen.apply(this, arguments); };
+  XMLHttpRequest.prototype.send = function () { if (this.__prhBlock) { toast(OFF_MSG); return; } return realSend.apply(this, arguments); };
+  if (navigator.sendBeacon) navigator.sendBeacon = function () { return true; };
+  document.addEventListener('submit', function (e) { e.preventDefault(); e.stopImmediatePropagation(); toast(OFF_MSG); }, true);
+
+  var COLORS = { changed: '#d97706', added: '#16a34a', moved: '#2563eb', removed: '#dc2626', visual: '#7c3aed' };
+  var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var OWN = function (el) { return el.closest && el.closest('#prh-ui,#prh-layer,#prh-top'); };
+
+  // ---------- find the element for a block key ----------
+  function isShown(el) { return el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden'; }
+  function findText(key, preferShown) {
+    if (!key) return null;
+    var probe = key.slice(0, 24);
+    var all = document.body.querySelectorAll('*');
+    var hits = [], hidden = [];
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|svg)$/i.test(el.tagName) || OWN(el)) continue;
+      var tc = el.textContent;
+      if (!tc || tc.length < key.length * 0.6 || norm(tc).indexOf(probe) < 0) continue;
+      if (norm(el.innerText) === key) hits.push(el);
+      else if (hidden && el.closest('details:not([open])')) hidden.push(el);
+    }
+    // text inside a closed <details> has no innerText until opened: open, test, close again if no match
+    if (!hits.length && window.__prhReveal) {
+      for (var j = 0; j < hidden.length && !hits.length; j++) {
+        var d = [], a2;
+        for (a2 = hidden[j].parentElement; a2; a2 = a2.parentElement) if (a2.tagName === 'DETAILS' && !a2.open) d.push(a2);
+        d.forEach(function (x) { x.open = true; });
+        var cand = [hidden[j]].concat(Array.prototype.slice.call(hidden[j].querySelectorAll('*')));
+        cand.forEach(function (c) { if (norm(c.innerText) === key) hits.push(c); });
+        if (!hits.length) d.forEach(function (x) { x.open = false; });
+      }
+    }
+    // deepest match wins (no matching descendant)
+    hits = hits.filter(function (el) { return !hits.some(function (o) { return o !== el && el.contains(o); }); });
+    if (preferShown) { var s = hits.filter(isShown); if (s.length) return s[0]; }
+    return hits[0] || null;
+  }
+  function findMedia(stem) {
+    if (!stem) return null;
+    var els = document.querySelectorAll('img,video,picture source');
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i];
+      var src = (e.currentSrc || e.getAttribute('src') || e.getAttribute('srcset') || '');
+      if (src.indexOf('/' + stem + '.') >= 0) return e.tagName === 'SOURCE' ? e.parentElement : e;
+    }
+    return null;
+  }
+
+  // ---------- wrap added words in <mark> ----------
+  function reEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\</body>'); }
+  function phrase(s) { return s.trim().split(/\s+/).filter(Boolean).map(reEsc).join('\\s*'); }
+  function markRanges(el, tokens) {
+    var nodes = [], full = '';
+    var tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (tw.nextNode()) { nodes.push({ n: tw.currentNode, start: full.length }); full += tw.currentNode.data; }
+    var keep = tokens.filter(function (t) { return t.t !== 'del' && t.v.trim(); });
+    var spans = [];
+    try {
+      var src = keep.map(function (t) { return '(' + phrase(t.v) + ')'; }).join('\\s*');
+      var m = new RegExp(src, 'd').exec(full);
+      if (m && m.indices) keep.forEach(function (t, i) { if (t.t === 'add') spans.push(m.indices[i + 1]); });
+    } catch (e) {}
+    if (!spans.length) { // fallback: sequential search for each added phrase
+      var from = 0;
+      keep.forEach(function (t) {
+        var re = new RegExp(phrase(t.v), 'g'); re.lastIndex = from;
+        var h = re.exec(full); if (!h) return;
+        from = h.index + h[0].length;
+        if (t.t === 'add') spans.push([h.index, from]);
+      });
+    }
+    var segs = [];
+    spans.forEach(function (sp) {
+      nodes.forEach(function (x) {
+        var a = Math.max(sp[0], x.start), b = Math.min(sp[1], x.start + x.n.data.length);
+        if (b > a) segs.push({ n: x.n, a: a - x.start, b: b - x.start });
+      });
+    });
+    segs.sort(function (p, q) { return p.n === q.n ? q.a - p.a : 0; });
+    var marks = [];
+    segs.forEach(function (s) {
+      if (!s.n.parentNode) return;
+      if (s.b < s.n.data.length) s.n.splitText(s.b);
+      var mid = s.a > 0 ? s.n.splitText(s.a) : s.n;
+      var mk = document.createElement('mark'); mk.className = 'prh-add';
+      mid.parentNode.insertBefore(mk, mid); mk.appendChild(mid); marks.push(mk);
+    });
+    return marks.length;
+  }
+
+  // ---------- build UI ----------
+  var css = document.createElement('style');
+  css.textContent = [
+    '#prh-top{position:relative;z-index:2147483646;background:#111;color:#fff;font:600 14px/1.35 system-ui,-apple-system,sans-serif;padding:10px 14px;text-align:center}',
+    '#prh-top b{color:#ffe066}',
+    '#ml-preview-badge{display:none!important}',
+    '#prh-top small{display:block;font-weight:400;opacity:.85;margin-top:2px}',
+    'mark.prh-add{background:#ffe066!important;color:#111!important;border-radius:2px;box-shadow:0 0 0 2px #ffe066;-webkit-text-fill-color:#111!important}',
+    '.prh-target{outline:3px solid var(--prh-c)!important;outline-offset:4px!important;border-radius:3px}',
+    '.prh-target.prh-new{background-color:rgba(255,224,102,.35)!important}',
+    '.prh-target.prh-box.prh-new{background-color:rgba(255,224,102,.16)!important}',
+    '.prh-pulse{animation:prhPulse 1.2s ease 2}',
+    '@keyframes prhPulse{50%{outline-offset:10px;outline-width:6px}}',
+    'html.prh-off mark.prh-add{background:transparent!important;box-shadow:none!important;color:inherit!important;-webkit-text-fill-color:inherit!important}',
+    'html.prh-off .prh-target{outline:none!important}html.prh-off .prh-target.prh-new{background-color:transparent!important}',
+    'html.prh-off #prh-layer{display:none}',
+    '#prh-layer{position:absolute;left:0;top:0;width:0;height:0;z-index:2147483645}',
+    '.prh-badge{position:absolute;font:700 12px/1 system-ui,-apple-system,sans-serif;color:#fff;padding:5px 7px;border-radius:999px;cursor:pointer;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.3);border:0}',
+    '.prh-note{position:absolute;width:min(420px,calc(100vw - 24px));box-sizing:border-box;background:#fff;color:#222;font:14px/1.45 system-ui,-apple-system,sans-serif;border:2px solid #dc2626;border-radius:8px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:none}',
+    '.prh-note.open{display:block}',
+    '.prh-note .h{font-weight:700;font-size:12px;color:#dc2626;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}',
+    '.prh-note del{color:#b91c1c;background:#fee2e2;text-decoration:line-through;margin-right:4px}',
+    '.prh-note ins{text-decoration:none;background:#ffe066}',
+    '#prh-ui{position:fixed;left:50%;transform:translateX(-50%);bottom:max(12px,env(safe-area-inset-bottom));z-index:2147483647;display:flex;align-items:center;gap:6px;background:#111;color:#fff;border-radius:999px;padding:6px;font:600 14px/1 system-ui,-apple-system,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:calc(100vw - 16px)}',
+    '#prh-ui button{all:unset;cursor:pointer;background:#2b2b2b;color:#fff;border-radius:999px;padding:9px 12px;font:600 14px/1 system-ui,-apple-system,sans-serif;white-space:nowrap}',
+    '#prh-ui button:active{background:#444}',
+    '#prh-ui .count{padding:0 6px;white-space:nowrap}',
+    '#prh-ui .tag{background:#ffe066;color:#111;border-radius:999px;padding:9px 10px;white-space:nowrap}',
+    '@media (max-width:520px){#prh-ui .tag{display:none}#prh-ui button{padding:9px 10px}}'
+  ].join('\n');
+  document.head.appendChild(css);
+
+  var top = document.createElement('div');
+  top.id = 'prh-top';
+  top.innerHTML = 'Review preview, not the live site. ' + esc(D.label) +
+    '<small><b>Yellow</b> is new text and outlines mark what changed. Tap a <b>Was</b> or <b>Removed</b> badge to see the old text. Use the arrows at the bottom to step through.</small>';
+  document.body.insertBefore(top, document.body.firstChild);
+
+  var layer = document.createElement('div'); layer.id = 'prh-layer';
+  document.documentElement.appendChild(layer);
+
+  var items = []; // {n, el, color, badge, note, change}
+  var claimed = new Set();
+  function findItem(it) { return it.media ? findMedia(it.stem) : findText(it.key, true); }
+  function mark(el, color, isNew) {
+    el.classList.add('prh-target'); el.style.setProperty('--prh-c', color);
+    if (isNew) el.classList.add('prh-new');
+  }
+  // One outline around a whole new block when the new elements share a parent that holds little else.
+  function commonBox(els) {
+    var a = els[0].parentElement;
+    while (a && !els.every(function (e) { return a.contains(e); })) a = a.parentElement;
+    if (!a || a === document.body || a === document.documentElement || a.tagName === 'MAIN') return null;
+    var own = els.reduce(function (n, e) { return n + norm(e.innerText || e.alt || '').length; }, 0);
+    var all = norm(a.innerText || '').length;
+    return all <= own * 1.35 + 40 ? a : null;
+  }
+  D.changes.forEach(function (c) {
+    var el = null, color = COLORS[c.type], label = '', noteHtml = null, extra = [];
+    if (c.type === 'added' || c.type === 'moved') {
+      c.afters.forEach(function (a) { var e = findItem(a); if (e && !claimed.has(e)) { e.__prhMoved = !!a.moved; extra.push(e); } });
+      el = extra[0] || null;
+      label = c.type === 'moved' ? 'Moved here' : c.afters.length > 2 ? 'New section' : 'New';
+    } else if (c.type === 'removed') {
+      el = findText(c.anchorAfter, true) || null;
+      label = 'Removed here';
+      noteHtml = '<div class="h">Removed from the page</div>' + c.befores.map(function (b) {
+        return '<div style="margin:2px 0"><del>' + esc(b.media ? 'Image: ' + b.stem.replace(/^[0-9a-f]{12,}[-_]?/i, '').replace(/[-_]+/g, ' ') : b.key) + '</del></div>';
+      }).join('');
+    } else if (c.media) {
+      el = findMedia(c.afterMedia); color = COLORS.visual; label = 'Image changed';
+    } else {
+      el = findText(c.after, true);
+      var hasDel = c.tokens && c.tokens.some(function (t) { return t.t === 'del' && t.v.trim(); });
+      label = hasDel ? 'Was' : 'Changed';
+      if (hasDel) noteHtml = '<div class="h">Before and after</div>' + c.tokens.map(function (t) { return t.t === 'del' ? '<del>' + esc(t.v) + '</del>' : t.t === 'add' ? '<ins>' + esc(t.v) + '</ins>' : esc(t.v); }).join('');
+    }
+    if (!el || (c.type !== 'removed' && claimed.has(el))) return;
+    // a change inside a collapsed accordion, closed <details> or hidden tab: open its container
+    if (window.__prhReveal) { window.__prhReveal.forEl(el); extra.forEach(function (e) { window.__prhReveal.forEl(e); }); }
+    if (extra.length) {
+      // Group neighbouring new elements into one outlined block where a parent holds little else.
+      var runs = [], run = [];
+      extra.forEach(function (e) {
+        if (c.type === 'added' && !e.__prhMoved && run.length && commonBox(run.concat([e]))) run.push(e);
+        else { if (run.length) runs.push(run); run = [e]; }
+      });
+      if (run.length) runs.push(run);
+      runs.forEach(function (r, i) {
+        var b = r.length >= 2 ? commonBox(r) : null;
+        r.forEach(function (e) { claimed.add(e); });
+        if (b) { claimed.add(b); b.classList.add('prh-box'); mark(b, color, true); if (i === 0) el = b; }
+        else r.forEach(function (e) { mark(e, e.__prhMoved ? COLORS.moved : color, !e.__prhMoved && !(e.tagName === 'IMG' || e.tagName === 'VIDEO')); });
+      });
+    }
+    else if (c.type !== 'removed') { claimed.add(el); mark(el, color, false); if (!c.media && c.tokens) markRanges(el, c.tokens); }
+    var n = items.length + 1;
+    var badge = document.createElement('button');
+    badge.className = 'prh-badge'; badge.style.background = color;
+    badge.textContent = n + ' · ' + label;
+    var note = null;
+    if (noteHtml) {
+      note = document.createElement('div'); note.className = 'prh-note'; note.innerHTML = noteHtml;
+      layer.appendChild(note);
+      note.addEventListener('click', function () { note.classList.remove('open'); });
+      badge.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); note.classList.toggle('open'); place(); });
+    } else badge.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); });
+    layer.appendChild(badge);
+    items.push({ n: n, el: el, color: color, badge: badge, note: note, change: c });
+  });
+
+  function place() {
+    var vw = document.documentElement.clientWidth;
+    var taken = []; // badge boxes already placed, to avoid overlaps
+    items.forEach(function (it) {
+      if (!it.el) return;
+      var shown = isShown(it.el);
+      it.badge.style.display = shown ? '' : 'none';
+      if (it.note && !shown) it.note.classList.remove('open');
+      if (!shown) return;
+      var r = it.el.getBoundingClientRect();
+      var x = r.left + scrollX, y = (it.change.type === 'removed' ? r.bottom : r.top) + scrollY;
+      var bw = it.badge.offsetWidth || 90;
+      var bx = Math.max(4, Math.min(vw - bw - 4, x - 4));
+      var by = Math.max(4, y - (it.change.type === 'removed' ? -6 : 30));
+      for (var guard = 0; guard < 20; guard++) {
+        var hit = taken.filter(function (t) { return bx < t.x + t.w + 6 && bx + bw + 6 > t.x && by < t.y + 26 && by + 26 > t.y; })[0];
+        if (!hit) break;
+        if (hit.x + hit.w + 8 + bw <= vw - 4) bx = hit.x + hit.w + 8; else by = hit.y + 28;
+      }
+      taken.push({ x: bx, y: by, w: bw });
+      it.badge.style.left = bx + 'px'; it.badge.style.top = by + 'px';
+      if (it.note) {
+        var nw = Math.min(420, vw - 24);
+        it.note.style.left = Math.max(12, Math.min(vw - nw - 12, bx)) + 'px';
+        it.note.style.top = (by + 30) + 'px';
+      }
+    });
+  }
+
+  // ---------- bottom bar ----------
+  var ui = document.createElement('div'); ui.id = 'prh-ui';
+  ui.innerHTML = '<span class="tag">Review preview</span><button data-a="prev" aria-label="Previous change">&#9664;</button><span class="count"></span><button data-a="next" aria-label="Next change">&#9654;</button><button data-a="toggle">Hide</button>';
+  document.body.appendChild(ui);
+  var count = ui.querySelector('.count'), toggleBtn = ui.querySelector('[data-a=toggle]');
+  var cur = -1;
+  function nav() { return items.filter(function (it) { return it.el && isShown(it.el); }); }
+  function showCount() {
+    var v = nav(), total = items.length;
+    var pos = cur >= 0 ? v.indexOf(items[cur]) + 1 : 0;
+    count.textContent = v.length ? (pos ? pos + ' of ' + v.length : v.length + ' change' + (v.length === 1 ? '' : 's')) : 'No changes here';
+    if (v.length < total) count.title = (total - v.length) + ' change(s) not shown at this screen width';
+  }
+  function go(dir) {
+    var v = nav(); if (!v.length) return;
+    var p = cur >= 0 ? v.indexOf(items[cur]) : -1;
+    p = p < 0 ? (dir > 0 ? 0 : v.length - 1) : (p + dir + v.length) % v.length;
+    var it = v[p]; cur = items.indexOf(it);
+    document.documentElement.classList.remove('prh-off'); toggleBtn.textContent = 'Hide';
+    items.forEach(function (o) { if (o.note) o.note.classList.remove('open'); });
+    if (it.note) it.note.classList.add('open');
+    it.el.scrollIntoView({ behavior: 'smooth', block: it.el.getBoundingClientRect().height > window.innerHeight * 0.8 ? 'start' : 'center' });
+    // Images above can load while scrolling and push the target away, so check again and settle on it.
+    [800, 1600].forEach(function (ms) { setTimeout(function () {
+      if (items[cur] !== it) return;
+      var r = it.el.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.bottom < 60 || r.top > vh - 90 || Math.abs((r.top + Math.min(r.height, vh) / 2) - vh / 2) > vh * 0.3) it.el.scrollIntoView({ behavior: 'auto', block: r.height > vh ? 'start' : 'center' });
+      place();
+    }, ms); });
+    it.el.classList.remove('prh-pulse'); void it.el.offsetWidth; it.el.classList.add('prh-pulse');
+    setTimeout(place, 400); showCount();
+  }
+  ui.addEventListener('click', function (e) {
+    var a = e.target.closest('button'); if (!a) return;
+    if (a.dataset.a === 'next') go(1); else if (a.dataset.a === 'prev') go(-1);
+    else { var off = document.documentElement.classList.toggle('prh-off'); a.textContent = off ? 'Show' : 'Hide'; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'j' || e.key === 'ArrowRight' && e.altKey) go(1); if (e.key === 'k' || e.key === 'ArrowLeft' && e.altKey) go(-1); });
+
+  place(); showCount();
+  window.addEventListener('resize', function () { place(); showCount(); });
+  window.addEventListener('load', place);
+  setInterval(place, 1000);
+  window.__prh = { items: items, place: place, go: go };
+})();
+</script></body> </html>
