@@ -320,15 +320,17 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
         toReveal.forEach(function (s) { s.classList.add('is-visible'); });
       }
     })();
-  </script> <script id="prh-data" type="application/json">{"pr":"264","route":"/mobiloud-reviews/pr-264/comparisons/magenative-alternative/","label":"PR #264 · /mobiloud-reviews/pr-264/comparisons/magenative-alternative/","headSha":"42a7655bbef32c224597248ecb1d39ce3bb94740","baseSha":"be2939d07e4751673f56b40bbe1c5245f9fcce46","changes":[{"type":"removed","befores":[{"key":"Converts your website into an app.","tag":"li"}],"anchorAfter":"MobiLoud"},{"type":"added","afters":[{"key":"Builds your app from your website, with nothing to rebuild.","tag":"li"}]},{"type":"changed","before":"MobiLoud actually converts your website into a mobile app.","after":"MobiLoud builds your brand's own mobile app from your website.","tokens":[{"t":"same","v":"MobiLoud "},{"t":"del","v":"actually converts"},{"t":"add","v":"builds"},{"t":"same","v":" your "},{"t":"del","v":"website into a"},{"t":"add","v":"brand's own"},{"t":"same","v":" mobile app "},{"t":"add","v":"from your website"},{"t":"same","v":"."}]}],"isNew":false}</script><script>// Opens collapsed content (closed <details>, accordion panels, hidden tabs) in REVIEW
+  </script> <script id="prh-data" type="application/json">{"pr":"264","route":"/mobiloud-reviews/pr-264/comparisons/magenative-alternative/","label":"PR #264 · /mobiloud-reviews/pr-264/comparisons/magenative-alternative/","headSha":"b1b6113732f9539d0fccb898f69cf5321d5bd6a1","baseSha":"be2939d07e4751673f56b40bbe1c5245f9fcce46","changes":[{"type":"removed","befores":[{"key":"Converts your website into an app.","tag":"li"}],"anchorAfter":"MobiLoud","vp":["desktop","mobile"]},{"type":"added","afters":[{"key":"Builds your app from your website, with nothing to rebuild.","tag":"li"}],"vp":["desktop","mobile"]},{"type":"changed","before":"MobiLoud actually converts your website into a mobile app.","after":"MobiLoud builds your brand's own mobile app from your website.","tokens":[{"t":"same","v":"MobiLoud "},{"t":"del","v":"actually converts"},{"t":"add","v":"builds"},{"t":"same","v":" your "},{"t":"del","v":"website into a"},{"t":"add","v":"brand's own"},{"t":"same","v":" mobile app "},{"t":"add","v":"from your website"},{"t":"same","v":"."}],"vp":["desktop","mobile"]}],"isNew":false}</script><script>// Opens collapsed content (closed <details>, accordion panels, hidden tabs) in REVIEW
 // copies and headless captures only. Never part of the site repo.
 // window.__prhReveal.all()      open every collapsed panel (used before text extraction)
 // window.__prhReveal.forEl(el)  open only the panels that contain el (used by the overlay)
+// window.__prhReveal.repin()     open those panels again if a site script closed them
 (function () {
   'use strict';
   if (window.__prhReveal) return;
   var SKIP = 'header,nav,[role=dialog],[aria-modal="true"],[role=menu],[role=listbox],#prh-ui,#prh-layer,#prh-top';
   var styled = false;
+  var pinned = new Set(); // panels opened for a change; kept open if site scripts close them again
   function addStyle() {
     if (styled) return; styled = true;
     var s = document.createElement('style'); s.id = 'prh-reveal-css';
@@ -353,7 +355,8 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
     if (a.getAttribute('role') === 'tabpanel') return true;
     return !!triggerFor(a);
   }
-  function open(a) {
+  function open(a, pin) {
+    if (pin) pinned.add(a);
     if (a.tagName === 'DETAILS') { a.open = true; return; }
     addStyle();
     a.setAttribute('data-prh-open', '');
@@ -365,10 +368,32 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
   function forEl(el) {
     var n = 0;
     for (var a = el && el.parentElement; a && a !== document.body; a = a.parentElement) {
-      if (collapsible(a)) { open(a); n++; }
+      if (collapsible(a)) { open(a, true); n++; }
     }
     return n;
   }
+  function isClosed(a) {
+    if (a.tagName === 'DETAILS') return !a.open;
+    return !a.hasAttribute('data-prh-open') || getComputedStyle(a).display === 'none';
+  }
+  // Site scripts can close panels after the overlay ran (e.g. a module script that closes
+  // details on small screens, or on a media query change). Open pinned panels again.
+  function repin() {
+    var n = 0;
+    pinned.forEach(function (a) { if (a.isConnected && isClosed(a)) { open(a, false); n++; } });
+    return n;
+  }
+  // A reviewer who toggles a panel by hand is in charge of it from then on.
+  document.addEventListener('click', function (e) {
+    if (!e.isTrusted || !e.target.closest) return;
+    var s = e.target.closest('summary');
+    if (s && s.parentElement) pinned.delete(s.parentElement);
+    var t = e.target.closest('[aria-expanded]');
+    if (t) {
+      (t.getAttribute('aria-controls') || '').split(/\s+/).forEach(function (id) { var x = id && document.getElementById(id); if (x) pinned.delete(x); });
+      var p = t.parentElement; if (p) for (var i = 0; i < p.children.length; i++) pinned.delete(p.children[i]);
+    }
+  }, true);
   function all() {
     var c = new Set();
     document.querySelectorAll('details:not([open]),[role=tabpanel]').forEach(function (e) { c.add(e); });
@@ -380,7 +405,7 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
     c.forEach(function (a) { if (collapsible(a)) { open(a); n++; } });
     return n;
   }
-  window.__prhReveal = { all: all, forEl: forEl, collapsible: collapsible };
+  window.__prhReveal = { all: all, forEl: forEl, repin: repin, collapsible: collapsible };
 })();
 
 // Review overlay. Injected ONLY into copies under /workspace/web/review-builds/.
@@ -414,21 +439,27 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
   var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var OWN = function (el) { return el.closest && el.closest('#prh-ui,#prh-layer,#prh-top'); };
+  var claimed = new Set();
 
   // ---------- find the element for a block key ----------
   function isShown(el) { return el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden'; }
-  function findText(key, preferShown) {
+  // text of the element itself, without child elements (extractBlocks' "own" blocks, e.g. a <p> that starts with a label <span>)
+  function ownText(el) { var t = []; for (var k = el.firstChild; k; k = k.nextSibling) if (k.nodeType === 3) t.push(k.data); return norm(t.join(' ')); }
+  function findText(key, preferShown, tag, anyEl) {
     if (!key) return null;
     var probe = key.slice(0, 24);
     var all = document.body.querySelectorAll('*');
-    var hits = [], hidden = [];
+    var hits = [], own = [], hidden = [];
     for (var i = 0; i < all.length; i++) {
       var el = all[i];
       if (/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|svg)$/i.test(el.tagName) || OWN(el)) continue;
       var tc = el.textContent;
       if (!tc || tc.length < key.length * 0.6 || norm(tc).indexOf(probe) < 0) continue;
       if (norm(el.innerText) === key) hits.push(el);
-      else if (hidden && el.closest('details:not([open])')) hidden.push(el);
+      else {
+        if (ownText(el) === key) own.push(el);
+        if (el.closest('details:not([open])')) hidden.push(el);
+      }
     }
     // text inside a closed <details> has no innerText until opened: open, test, close again if no match
     if (!hits.length && window.__prhReveal) {
@@ -441,10 +472,22 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
         if (!hits.length) d.forEach(function (x) { x.open = false; });
       }
     }
+    if (!hits.length) hits = own;
     // deepest match wins (no matching descendant)
     hits = hits.filter(function (el) { return !hits.some(function (o) { return o !== el && el.contains(o); }); });
-    if (preferShown) { var s = hits.filter(isShown); if (s.length) return s[0]; }
-    return hits[0] || null;
+    // The same text can sit in a desktop table and in mobile cards (only one is shown per width).
+    // Prefer an element no other change took, then the recorded tag, then one shown at this width
+    // (a change seen only at the other width may stay hidden here; review.json lists its widths).
+    var free = function (e) { return anyEl || !claimed.has(e); };
+    var tagOk = function (e) { return !tag || e.tagName.toLowerCase() === tag; };
+    var tests = preferShown
+      ? [[free, tagOk, isShown], [free, tagOk], [free, isShown], [free], [isShown], []]
+      : [[free, tagOk], [free], []];
+    for (var t = 0; t < tests.length; t++) {
+      var f = tests[t], m = hits.filter(function (e) { return f.every(function (fn) { return fn(e); }); });
+      if (m.length) return m[0];
+    }
+    return null;
   }
   function findMedia(stem) {
     if (!stem) return null;
@@ -500,6 +543,9 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
   }
 
   // ---------- build UI ----------
+  // Module scripts run after this inline script, and some close panels on small screens,
+  // so matching and opening panels waits for DOMContentLoaded (after module scripts ran).
+  function init() {
   var css = document.createElement('style');
   css.textContent = [
     '#prh-top{position:relative;z-index:2147483646;background:#111;color:#fff;font:600 14px/1.35 system-ui,-apple-system,sans-serif;padding:10px 14px;text-align:center}',
@@ -541,8 +587,7 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
   document.documentElement.appendChild(layer);
 
   var items = []; // {n, el, color, badge, note, change}
-  var claimed = new Set();
-  function findItem(it) { return it.media ? findMedia(it.stem) : findText(it.key, true); }
+  function findItem(it) { return it.media ? findMedia(it.stem) : findText(it.key, true, it.tag); }
   function mark(el, color, isNew) {
     el.classList.add('prh-target'); el.style.setProperty('--prh-c', color);
     if (isNew) el.classList.add('prh-new');
@@ -563,7 +608,7 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
       el = extra[0] || null;
       label = c.type === 'moved' ? 'Moved here' : c.afters.length > 2 ? 'New section' : 'New';
     } else if (c.type === 'removed') {
-      el = findText(c.anchorAfter, true) || null;
+      el = findText(c.anchorAfter, true, null, true) || null;
       label = 'Removed here';
       noteHtml = '<div class="h">Removed from the page</div>' + c.befores.map(function (b) {
         return '<div style="margin:2px 0"><del>' + esc(b.media ? 'Image: ' + b.stem.replace(/^[0-9a-f]{12,}[-_]?/i, '').replace(/[-_]+/g, ' ') : b.key) + '</del></div>';
@@ -678,10 +723,13 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'j' || e.key === 'ArrowRight' && e.altKey) go(1); if (e.key === 'k' || e.key === 'ArrowLeft' && e.altKey) go(-1); });
 
+  var repin = function () { if (window.__prhReveal && window.__prhReveal.repin) window.__prhReveal.repin(); };
   place(); showCount();
-  window.addEventListener('resize', function () { place(); showCount(); });
-  window.addEventListener('load', place);
-  setInterval(place, 1000);
+  window.addEventListener('resize', function () { setTimeout(function () { repin(); place(); showCount(); }, 50); });
+  window.addEventListener('load', function () { repin(); place(); showCount(); });
+  setInterval(function () { repin(); place(); }, 1000);
   window.__prh = { items: items, place: place, go: go };
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 </script></body> </html>
