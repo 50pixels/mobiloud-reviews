@@ -1,0 +1,19 @@
+{
+  "pr": "257",
+  "title": "Homepage: three selling points",
+  "head": "pr/257",
+  "headSha": "cce204d2e9f4f745c5e0438462325c005c074ccd",
+  "base": "00f4e398",
+  "baseSha": "00f4e398d461c5ca3ee08630d7ea070b6029ad5f",
+  "comparedTo": "current tip",
+  "builtAt": "2026-11-01T20:28:10.682Z",
+  "routes": [
+    {
+      "route": "/",
+      "isNew": false,
+      "changes": 7
+    }
+  ],
+  "skipped": [],
+  "removedPages": []
+}
