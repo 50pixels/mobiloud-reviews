@@ -1,0 +1,54 @@
+{
+  "pr": "261",
+  "title": "Comparison hand-built pages: manage instead of run, drop Truly unlimited",
+  "head": "pr/261",
+  "headSha": "ddc42080eb7c0e857dab823fbb7202b6d9855543",
+  "base": "2fede24875a1a495e1cda2450ac5df887d98376e",
+  "baseSha": "f31c001629bded8a5a8caca23ca592a79ea0e900",
+  "comparedTo": "merge base",
+  "builtAt": "2026-11-01T21:31:27.822Z",
+  "routes": [
+    {
+      "route": "/comparisons/appbrew-alternative/",
+      "isNew": false,
+      "changes": 12
+    },
+    {
+      "route": "/comparisons/appmaker-xyz-alternative/",
+      "isNew": false,
+      "changes": 5
+    },
+    {
+      "route": "/comparisons/apptile-alternative/",
+      "isNew": false,
+      "changes": 9
+    },
+    {
+      "route": "/comparisons/plobal-apps-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/reactiv-alternative/",
+      "isNew": false,
+      "changes": 4
+    },
+    {
+      "route": "/comparisons/shopney-alternative/",
+      "isNew": false,
+      "changes": 14
+    },
+    {
+      "route": "/comparisons/superfans-vs-mobiloud/",
+      "isNew": false,
+      "changes": 5
+    },
+    {
+      "route": "/comparisons/tapcart-vs-mobiloud/",
+      "isNew": false,
+      "changes": 19
+    }
+  ],
+  "skipped": [],
+  "removedPages": []
+}
