@@ -1,0 +1,109 @@
+{
+  "pr": "260",
+  "title": "Comparison pages: clean older copy (follow-up to #258)",
+  "head": "pr/260",
+  "headSha": "f31c001629bded8a5a8caca23ca592a79ea0e900",
+  "base": "acd81b57a4584388882d7fe47b244cc1e9c593ff",
+  "baseSha": "84be9144a93486cb3f8583eff01d4a9f13e8b433",
+  "comparedTo": "merge base",
+  "builtAt": "2026-11-01T21:29:04.438Z",
+  "routes": [
+    {
+      "route": "/comparisons/appmysite-alternative/",
+      "isNew": false,
+      "changes": 13
+    },
+    {
+      "route": "/comparisons/best-tapcart-alternatives/",
+      "isNew": false,
+      "changes": 15
+    },
+    {
+      "route": "/comparisons/buildfire-alternative/",
+      "isNew": false,
+      "changes": 18
+    },
+    {
+      "route": "/comparisons/drobile-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/evlop-alternative/",
+      "isNew": false,
+      "changes": 11
+    },
+    {
+      "route": "/comparisons/fuego-alternative/",
+      "isNew": false,
+      "changes": 13
+    },
+    {
+      "route": "/comparisons/goodbarber-alternative/",
+      "isNew": false,
+      "changes": 10
+    },
+    {
+      "route": "/comparisons/hulk-mobile-app-builder-alternative/",
+      "isNew": false,
+      "changes": 9
+    },
+    {
+      "route": "/comparisons/",
+      "isNew": false,
+      "changes": 2
+    },
+    {
+      "route": "/comparisons/jmango360-alternative/",
+      "isNew": false,
+      "changes": 11
+    },
+    {
+      "route": "/comparisons/magenative-alternative/",
+      "isNew": false,
+      "changes": 14
+    },
+    {
+      "route": "/comparisons/median-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/mobiloud-vs-cross-platform-development/",
+      "isNew": false,
+      "changes": 1
+    },
+    {
+      "route": "/comparisons/mobiloud-vs-custom-development/",
+      "isNew": false,
+      "changes": 32
+    },
+    {
+      "route": "/comparisons/mobiloud-vs-in-house-mobile-app-team/",
+      "isNew": false,
+      "changes": 34
+    },
+    {
+      "route": "/comparisons/newstore-alternative/",
+      "isNew": false,
+      "changes": 7
+    },
+    {
+      "route": "/comparisons/twinr-alternative/",
+      "isNew": false,
+      "changes": 6
+    },
+    {
+      "route": "/comparisons/vajro-alternative/",
+      "isNew": false,
+      "changes": 12
+    },
+    {
+      "route": "/comparisons/venn-apps/",
+      "isNew": false,
+      "changes": 10
+    }
+  ],
+  "skipped": [],
+  "removedPages": []
+}
