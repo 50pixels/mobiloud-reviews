@@ -453,13 +453,25 @@ MobiLoud® is a registered trademark of Fifty Pixels, registered in the European
     if (!key) return null;
     var probe = key.slice(0, 24);
     var all = document.body.querySelectorAll('*');
-    var hits = [];
+    var hits = [], hidden = [];
     for (var i = 0; i < all.length; i++) {
       var el = all[i];
       if (/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|svg)$/i.test(el.tagName) || OWN(el)) continue;
       var tc = el.textContent;
       if (!tc || tc.length < key.length * 0.6 || norm(tc).indexOf(probe) < 0) continue;
       if (norm(el.innerText) === key) hits.push(el);
+      else if (hidden && el.closest('details:not([open])')) hidden.push(el);
+    }
+    // text inside a closed <details> has no innerText until opened: open, test, close again if no match
+    if (!hits.length && window.__prhReveal) {
+      for (var j = 0; j < hidden.length && !hits.length; j++) {
+        var d = [], a2;
+        for (a2 = hidden[j].parentElement; a2; a2 = a2.parentElement) if (a2.tagName === 'DETAILS' && !a2.open) d.push(a2);
+        d.forEach(function (x) { x.open = true; });
+        var cand = [hidden[j]].concat(Array.prototype.slice.call(hidden[j].querySelectorAll('*')));
+        cand.forEach(function (c) { if (norm(c.innerText) === key) hits.push(c); });
+        if (!hits.length) d.forEach(function (x) { x.open = false; });
+      }
     }
     // deepest match wins (no matching descendant)
     hits = hits.filter(function (el) { return !hits.some(function (o) { return o !== el && el.contains(o); }); });
