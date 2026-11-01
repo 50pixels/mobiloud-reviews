@@ -6,12 +6,12 @@
   "base": "21abd6e8",
   "baseSha": "e2146bd2090328d13551fb46dd153e6a2ed67f77",
   "comparedTo": "merge base",
-  "builtAt": "2026-11-01T20:49:51.791Z",
+  "builtAt": "2026-11-01T20:56:38.558Z",
   "routes": [
     {
       "route": "/faqs/",
       "isNew": false,
-      "changes": 0
+      "changes": 8
     },
     {
       "route": "/features/",
@@ -21,7 +21,7 @@
     {
       "route": "/features/retain-website-features/",
       "isNew": false,
-      "changes": 3
+      "changes": 10
     },
     {
       "route": "/how-it-works/",
