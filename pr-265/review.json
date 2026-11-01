@@ -1,0 +1,154 @@
+{
+  "pr": "265",
+  "title": "Wording sweep 2: tools wording, Shopify FAQ, retain features, plan-accurate push lines",
+  "head": "origin/frame/wording-sweep-2",
+  "headSha": "72e969c760303e444d48d8f49a53d81fead15fb4",
+  "base": "cef43016",
+  "baseSha": "cef43016ddde3c0b5e597178056d8235671b498a",
+  "comparedTo": "current tip",
+  "builtAt": "2026-11-01T22:06:12.432Z",
+  "routes": [
+    {
+      "route": "/comparisons/appbrew-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/buildfire-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/evlop-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/fuego-alternative/",
+      "isNew": false,
+      "changes": 3,
+      "desktop": 3,
+      "mobile": 3
+    },
+    {
+      "route": "/comparisons/goodbarber-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/jmango360-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/plobal-apps-alternative/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/comparisons/superfans-vs-mobiloud/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/faqs/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/features/analytics-cro/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/features/promotion/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/features/push-notifications/",
+      "isNew": false,
+      "changes": 5,
+      "desktop": 5,
+      "mobile": 5
+    },
+    {
+      "route": "/features/retain-website-features/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/",
+      "isNew": false,
+      "changes": 1,
+      "desktop": 1,
+      "mobile": 1
+    },
+    {
+      "route": "/use-cases/bigcommerce-mobile-app/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/use-cases/convert-adobe-commerce-site-to-mobile-app/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/use-cases/ecommerce-mobile-app/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/use-cases/hyva-mobile-apps/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/use-cases/magento-mobile-app-development/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    },
+    {
+      "route": "/use-cases/shopify-plus-mobile-app/",
+      "isNew": false,
+      "changes": 2,
+      "desktop": 2,
+      "mobile": 2
+    }
+  ],
+  "skipped": [],
+  "removedPages": []
+}
