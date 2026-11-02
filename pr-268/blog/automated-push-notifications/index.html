@@ -1,0 +1,888 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"> <head><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow"><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://hooks.zapier.com https://calendly.com https://assets.calendly.com; form-action 'self' https://hooks.zapier.com https://calendly.com; frame-src 'self' https://calendly.com https://www.youtube.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com"><script id="ml-env-guard">window.__ML_SITE_ENV__="preview";window.__ML_PREVIEW_CSP__="connect-src 'self' https://hooks.zapier.com https://calendly.com https://assets.calendly.com; form-action 'self' https://hooks.zapier.com https://calendly.com; frame-src 'self' https://calendly.com https://www.youtube.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com";
+(function () {
+  var PRODUCTION_HOSTS = ['www.mobiloud.com', 'mobiloud.com'];
+  var host = window.location.hostname;
+  var active = window.__ML_SITE_ENV__ !== 'production' || PRODUCTION_HOSTS.indexOf(host) === -1;
+  window.__ML_PREVIEW__ = active;
+  if (!active) return;
+
+  
+  if (!document.querySelector('meta[http-equiv="Content-Security-Policy"]')) {
+    var policy = document.createElement('meta');
+    policy.httpEquiv = 'Content-Security-Policy';
+    policy.content = window.__ML_PREVIEW_CSP__;
+    document.head.appendChild(policy);
+  }
+
+  var origin = window.location.origin;
+  function allowedRequest(url) {
+    try {
+      var target = new URL(String(url), window.location.href);
+      return target.origin === origin || (target.protocol === 'https:' && target.hostname === 'hooks.zapier.com');
+    } catch (err) {
+      return false;
+    }
+  }
+
+  var nativeFetch = window.fetch;
+  if (typeof nativeFetch === 'function') {
+    window.fetch = function (input) {
+      var url = input && typeof input === 'object' && 'url' in input ? input.url : input;
+      if (allowedRequest(url)) return nativeFetch.apply(this, arguments);
+      return Promise.resolve(new Response(null, { status: 204 }));
+    };
+  }
+
+  if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
+    var nativeBeacon = window.navigator.sendBeacon;
+    window.navigator.sendBeacon = function (url) {
+      if (allowedRequest(url)) return nativeBeacon.apply(this, arguments);
+      return true;
+    };
+  }
+
+  
+  if (window.XMLHttpRequest) {
+    var proto = window.XMLHttpRequest.prototype;
+    var nativeOpen = proto.open;
+    var nativeSend = proto.send;
+    proto.open = function (method, url) {
+      if (this.__mlBlocked) {
+        delete this.readyState;
+        delete this.status;
+      }
+      this.__mlBlocked = !allowedRequest(url);
+      return nativeOpen.apply(this, arguments);
+    };
+    proto.send = function () {
+      if (!this.__mlBlocked) return nativeSend.apply(this, arguments);
+      var xhr = this;
+      setTimeout(function () {
+        try {
+          Object.defineProperty(xhr, 'readyState', { value: 4, configurable: true });
+          Object.defineProperty(xhr, 'status', { value: 0, configurable: true });
+        } catch (err) {  }
+        xhr.dispatchEvent(new Event('readystatechange'));
+        xhr.dispatchEvent(new ProgressEvent('error'));
+        xhr.dispatchEvent(new ProgressEvent('loadend'));
+      }, 0);
+    };
+  }
+
+  function badge() {
+    if (document.getElementById('ml-preview-badge') || !document.body) return;
+    var b = document.createElement('div');
+    b.id = 'ml-preview-badge';
+    b.textContent = 'Staging preview. Forms are live for testing.';
+    b.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483647;background:#111;color:#fff;font:600 12px/1 system-ui,sans-serif;padding:8px 10px;border-radius:6px;opacity:.92;pointer-events:none';
+    document.body.appendChild(b);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', badge);
+  } else {
+    badge();
+  }
+})();</script><!-- OpenAI Ads pixel. Production builds only, and off at runtime wherever the guard is active. --><!-- X Ads pixel. Same gating as the OpenAI Ads pixel. --><title>Review preview · Automated Push Notifications: 12 Flows Every Store Should Run</title><meta name="description" content="Automated push notifications reach shoppers the moment they act. See the 12 flows every online store should run and how to set them up in your push platform."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://www.mobiloud.com/blog/automated-push-notifications/"><!-- Favicons --><link rel="icon" href="/mobiloud-reviews/pr-268/images/favicon.png" type="image/png"><link rel="icon" href="/mobiloud-reviews/pr-268/images/favicon.png" sizes="32x32"><link rel="apple-touch-icon" href="/mobiloud-reviews/pr-268/images/webclip.png"><!-- Open Graph --><meta property="og:title" content="Automated Push Notifications: 12 Flows Every Store Should Run"><meta property="og:description" content="Automated push notifications reach shoppers the moment they act. See the 12 flows every online store should run and how to set them up in your push platform."><meta property="og:type" content="article"><meta property="og:url" content="https://www.mobiloud.com/blog/automated-push-notifications/"><meta property="og:site_name" content="MobiLoud"><meta property="og:image" content="https://www.mobiloud.com/og/blog/automated-push-notifications.jpg"><meta property="article:published_time" content="2024-11-02T06:11:06.414Z"><meta property="article:modified_time" content="2026-10-29T09:00:00.000Z"><meta property="article:section" content="Push Notifications"><meta property="article:author" content="https://www.mobiloud.com/author/andrew-buck/"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Automated Push Notifications: 12 Flows Every Store Should Run"><meta name="twitter:description" content="Automated push notifications reach shoppers the moment they act. See the 12 flows every online store should run and how to set them up in your push platform."><meta name="twitter:image" content="https://www.mobiloud.com/og/blog/automated-push-notifications.jpg"><!-- Open the connections the page genuinely waits on, while it is still parsing HTML. --><!-- Calendly. The stylesheet is loaded without blocking render: as a plain
+       <link rel="stylesheet"> it sat on the critical path of every page, and
+       nothing paints until a third-party host answers. Measured 2026-09-01
+       across 6 pages x 3 passes: removing it from that path took median LCP
+       from 2892ms to 1896ms and cut sub-70 runs from 6/18 to 2/18. The widget
+       only appears seconds after a form submit, so applying its CSS a beat
+       late costs nothing.
+
+       Absent from preview builds, and injected rather than written into the
+       markup so that production output opened on a preview alias never reaches
+       the host either: as static tags the preload scanner fetches them before
+       any script on the page runs, including the guard. Same tags, same async
+       and preload attributes, appended while the head is still parsing. --><script>{
+    var mlHead = document.head;
+    var mlPre = document.createElement('link');
+    mlPre.rel = 'preconnect'; mlPre.href = 'https://assets.calendly.com'; mlPre.crossOrigin = '';
+    mlHead.appendChild(mlPre);
+    var mlCss = document.createElement('link');
+    mlCss.rel = 'preload'; mlCss.as = 'style'; mlCss.href = 'https://assets.calendly.com/assets/external/widget.css';
+    mlCss.onload = function () { this.onload = null; this.rel = 'stylesheet'; };
+    mlHead.appendChild(mlCss);
+    var mlJs = document.createElement('script');
+    mlJs.src = 'https://assets.calendly.com/assets/external/widget.js'; mlJs.async = true;
+    mlHead.appendChild(mlJs);
+  }</script><noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript><!-- Google Tag Manager (also loads Hotjar and the ads tags). Not in preview
+       builds at all; in production it stays off when the guard above found a
+       hostname that is not the live site. --><!-- Conversion-event bridge. Keep identical to subsites/landing's copy. --><script>
+    (function () {
+      var MAP = {
+        'contact-form':                      { legacyId: 'wf-form-Contact-Form' },
+        'demo-consult-form':                 { legacyId: 'wf-form-Demo-Form',        alsoSubmit: true },
+        'report-ecommerce-benchmark-report': { legacyId: 'wf-form-Benchmark-Report', alsoSubmit: true }
+      };
+
+      window.mlLegacyConversion = function (formId) {
+        var id = String(formId || '');
+        var m = MAP[id] || { legacyId: id };
+        var dl = window.dataLayer = window.dataLayer || [];
+        dl.push({ event: 'webflow-form-success', webflow_form_id: m.legacyId });
+        if (m.alsoSubmit) {
+          dl.push({ event: 'form_submit', 'gtm.elementId': m.legacyId });
+        }
+      };
+    })();
+  </script><!-- Lead-form submit guard. Keep identical to subsites/landing's copy. --><script>(function(){const BLOCKED_EMAIL_DOMAINS = ["gmail.co","gmail.cm","gmail.con","gmail.om","gmailc.om","gmial.com","gmai.com","gmal.com","gmil.com","gamil.com","gnail.com","gmaill.com","gmails.com","gmaul.com","hotmai.com","hotmial.com","hotmall.com","hotamail.com","hotmil.com","hotmaill.com","homail.com","hotmail.co","hotmail.con","outlok.com","outllok.com","outloook.com","outlook.con","otulook.com","yaho.com","yahooo.com","yhoo.com","yahoo.con","yahoo.cm","iclod.com","iclould.com","icloud.co"];
+
+    (function () {
+      // Six lead forms post to one Zapier catch hook, each from its own inline
+      // script, and every one of those scripts only tested that a required
+      // field was non-empty. That let through "red" and "houda.de.vicuna" as
+      // email addresses, "https://a", "https:/Good Access/" and
+      // "https://clothing app.com" as websites. Running on submit
+      // capture puts one check ahead of all six handlers, and covers any lead
+      // form added later.
+      //
+      // What this does NOT stop: a bot POSTing the Zapier hook URL directly,
+      // which is where the fully blank "New Lead" notifications come from. The
+      // hook URL is in the page source and accepts anything. That one needs a
+      // filter step on the Zap itself.
+      var HOSTNAME = /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*\.[a-z]{2,}$/;
+      var BAD_EMAIL = 'Please enter a valid email address, like john@yourcompany.com.';
+      var BAD_URL = 'Please enter your website as a full address, like https://yourcompany.com.';
+
+      function domainOf(value) {
+        var at = value.lastIndexOf('@');
+        return at === -1 ? '' : value.slice(at + 1).toLowerCase();
+      }
+
+      // Empty returns '' on purpose: each form already has its own "required"
+      // message, and two errors under one field reads as a broken page.
+      function checkEmail(value) {
+        var e = String(value || '').trim();
+        if (!e) return '';
+        if (e.length > 254 || !/^[^\s@]+@[^\s@]+$/.test(e)) return BAD_EMAIL;
+        var d = domainOf(e);
+        if (!HOSTNAME.test(d)) return BAD_EMAIL;
+        if (BLOCKED_EMAIL_DOMAINS.indexOf(d) !== -1) return 'That email domain looks like a typo. Please check the spelling.';
+        return '';
+      }
+
+      function checkWebsite(value) {
+        var u = String(value || '').trim();
+        if (!u || u === 'https://') return '';
+        if (/\s/.test(u)) return 'Please enter your website as one address, with no spaces in it.';
+        if (/https?:\/\/[^\s]*https?:\/\//i.test(u)) return 'Please enter one website address.';
+        if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+        try {
+          if (!HOSTNAME.test(new URL(u).hostname.toLowerCase())) return BAD_URL;
+        } catch (err) {
+          return BAD_URL;
+        }
+        return '';
+      }
+
+      function errorSlot(field) {
+        var wrapper = field.closest('div') || field.parentNode;
+        var el = wrapper.querySelector('.ml-guard-error') || wrapper.querySelector('.fp-field > .field-error');
+        if (!el) {
+          el = document.createElement('p');
+          el.className = 'ml-guard-error text-xs mt-1 text-red-600';
+          wrapper.appendChild(el);
+        }
+        return el;
+      }
+
+      function clearError(field) {
+        var wrapper = field.closest('div') || field.parentNode;
+        var el = wrapper ? wrapper.querySelector('.ml-guard-error') : null;
+        if (el) el.classList.add('hidden');
+        if (wrapper.classList.contains('fp-field')) field.removeAttribute('aria-invalid');
+      }
+
+      // A lead form is any form carrying both an Email and a website field.
+      // That is the shape all six share, so a new one is covered on arrival.
+      function isLeadForm(form) {
+        return !!(form.querySelector('input[name="Email"]') && form.querySelector('input[name="website"]'));
+      }
+
+      document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || form.tagName !== 'FORM' || !isLeadForm(form)) return;
+
+        // The per-form handlers test `!field.value`, which a single space
+        // satisfies. Trimming here makes a whitespace-only field read as empty
+        // to them, and strips the trailing space that bounces an email.
+        form.querySelectorAll('input').forEach(function (f) {
+          if (f.type !== 'hidden' && typeof f.value === 'string') f.value = f.value.trim();
+        });
+
+        var blocked = null;
+        [
+          [form.querySelector('input[name="Email"]'), checkEmail],
+          [form.querySelector('input[name="website"]'), checkWebsite]
+        ].forEach(function (pair) {
+          var field = pair[0];
+          if (!field) return;
+          var message = pair[1](field.value);
+          if (!message) {
+            clearError(field);
+            return;
+          }
+          var slot = errorSlot(field);
+          slot.classList.add('ml-guard-error');
+          slot.textContent = message;
+          if (field.closest('.fp-field')) field.setAttribute('aria-invalid', 'true');
+          slot.classList.remove('hidden');
+          field.classList.add('border-red-500');
+          if (!blocked) blocked = field;
+        });
+
+        if (blocked) {
+          e.preventDefault();
+          e.stopPropagation();
+          blocked.focus();
+        }
+      }, true);
+
+      document.addEventListener('input', function (e) {
+        var f = e.target;
+        if (f && (f.name === 'Email' || f.name === 'website')) clearError(f);
+      }, true);
+    })();
+  })();</script><!-- PostHog. Same gating as GTM. --><script type="application/ld+json">[{"@context":"https://schema.org","@type":"OnlineBusiness","@id":"https://www.mobiloud.com/#organization","url":"https://www.mobiloud.com","name":"MobiLoud","legalName":"Fifty Pixels Ltd","description":"MobiLoud turns the site you already have into native iOS and Android apps, built and managed by our team.","logo":"https://www.mobiloud.com/branding/mobiloud-logo-dark.png","sameAs":["https://www.linkedin.com/company/mobiloud/","https://www.facebook.com/mobiloudapp","https://x.com/mobiloud","https://www.youtube.com/@Mobiloud","https://www.capterra.com/p/181364/MobiLoud","https://www.g2.com/products/mobiloud/reviews","https://www.getapp.ca/software/116687/mobiloud"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","telephone":"+44 020 8798 0959","email":"support@mobiloud.com"},{"@type":"ContactPoint","contactType":"sales","telephone":"+1 888 697 6807","email":"sales@mobiloud.com"}],"address":[{"@type":"PostalAddress","streetAddress":"209 High Road","addressLocality":"London","postalCode":"N2 8AN","addressCountry":"GB"},{"@type":"PostalAddress","streetAddress":"5455 De Gaspe Avenue, Suite 710","addressLocality":"Montreal","addressRegion":"QC","postalCode":"H2T 3B3","addressCountry":"CA"}]},{"@context":"https://schema.org","@type":"BlogPosting","headline":"12 Automated Push Notifications That Drive Revenue on Autopilot","description":"Automated push notifications reach shoppers the moment they act. See the 12 flows every online store should run and how to set them up in your push platform.","url":"https://www.mobiloud.com/blog/automated-push-notifications/","mainEntityOfPage":"https://www.mobiloud.com/blog/automated-push-notifications/","image":"https://www.mobiloud.com/blog-images/6865a5304601ba14e512d94d_20250702T0913-0910366c-c7f6-40f9-8e1b-9e2d76d565aa.webp","datePublished":"2024-11-02T06:11:06.414Z","dateModified":"2026-10-29T09:00:00.000Z","author":{"@type":"Person","name":"Andrew Buck","url":"https://www.mobiloud.com/author/andrew-buck/"},"publisher":{"@id":"https://www.mobiloud.com/#organization"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mobiloud.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.mobiloud.com/blog/"},{"@type":"ListItem","position":3,"name":"Push Notifications","item":"https://www.mobiloud.com/blog-category/push-notifications/"},{"@type":"ListItem","position":4,"name":"12 Automated Push Notifications That Drive Revenue on Autopilot","item":"https://www.mobiloud.com/blog/automated-push-notifications/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are automated push notifications?","acceptedAnswer":{"@type":"Answer","text":"Automated push notifications are messages a push platform sends on its own when a set trigger happens, such as a customer abandoning a cart, a product coming back in stock or an order shipping. You build each flow once, and it then runs for every customer who triggers it."}},{"@type":"Question","name":"What's the difference between automated push notifications and push campaigns?","acceptedAnswer":{"@type":"Answer","text":"Automated push notifications go to one customer at a time, when they trigger a flow, while push campaigns go to a whole segment at a time your team chooses. Most stores use both: campaigns for new arrivals, sales and launches, and automated flows for welcomes, carts, restocks and order updates."}},{"@type":"Question","name":"Which automated push notification earns the most?","acceptedAnswer":{"@type":"Answer","text":"Abandoned cart reminders usually earn the most of any automated push notification, because they reach shoppers who were about to buy. For brands we studied for our benchmark report, abandoned cart push alone brought in $10,000 to $200,000+ over a 30-day period."}},{"@type":"Question","name":"Do automated push notifications count toward how often you send?","acceptedAnswer":{"@type":"Answer","text":"Automated push notifications mostly come on top of your weekly campaigns, because each customer only gets the ones they trigger. Transactional updates like shipping notices don't need to count at all, but cap your marketing flows so one customer can't get several reminders in a day."}},{"@type":"Question","name":"How do you set up automated push notifications in Klaviyo?","acceptedAnswer":{"@type":"Answer","text":"To set up automated push notifications in Klaviyo, connect your app's push to Klaviyo, then add a push notification step to flows such as abandoned cart, browse abandonment and win-back. A conditional split sends the push to customers who can receive it, and email or SMS to everyone else."}},{"@type":"Question","name":"Can you send automated push notifications without an app?","acceptedAnswer":{"@type":"Answer","text":"You can automate web push notifications from a website without an app, but they reach far fewer customers. On iPhone, web push only works for people who have added your site to their Home Screen, on iOS 16.4 or later, so reliable automated push on phones takes an app."}}]}]</script><!-- Global styles loaded via import in pages --><link rel="stylesheet" href="/mobiloud-reviews/pr-268/_astro/global.CYRcyvNs.css">
+<link rel="stylesheet" href="/mobiloud-reviews/pr-268/_astro/Footer.CnfnNcYl.css">
+<style>.toc-title[data-astro-cid-ymbpksfa]{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary-700);margin-bottom:.75rem}.toc-list[data-astro-cid-ymbpksfa]{list-style:none;padding:0;margin:0;font-size:.9rem;line-height:1.4}.toc-list[data-astro-cid-ymbpksfa] li[data-astro-cid-ymbpksfa]{margin-top:.55rem}.toc-list[data-astro-cid-ymbpksfa] li[data-astro-cid-ymbpksfa].toc-sub{padding-left:.85rem}.toc-list[data-astro-cid-ymbpksfa] a[data-astro-cid-ymbpksfa]{color:var(--color-neutral-600);text-decoration:none;transition:color .15s ease;display:block}.toc-list[data-astro-cid-ymbpksfa] a[data-astro-cid-ymbpksfa]:hover{color:var(--color-primary-700)}.toc-list[data-astro-cid-ymbpksfa] a[data-astro-cid-ymbpksfa].toc-active{color:var(--color-primary-700);font-weight:600}
+.share[data-astro-cid-xiyysuza]{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.share-label[data-astro-cid-xiyysuza]{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--color-neutral-500);margin-right:.25rem}.share-btn[data-astro-cid-xiyysuza]{display:inline-flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:9999px;border:1px solid var(--color-neutral-200);color:var(--color-neutral-600);background:#fff;cursor:pointer;transition:all .15s ease}.share-btn[data-astro-cid-xiyysuza] svg[data-astro-cid-xiyysuza]{width:1.05rem;height:1.05rem;display:block}.share-btn[data-astro-cid-xiyysuza]:hover{border-color:var(--color-primary-300);color:var(--color-primary-700);background:var(--color-primary-50);transform:translateY(-1px)}.share-copy[data-astro-cid-xiyysuza]{position:relative}.share-copy[data-astro-cid-xiyysuza] .icon-check[data-astro-cid-xiyysuza]{display:none}.share-copy[data-astro-cid-xiyysuza].copied{color:var(--color-primary-700);border-color:var(--color-primary-400);background:var(--color-primary-50)}.share-copy[data-astro-cid-xiyysuza].copied .icon-link[data-astro-cid-xiyysuza]{display:none}.share-copy[data-astro-cid-xiyysuza].copied .icon-check[data-astro-cid-xiyysuza]{display:block}.share-copy[data-astro-cid-xiyysuza].copied:after{content:attr(data-copied-label);position:absolute;bottom:calc(100% + .4rem);left:50%;transform:translate(-50%);white-space:nowrap;font-size:.7rem;font-weight:600;letter-spacing:.02em;color:#fff;background:var(--color-neutral-900);padding:.25rem .5rem;border-radius:.4rem;pointer-events:none}.summarize[data-astro-cid-zgpgmf4h]{display:flex;flex-direction:column;align-items:center;gap:.75rem}.summarize-label[data-astro-cid-zgpgmf4h]{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--color-neutral-400)}.summarize-links[data-astro-cid-zgpgmf4h]{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}.summarize-btn[data-astro-cid-zgpgmf4h]{display:inline-flex;align-items:center;gap:.5rem;height:2.25rem;padding:0 .95rem;border-radius:9999px;border:1px solid rgb(255 255 255 / .16);background:#ffffff0d;color:var(--color-neutral-200);font-size:.875rem;font-weight:500;line-height:1;transition:all .15s ease}.summarize-btn[data-astro-cid-zgpgmf4h] svg[data-astro-cid-zgpgmf4h]{width:1rem;height:1rem;flex-shrink:0}.summarize-btn[data-astro-cid-zgpgmf4h]:hover{border-color:var(--color-primary-400);color:#fff;background:#ffffff1a;transform:translateY(-1px)}.summarize-btn[data-astro-cid-zgpgmf4h]:focus-visible{outline:2px solid var(--color-primary-400);outline-offset:2px}@media(max-width:639px){.summarize-links[data-astro-cid-zgpgmf4h]{gap:.375rem}.summarize-btn[data-astro-cid-zgpgmf4h]{gap:.4rem;padding:0 .7rem;font-size:.8125rem}.summarize-btn[data-astro-cid-zgpgmf4h] svg[data-astro-cid-zgpgmf4h]{width:.9375rem;height:.9375rem}}@media(min-width:640px){.summarize[data-astro-cid-zgpgmf4h]{flex-direction:row;justify-content:center;gap:1rem}}
+</style></head> <body class="overflow-x-hidden">   <!-- data-nosnippet keeps Google from quoting menu labels as a page's search
+     snippet. Google honours it only on div, span and section, so it sits on
+     the bar and the drawer rather than on header or nav. Links are still
+     crawled and followed. --><header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" data-astro-cid-rxxavq4o> <div data-nosnippet id="site-header-inner" class="mx-auto flex items-center justify-between h-16 sm:h-18 px-5 sm:px-8 lg:px-6 xl:px-10 transition-all duration-300" data-astro-cid-rxxavq4o> <!-- Logo: swap between white (initial, over dark hero) and dark (floating pill) --> <a href="/mobiloud-reviews/pr-268/" class="flex items-center flex-shrink-0" aria-label="MobiLoud home" data-astro-cid-rxxavq4o> <img class="logo-white h-5 sm:h-6 w-auto" src="/mobiloud-reviews/pr-268/branding/mobiloud-logo-white.svg" alt="MobiLoud" width="701" height="128" loading="eager" data-astro-cid-rxxavq4o> <img class="logo-dark h-5 sm:h-6 w-auto" src="/mobiloud-reviews/pr-268/branding/mobiloud-logo-dark.png" alt="MobiLoud" width="367" height="67" loading="eager" data-astro-cid-rxxavq4o> </a> <!-- Desktop nav --> <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1 text-sm" aria-label="Primary" data-astro-cid-rxxavq4o> <div class="nav-dropdown relative group" data-astro-cid-rxxavq4o> <button type="button" id="nav-solutions-trigger" class="nav-dropdown-trigger nav-link flex items-center gap-1 px-2 xl:px-4 py-2 font-medium" aria-expanded="false" aria-controls="nav-solutions-panel" data-astro-cid-rxxavq4o>
+Solutions
+<svg class="nav-dropdown-chevron w-4 h-4 transition-transform" viewBox="0 0 20 20" fill="currentColor" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div id="nav-solutions-panel" class="nav-dropdown-panel absolute left-0 top-full pt-3" data-astro-cid-rxxavq4o> <div class="nav-panel w-[480px] xl:w-[560px] rounded-2xl p-5" data-astro-cid-rxxavq4o> <div class="grid grid-cols-2 gap-4 xl:gap-6" data-astro-cid-rxxavq4o> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>By Industry</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Ecommerce</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/enterprise-mobile-apps" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Enterprise</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/marketplaces" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Marketplaces</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Fashion &amp; Apparel</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Beauty &amp; Cosmetics</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Supplements &amp; Nutrition</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Grocery</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Pharmacy</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>B2B</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/news-publishing-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>News &amp; Publishing</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/community-mobile-app" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Communities</a></li> </ul> </div> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>By Platform</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/shopify.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Shopify </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/shopify-plus.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Shopify Plus </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/bigcommerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> BigCommerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/adobe-commerce-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/adobe-commerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Adobe Commerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/wordpress-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/wordpress.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> WordPress </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/woocommerce-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/woocommerce.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> WooCommerce </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/salesforce-commerce-cloud-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/salesforce-commerce-cloud.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> Salesforce Commerce Cloud </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app-builder" class="flex items-center gap-2.5 px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/prestashop.webp" alt="" width="20" height="20" class="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> PrestaShop </a> </li> </ul> </div> </div> </div> </div> </div> <a href="https://www.mobiloud.com/case-studies" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Case Studies</a> <a href="https://www.mobiloud.com/reviews" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Reviews</a> <a href="https://www.mobiloud.com/pricing" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Pricing</a> <div class="nav-dropdown relative group" data-astro-cid-rxxavq4o> <button type="button" id="nav-resources-trigger" class="nav-dropdown-trigger nav-link flex items-center gap-1 px-2 xl:px-4 py-2 font-medium" aria-expanded="false" aria-controls="nav-resources-panel" data-astro-cid-rxxavq4o>
+Resources
+<svg class="nav-dropdown-chevron w-4 h-4 transition-transform" viewBox="0 0 20 20" fill="currentColor" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div id="nav-resources-panel" class="nav-dropdown-panel absolute right-0 top-full pt-3" data-astro-cid-rxxavq4o> <div class="nav-panel w-[540px] xl:w-[680px] rounded-2xl p-5" data-astro-cid-rxxavq4o> <div class="grid grid-cols-3 gap-3 xl:gap-6" data-astro-cid-rxxavq4o> <div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Product</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/how-it-works" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>How It Works</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/features" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Features</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/integrations" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Integrations</a></li> </ul> </div><div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Learn</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/blog" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Blog</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Benchmark Report</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/faqs" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Help Center</a></li><li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/answers" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Buyer Answers</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/docs" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>Documentation</a></li> </ul> </div><div data-astro-cid-rxxavq4o> <p class="text-xs font-bold uppercase tracking-wide text-neutral-600 mb-3 px-2" data-astro-cid-rxxavq4o>Company</p> <ul class="space-y-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/about" class="block px-2 py-1.5 rounded-md text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900" data-astro-cid-rxxavq4o>About Us</a></li> </ul> </div> </div> </div> </div> </div> <a href="https://www.mobiloud.com/contact" class="nav-link px-2 xl:px-4 py-2 font-medium" data-astro-cid-rxxavq4o>Contact</a> </nav> <!-- CTAs - state-aware via CSS --> <div class="hidden lg:flex items-center gap-2" data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/demo" class="nav-cta-secondary inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold text-sm px-3 xl:px-4 py-2 rounded-lg transition-all" data-astro-cid-rxxavq4o>Book a Demo</a> <a href="https://www.mobiloud.com/free-preview" class="nav-cta-primary inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold text-sm px-3 xl:px-4 py-2 rounded-lg bg-primary-700 text-white hover:bg-primary-800 shadow-md hover:-translate-y-0.5 transition-all" data-astro-cid-rxxavq4o>Free App Preview</a> </div> <!-- Mobile hamburger --> <button id="mobile-menu-toggle" type="button" class="nav-link lg:hidden p-2 -mr-2 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-astro-cid-rxxavq4o> <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-rxxavq4o><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" data-astro-cid-rxxavq4o></path></svg> </button> </div> <!-- Mobile drawer --> <div id="mobile-backdrop" class="mobile-backdrop lg:hidden fixed inset-0 z-40 bg-neutral-950/50 backdrop-blur-[2px]" hidden data-astro-cid-rxxavq4o></div> <div data-nosnippet id="mobile-menu" class="mobile-drawer lg:hidden fixed top-0 right-0 z-50 flex h-dvh w-[min(92vw,25rem)] flex-col bg-white shadow-2xl" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-astro-cid-rxxavq4o> <div class="flex items-center justify-between border-b border-neutral-200 px-5 h-16 flex-shrink-0" data-astro-cid-rxxavq4o> <a href="/mobiloud-reviews/pr-268/" class="-ml-2 flex items-center rounded-lg px-2 py-3" aria-label="MobiLoud home" data-astro-cid-rxxavq4o> <img class="h-5 w-auto" src="/mobiloud-reviews/pr-268/branding/mobiloud-logo-dark.png" alt="MobiLoud" width="367" height="67" loading="lazy" data-astro-cid-rxxavq4o> </a> <button id="mobile-menu-close" type="button" class="-mr-2 rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 transition-colors" aria-label="Close menu" data-astro-cid-rxxavq4o> <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-rxxavq4o><path d="M6 6l12 12M6 18L18 6" stroke-linecap="round" data-astro-cid-rxxavq4o></path></svg> </button> </div> <nav class="flex-1 overflow-y-auto overscroll-contain px-3 py-3" aria-label="Mobile" data-astro-cid-rxxavq4o> <!-- Solutions, split so neither list runs long --> <div class="ml-acc" data-astro-cid-rxxavq4o> <button type="button" class="ml-acc-trigger" aria-expanded="false" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Solutions</span> <svg class="ml-acc-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div class="ml-acc-panel" inert data-astro-cid-rxxavq4o> <div class="ml-acc-inner" data-astro-cid-rxxavq4o> <p class="ml-group-label" data-astro-cid-rxxavq4o>By platform</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/shopify.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Shopify</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/shopify-plus.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Shopify Plus</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/bigcommerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>BigCommerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/adobe-commerce-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/adobe-commerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Adobe Commerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/wordpress-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/wordpress.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>WordPress</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/woocommerce-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/woocommerce.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>WooCommerce</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/salesforce-commerce-cloud-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/salesforce-commerce-cloud.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Salesforce Commerce Cloud</span> </a> </li><li data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app-builder" class="ml-icon-link" data-astro-cid-rxxavq4o> <img src="/mobiloud-reviews/pr-268/platform-icons/prestashop.webp" alt="" width="24" height="24" class="h-6 w-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" aria-hidden="true" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>PrestaShop</span> </a> </li> </ul> <p class="ml-group-label" data-astro-cid-rxxavq4o>By industry</p> <ul class="grid grid-cols-2 gap-x-2 pb-2" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Ecommerce</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/enterprise-mobile-apps" class="ml-chip-link" data-astro-cid-rxxavq4o>Enterprise</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/marketplaces" class="ml-chip-link" data-astro-cid-rxxavq4o>Marketplaces</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Fashion &amp; Apparel</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Beauty &amp; Cosmetics</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Supplements &amp; Nutrition</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Grocery</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Pharmacy</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>B2B</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/news-publishing-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>News &amp; Publishing</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/use-cases/community-mobile-app" class="ml-chip-link" data-astro-cid-rxxavq4o>Communities</a></li> </ul> </div> </div> </div> <a href="https://www.mobiloud.com/case-studies" class="ml-flat-link" data-astro-cid-rxxavq4o>Case Studies</a> <a href="https://www.mobiloud.com/reviews" class="ml-flat-link" data-astro-cid-rxxavq4o>Reviews</a> <a href="https://www.mobiloud.com/pricing" class="ml-flat-link" data-astro-cid-rxxavq4o>Pricing</a> <!-- Resources --> <div class="ml-acc" data-astro-cid-rxxavq4o> <button type="button" class="ml-acc-trigger" aria-expanded="false" data-astro-cid-rxxavq4o> <span data-astro-cid-rxxavq4o>Resources</span> <svg class="ml-acc-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-astro-cid-rxxavq4o><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-rxxavq4o></path></svg> </button> <div class="ml-acc-panel" inert data-astro-cid-rxxavq4o> <div class="ml-acc-inner" data-astro-cid-rxxavq4o>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Product</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/how-it-works" class="ml-chip-link" data-astro-cid-rxxavq4o>How It Works</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/features" class="ml-chip-link" data-astro-cid-rxxavq4o>Features</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/integrations" class="ml-chip-link" data-astro-cid-rxxavq4o>Integrations</a></li> </ul>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Learn</p> <ul class="mb-1" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/blog" class="ml-chip-link" data-astro-cid-rxxavq4o>Blog</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="ml-chip-link" data-astro-cid-rxxavq4o>Benchmark Report</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/faqs" class="ml-chip-link" data-astro-cid-rxxavq4o>Help Center</a></li><li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/answers" class="ml-chip-link" data-astro-cid-rxxavq4o>Buyer Answers</a></li><li data-astro-cid-rxxavq4o><a href="https://www.mobiloud.com/docs" class="ml-chip-link" data-astro-cid-rxxavq4o>Documentation</a></li> </ul>  <p class="ml-group-label" data-astro-cid-rxxavq4o>Company</p> <ul class="pb-2" data-astro-cid-rxxavq4o> <li data-astro-cid-rxxavq4o><a href="/mobiloud-reviews/pr-268/about" class="ml-chip-link" data-astro-cid-rxxavq4o>About Us</a></li> </ul>  </div> </div> </div> <a href="https://www.mobiloud.com/contact" class="ml-flat-link" data-astro-cid-rxxavq4o>Contact</a> </nav> <div class="flex flex-col gap-2 border-t border-neutral-200 bg-white px-5 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex-shrink-0" data-astro-cid-rxxavq4o> <a href="https://www.mobiloud.com/free-preview" class="inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 font-semibold text-sm text-white" data-astro-cid-rxxavq4o>Free App Preview</a> <a href="https://www.mobiloud.com/demo" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-5 py-3 font-semibold text-sm text-neutral-900" data-astro-cid-rxxavq4o>Book a Demo</a> </div> </div> </header>  <script type="module" src="/mobiloud-reviews/pr-268/_astro/Nav.astro_astro_type_script_index_0_lang.BS4qZR3D.js"></script>  <header class="relative bg-neutral-900 pt-32 sm:pt-36 lg:pt-40 pb-20 lg:pb-24 overflow-hidden" style="background: linear-gradient(135deg, #1a1a2e 0%, #171717 50%, #0f2016 100%)"> <div class="absolute inset-0 dot-grid opacity-40 pointer-events-none" aria-hidden="true"></div> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <nav class="relative max-w-3xl mx-auto mb-6 text-xs text-neutral-400 flex flex-wrap items-center justify-center gap-1.5" aria-label="Breadcrumb"> <a href="/mobiloud-reviews/pr-268/" class="hover:text-neutral-200">Home</a> <span aria-hidden="true">/</span> <a href="/mobiloud-reviews/pr-268/blog/" class="hover:text-neutral-200">Blog</a>  <span aria-hidden="true">/</span> <a href="https://www.mobiloud.com/blog-category/push-notifications/" class="hover:text-neutral-200">Push Notifications</a>  </nav> <div class="relative max-w-3xl mx-auto text-center"> <a href="https://www.mobiloud.com/blog-category/push-notifications/" class="text-primary-400 font-semibold text-sm uppercase tracking-wide hover:text-primary-300">Push Notifications</a> <h1 class="font-display text-display-2 text-white mt-6 mb-8 leading-[1.18]">12 Automated Push Notifications That Drive Revenue on Autopilot</h1>  <div class="flex flex-col items-center gap-2 text-sm text-neutral-400 sm:flex-row sm:justify-center sm:gap-5"> <div class="flex items-center gap-3"> <img src="/mobiloud-reviews/pr-268/blog-images/63acb8ced827c53c7b507cfd_andrew.avif" alt="Andrew Buck" width="36" height="36" class="w-9 h-9 rounded-full object-cover" loading="lazy"> <span class="text-neutral-200"> <a href="https://www.mobiloud.com/author/andrew-buck/" class="hover:text-white underline-offset-2 hover:underline">Andrew Buck</a>  </span> </div> <div class="flex items-center gap-4"> <time datetime="2026-10-29T09:00:00.000Z">Updated October 29, 2026</time> <span>12 min read</span> </div> </div> <div class="mt-8"> <div class="summarize" data-astro-cid-zgpgmf4h> <span class="summarize-label" id="summarize-label" data-astro-cid-zgpgmf4h>Summarize with</span> <div class="summarize-links" role="group" aria-labelledby="summarize-label" data-astro-cid-zgpgmf4h> <a href="https://chatgpt.com/?q=Summarize%20this%20article%3A%20https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications" target="_blank" rel="noopener" class="summarize-btn" aria-label="Summarize this article with ChatGPT (opens in a new tab)" data-astro-cid-zgpgmf4h> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-zgpgmf4h><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" data-astro-cid-zgpgmf4h></path></svg> ChatGPT </a><a href="https://claude.ai/new?q=Summarize%20this%20article%3A%20https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications" target="_blank" rel="noopener" class="summarize-btn" aria-label="Summarize this article with Claude (opens in a new tab)" data-astro-cid-zgpgmf4h> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-zgpgmf4h><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z" data-astro-cid-zgpgmf4h></path></svg> Claude </a><a href="https://www.perplexity.ai/search?q=Summarize%20this%20article%3A%20https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications" target="_blank" rel="noopener" class="summarize-btn" aria-label="Summarize this article with Perplexity (opens in a new tab)" data-astro-cid-zgpgmf4h> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-zgpgmf4h><path d="M22.3977 7.0896h-2.3106V.0676l-7.5094 6.3542V.1577h-1.1554v6.1966L4.4904 0v7.0896H1.6023v10.3976h2.8882V24l6.932-6.3591v6.2005h1.1554v-6.0469l6.9318 6.1807v-6.4879h2.8882V7.0896zm-3.4657-4.531v4.531h-5.355l5.355-4.531zm-13.2862.0676 4.8691 4.4634H5.6458V2.6262zM2.7576 16.332V8.245h7.8476l-6.1149 6.1147v1.9723H2.7576zm2.8882 5.0404v-3.8852h.0001v-2.6488l5.7763-5.7764v7.0111l-5.7764 5.2993zm12.7086.0248-5.7766-5.1509V9.0618l5.7766 5.7766v6.5588zm2.8882-5.0652h-1.733v-1.9723L13.3948 8.245h7.8478v8.087z" data-astro-cid-zgpgmf4h></path></svg> Perplexity </a> </div> </div> </div> </div>  </div> </header> <article class="bg-white py-12 lg:py-16"> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-12 lg:max-w-5xl lg:mx-auto"> <!-- main column --> <div class="min-w-0 max-w-3xl mx-auto lg:mx-0 w-full"> <details class="lg:hidden mb-8 rounded-xl border border-neutral-200 p-4"> <summary class="font-semibold text-neutral-900 cursor-pointer">Table of contents</summary> <div class="mt-3"><nav class="toc" aria-label="Table of contents" data-astro-cid-ymbpksfa><p class="toc-title" data-astro-cid-ymbpksfa>Table of contents</p><ul class="toc-list" data-astro-cid-ymbpksfa><li class data-astro-cid-ymbpksfa><a href="#what-are-automated-push-notifications" data-astro-cid-ymbpksfa>What Are Automated Push Notifications?</a></li><li class data-astro-cid-ymbpksfa><a href="#why-automate-your-push-notifications" data-astro-cid-ymbpksfa>Why Automate Your Push Notifications?</a></li><li class data-astro-cid-ymbpksfa><a href="#12-automated-push-notification-ideas-that-work" data-astro-cid-ymbpksfa>12 Automated Push Notification Ideas That Work</a></li><li class data-astro-cid-ymbpksfa><a href="#how-to-automate-your-push-notifications" data-astro-cid-ymbpksfa>How to Automate Your Push Notifications</a></li><li class data-astro-cid-ymbpksfa><a href="#use-mobiloud-to-build-an-app-and-drive-engagement-on-autopilot" data-astro-cid-ymbpksfa>Use MobiLoud to Build an App and Drive Engagement on Autopilot</a></li><li class data-astro-cid-ymbpksfa><a href="#final-thoughts" data-astro-cid-ymbpksfa>Final Thoughts</a></li></ul></nav><script type="module">const n=Array.from(document.querySelectorAll(".toc-list a")),o=new Map;n.forEach(t=>{const e=decodeURIComponent(t.getAttribute("href").slice(1));o.set(e,t)});const s=Array.from(o.keys()).map(t=>document.getElementById(t)).filter(Boolean);if(s.length){const t=new IntersectionObserver(e=>{e.forEach(r=>{if(r.isIntersecting){n.forEach(a=>a.classList.remove("toc-active"));const c=o.get(r.target.id);c&&c.classList.add("toc-active")}})},{rootMargin:"-80px 0px -70% 0px",threshold:0});s.forEach(e=>t.observe(e))}</script></div> </details> <aside class="mb-10 rounded-2xl border border-primary-200 bg-primary-50/60 p-6 lg:p-8"> <h2 class="font-display text-xl text-neutral-900 mb-3">Key takeaways</h2> <div class="blog-prose blog-prose-tight"><ul><li>Automated push notifications are sent by a trigger, like an abandoned cart, a restock or a shipped order, so each one reaches a customer at the moment it matters to them.</li><li>Triggered pushes get far more opens than broadcast campaigns, and once a flow is running, it keeps sending at no extra cost or effort.</li><li>Start with welcome, abandoned cart, back-in-stock and shipping updates, then add browse abandonment, price drops, loyalty, replenishment and re-engagement flows.</li><li>Build each flow once in a push platform like Klaviyo or OneSignal, with rules that stop it when the customer buys and cap how many pushes one person gets.</li></ul></div> </aside> <div class="blog-prose post-body"><p>A push campaign earns its money on the day you send it. Someone picks the products, writes the copy and presses send, and next week the work starts again.</p>
+<p>Automated push notifications keep working after you build them. A welcome offer greets every new app user, a cart reminder goes out an hour after someone leaves and a restock alert reaches the people who were waiting, at any hour of the day.</p>
+<p>Set up the right flows once, and push becomes a steady source of revenue that doesn’t depend on anyone’s calendar.</p>
+<p>This guide covers what automated push notifications are, the 12 flows every online store should run, which ones to set up first and how to build them in your push platform.</p>
+<aside class="post-cta newsletter-optin" data-variant="newsletter-optin" data-nosnippet> <p>Want the latest insights into how 8 and 9-figure brands are driving sustainable growth? That’s what you get with our weekly newsletter, <strong>The Retention Edge</strong>. Built for brands that want an edge. Subscribe for free now.</p> <div class="newsletter-optin-form">  <div class="newsletter-optin-mock" aria-hidden="true"> <span>Enter your email</span> <span>Subscribe</span> </div> <p class="newsletter-optin-note">Sign-up is turned off on staging.</p>  </div> </aside><h2 id="what-are-automated-push-notifications">What Are Automated Push Notifications?</h2>
+<p>Automated push notifications are messages your push platform sends by itself when something happens, like a customer abandoning a cart, a product coming back in stock or an order shipping.</p>
+<p>Each one is a flow you set up once: a trigger, a short wait, the message and the rules for who gets it. From then on, it runs for every customer who sets it off, with nobody pressing send.</p>
+<div class="ct-wrap">
+  <table class="ct" data-highlight="2">
+    <thead>
+      <tr><th></th><th>Automated flows</th><th>Campaigns</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Sent by</th><td>A trigger, like something the customer does or a date</td><td>Your team, on a schedule</td></tr>
+      <tr><th scope="row">Goes to</th><td>One customer at a time, when they trigger it</td><td>A segment, or everyone with your app</td></tr>
+      <tr><th scope="row">Work after setup</th><td>Checking results and refreshing copy now and then</td><td>Planning, writing and scheduling every send</td></tr>
+      <tr><th scope="row">Best for</th><td>Welcomes, carts, restocks, order updates and win-backs</td><td>New arrivals, sales, launches and brand stories</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Most stores need both. Campaigns give customers a reason to open your app each week, and flows catch the moments a calendar can’t predict, like the minute someone leaves a full cart.</p>
+<h2 id="why-automate-your-push-notifications">Why Automate Your Push Notifications?</h2>
+<p>Automated pushes are some of the most profitable messages a store can send, because each one reaches a customer when the message matters most to them.</p>
+<p>Push is still one of the most underused channels in ecommerce, and automation is where it pays off fastest. Once a flow is running, each message costs nothing to send and takes no time to write.</p>
+<p>Triggered messages also get far more attention. In <a href="https://batch.com/ressources/etudes/benchmark-notifications-push-crm-mobile">Batch’s 2025 benchmark</a> of 800 billion messages, push campaigns triggered by an action or a set time averaged a 14.4% open rate, compared with 4.19% for generic campaigns sent to a broad group.</p>
+<p>Email shows the same pattern. In <a href="https://www.klaviyo.com/products/email-marketing/benchmarks">Klaviyo’s 2026 benchmarks</a>, automated flows made up just 5.3% of email sends but earned nearly 41% of email revenue.</p>
+<p>We’ve seen it with push in our <a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report/">benchmark report</a>, too. One wellness brand turned on push near the end of the first quarter of 2025, and in April alone earned over $31,000 from it, nearly half from its automated abandoned cart push.</p>
+<h2 id="12-automated-push-notification-ideas-that-work">12 Automated Push Notification Ideas That Work</h2>
+<p>These are the 12 automated push notifications that matter most for an online store, in the order a customer usually meets them.</p>
+<div class="ct-wrap">
+  <table class="ct">
+    <thead>
+      <tr><th>Flow</th><th>Trigger</th><th>When to send</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Welcome</th><td>A new app user allows notifications</td><td>Within minutes, and again a day later if they haven't ordered</td></tr>
+      <tr><th scope="row">Browse abandonment</th><td>A product viewed but not added to the cart</td><td>A few hours later, once</td></tr>
+      <tr><th scope="row">Abandoned cart</th><td>Items left in the cart with no order</td><td>About an hour later, then a reminder or two</td></tr>
+      <tr><th scope="row">Back in stock and low stock</th><td>A product they wanted restocks or runs low</td><td>As soon as it happens</td></tr>
+      <tr><th scope="row">Price drop</th><td>A product they viewed or saved gets cheaper</td><td>As soon as the price changes</td></tr>
+      <tr><th scope="row">Shipping updates</th><td>An order is confirmed, shipped or delivered</td><td>At each stage</td></tr>
+      <tr><th scope="row">Feedback request</th><td>An order is delivered</td><td>A few days later</td></tr>
+      <tr><th scope="row">Post-purchase recommendations</th><td>An order is delivered</td><td>One to two weeks later</td></tr>
+      <tr><th scope="row">Replenishment</th><td>Time since their last order of a consumable</td><td>Just before they're likely to run out</td></tr>
+      <tr><th scope="row">Loyalty updates</th><td>Points earned, a new tier or rewards about to expire</td><td>When it happens</td></tr>
+      <tr><th scope="row">Birthday and anniversary</th><td>A date on the customer's profile</td><td>A few days before the date</td></tr>
+      <tr><th scope="row">Re-engagement</th><td>No app open for a while</td><td>After 14 to 30 days, then again with an offer</td></tr>
+    </tbody>
+  </table>
+</div>
+<h3 id="welcome-notifications">Welcome Notifications</h3>
+<p>A welcome push thanks a new app user and gives them a reason to place their first order in the app, often a discount code or free shipping. Send it within minutes of someone allowing notifications, while they’re still exploring.</p>
+<p>It also sets expectations. A friendly first message tells customers what your notifications will bring, which makes them more likely to notice the next one and less likely to switch them off.</p>
+<p>Getting a push out early matters for retention. App users who got at least one push notification in their first 90 days had about <a href="https://www.airship.com/blog/push-notification-strategy-customer-retention/">a third higher retention</a> than those who got none, according to Airship’s 2023 benchmarks.</p>
+<p>Culture Kings leads with a first-order code, while Farfetch introduces its network of brands and boutiques.</p>
+<div class="push-examples">
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/culture-kings-1.webp" alt="Culture Kings push notification: UNLOCKED: 10% OFF your first o.... Use code CKAPP10 at checkout Welcome to the Culture Kings VIP list." width="900" height="900" loading="lazy"></figure>
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/farfetch-8.webp" alt="Farfetch push notification: Welcome to FARFETCH. Tap to explore our international network of established brands, emerging labels and more than 750 boutiques." width="900" height="900" loading="lazy"></figure>
+</div>
+<p>If someone hasn’t ordered a day later, a second push that repeats the offer catches the people who got distracted.</p>
+<h3 id="browse-abandonment-notifications">Browse Abandonment Notifications</h3>
+<p>Browse abandonment notifications go to shoppers who viewed a product, or several in one category, and left without adding anything to their cart.</p>
+<p>If someone looked at a product for a while, there’s a good chance they’re interested. A gentle reminder a few hours later may be all it takes to bring them back to buy it.</p>
+<p>Send one, and show the product they looked at. Pretty Little Thing pairs its reminder with a code.</p>
+<div class="push-examples">
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/pretty-little-thing-2.webp" alt="Pretty Little Thing push notification: Browsing your favourite looks? an extra 22% off your order with code: NEWBIE22" width="900" height="900" loading="lazy"></figure>
+</div>
+<p>Leave out anyone who has since added the item to their cart, so your cart flow can take over.</p>
+<h3 id="abandoned-cart-notifications">Abandoned Cart Notifications</h3>
+<p><a href="/mobiloud-reviews/pr-268/blog/abandoned-cart-push-notifications/">Abandoned cart notifications</a> remind shoppers about the items still in their cart, and they’re usually the most profitable automated push a store runs.</p>
+<p>Carts get left all the time. <a href="https://baymard.com/lists/cart-abandonment-rate">Baymard Institute’s</a> average across 50 studies puts cart abandonment at about 70%, and in many cases the shopper just got distracted before checking out.</p>
+<p>Send the first reminder about an hour after they leave, link straight to the cart and stop the flow as soon as they buy. For brands we studied for our benchmark report, abandoned cart push alone brought in $10,000 to $200,000+ over a 30-day period.</p>
+<h3 id="back-in-stock-and-low-stock-alerts">Back-in-Stock and Low-Stock Alerts</h3>
+<p>Back-in-stock alerts tell customers that a product they viewed, saved or asked about is available again. They go to people who already wanted to buy, which makes them some of the easiest sales push can bring in.</p>
+<p>Back-in-stock alerts are best suited to products that sell out often, like limited drops and bestsellers. Add a “notify me” button to sold-out products so customers can sign up, and send the alert as soon as stock lands, before it sells out again.</p>
+<p>Low-stock alerts work the same way for products in a customer’s cart or wish list. Only send them when stock really is low, or customers will stop believing them.</p>
+<h3 id="price-drop-alerts">Price Drop Alerts</h3>
+<p>Price drop alerts tell a customer that something they viewed, saved or left in their cart now costs less. They answer the one thing that may have stopped the shopper buying.</p>
+<p>Name the product and the new price, and add a photo if you can. JD Sports tells shoppers when their size is on sale, and Gymshark tells them when their favorite color is.</p>
+<div class="push-examples">
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/jd-sports-11.webp" alt="JD Sports push notification: Your Size is ON SALE. Ready to save BIG on your next pair? Tap to find your size" width="900" height="900" loading="lazy"></figure>
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/gymshark-4.webp" alt="Gymshark push notification: YOUR FAVE COLOUR&#x27;S ON SALE... Grab an extra 20% off everything with code EXTRA20." width="900" height="900" loading="lazy"></figure>
+</div>
+<h3 id="shipping-updates">Shipping Updates</h3>
+<p>Shipping updates keep customers posted as their order is confirmed, shipped, out for delivery and delivered. They’re the pushes customers want most, and each one saves a “where’s my order?” email your team would otherwise answer.</p>
+<p>They don’t sell anything directly. But a smooth delivery experience makes customers much more likely to come back and buy from you again.</p>
+<p>Send one push for each real change in status, and link it to the order tracking page.</p>
+<h3 id="feedback-requests">Feedback Requests</h3>
+<p>A feedback request asks for a review a few days after the order arrives, once the customer has had time to try it.</p>
+<p>Reviews give you social proof for your product pages, and asking shows customers you care how their order went. Link straight to the review form for that order, so leaving one takes a tap.</p>
+<p>Hold the request back if the customer has an open support ticket or a return in progress.</p>
+<h3 id="post-purchase-recommendations">Post-Purchase Recommendations</h3>
+<p>Post-purchase recommendations suggest products that go with what a customer just bought, like a belt for new jeans or a refill for a starter kit.</p>
+<p>Send them a week or two after delivery, once the first order has been worn or used. They work best when they’re <a href="/mobiloud-reviews/pr-268/blog/personalized-push-notifications/">personalized</a> to the order, because one product name makes the message feel picked by hand.</p>
+<h3 id="replenishment-reminders">Replenishment Reminders</h3>
+<p>Replenishment reminders go out when a customer is likely to be running low on something they buy again and again, like supplements, skincare, coffee or pet food.</p>
+<p>Time each one from the customer’s last order and how long the product lasts, such as 25 days after a 30-day supply. Link to the same product, ready to reorder.</p>
+<p>This flow is ideal for stores that sell consumables, because it catches the repeat order before the customer shops somewhere else.</p>
+<h3 id="loyalty-program-updates">Loyalty Program Updates</h3>
+<p>Loyalty updates tell members about points they’ve earned, a new tier, rewards waiting to be used and points about to expire.</p>
+<p>Push and loyalty programs go well together. Regular updates keep the program top of mind, which keeps members taking part and coming back to buy.</p>
+<p>PatPat tells customers when new points are on the way, and Caden Lane tells its VIP members when their discounts start.</p>
+<div class="push-examples">
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/patpat-8.webp" alt="PatPat push notification: Want some cash?. $ 9900 PatPoints will arrive soon!" width="900" height="900" loading="lazy"></figure>
+  <figure><img src="/mobiloud-reviews/pr-268/blog-images/push-examples/caden-lane-5.webp" alt="Caden Lane push notification: VIP discounts start now!" width="900" height="900" loading="lazy"></figure>
+</div>
+<h3 id="birthday-and-anniversary-messages">Birthday and Anniversary Messages</h3>
+<p>Birthday and anniversary messages are date-triggered pushes that celebrate a customer, often with a small gift or offer.</p>
+<p>Ask for a birthday at sign-up or in your app’s preferences, and send the push a few days early, so there’s time to use the offer. The anniversary of a first order works too, and you already have that date for every customer.</p>
+<h3 id="automatic-re-engagement-notifications">Automatic Re-Engagement Notifications</h3>
+<p>Re-engagement notifications go to customers who haven’t opened your app or ordered in a while, to bring them back before they forget about you.</p>
+<p>Start with a reminder of what’s new after 14 to 30 days without an open, and add an incentive in a second push if they don’t come back. Motel Rocks’ “we miss you” push does both at once, with news of weekly new arrivals and a 15% code.</p>
+<p>Stop the flow as soon as they open your app, and don’t train customers to drift away just to get a discount.</p>
+<h2 id="how-to-automate-your-push-notifications">How to Automate Your Push Notifications</h2>
+<p>Automating push takes an app that can receive notifications, a push platform connected to your store’s data and a flow for each trigger.</p>
+<h3 id="what-do-you-need-to-automate-push-notifications">What Do You Need to Automate Push Notifications?</h3>
+<p>Your push platform needs to know what customers do in your store. Events like viewed product, added to cart, started checkout, placed order and fulfilled order are what start each flow.</p>
+<p>In <a href="/mobiloud-reviews/pr-268/blog/klaviyo-push-notifications/">Klaviyo</a>, push is a step you add to the same flows you already run for email and SMS. A conditional split sends the push to customers who can receive it, and email or SMS to everyone else.</p>
+<p>OneSignal runs flows as Journeys, started by events your store or app sends it, like an abandoned checkout. Whichever platform you use, link each app user to their customer account, so every flow knows who bought what.</p>
+<h3 id="which-automated-flows-should-you-set-up-first">Which Automated Flows Should You Set Up First?</h3>
+<p>Start with the flows that earn the most for the least work: welcome, abandoned cart, back-in-stock and shipping updates. Together they cover a customer’s first visit, their first order and the products they’re waiting for.</p>
+<p>Then add browse abandonment and price drops. Loyalty, replenishment, birthday and re-engagement flows come next, as your app and your customer base grow.</p>
+<h3 id="how-do-you-keep-automated-push-from-feeling-spammy">How Do You Keep Automated Push From Feeling Spammy?</h3>
+<p>Automated push stays welcome when every message still makes sense at the moment it arrives. A few rules make sure it does:</p>
+<ul>
+<li>Stop a flow as soon as it’s done its job, so nobody gets a cart reminder after they’ve bought.</li>
+<li>Cap how many automated pushes one customer can get in a day, since several flows can fire at once.</li>
+<li>Send in each customer’s time zone, and hold messages that aren’t urgent until morning.</li>
+<li>Don’t repeat the same message on every channel. If a push brought the customer back, skip the email and the text.</li>
+<li>Link each push to the exact product, cart or order it mentions.</li>
+</ul>
+<p>Most automated messages sit on top of your <a href="/mobiloud-reviews/pr-268/blog/optimal-push-notification-frequency-ecommerce/">weekly campaigns</a>, because each customer only gets the ones they trigger.</p>
+<h3 id="how-do-you-measure-automated-push-notifications">How Do You Measure Automated Push Notifications?</h3>
+<p>Judge each flow by the orders and revenue it brings in per person who receives it, not only by taps. Watch opt-outs too, since a flow that annoys people costs more than it earns.</p>
+<p>For your biggest flows, hold back a small share of customers who don’t get the message. Comparing the two groups shows how much the flow really adds.</p>
+<p>Then check in on each flow every month or two, and test new copy or timing to keep improving it.</p>
+<h2 id="use-mobiloud-to-build-an-app-and-drive-engagement-on-autopilot">Use MobiLoud to Build an App and Drive Engagement on Autopilot</h2>
+<p>Automated push notifications need an app to come from. If you don’t have one yet, MobiLoud can get you there.</p>
+<p>MobiLoud transforms your website into a custom native app, powered by the same underlying code as your site. We build, publish and maintain your app, helping you go live in a few weeks.</p>
+<p>Some of the most valuable flows come ready to run. Abandoned cart reminders are built into your app, and at <a href="https://www.mobiloud.com/customers/pharmazone/">Pharmazone</a>, a pharmacy chain in Kuwait, they convert at 22%. On Shopify, our app also sends order and shipping updates automatically.</p>
+<p>Once your app is live, our team works with you to make your push campaigns a success, helping you set up the rest of your flows in OneSignal on every plan, or Klaviyo on Business and Enterprise.</p>
+<aside class="post-cta" data-variant="glow">
+  <div class="post-cta-copy">
+    <p class="post-cta-title">See your website <span class="post-cta-accent">as a native app</span></p>
+    <p>Get a live, interactive preview of your app, built from your own website, and see how it could look and feel before you decide.</p>
+    <a class="post-cta-action" href="https://www.mobiloud.com/free-preview/">Get a free preview</a>
+  </div>
+  <img class="post-cta-media" src="/mobiloud-reviews/pr-268/images/jack-jones-push-notification.webp" alt="Jack &#x26; Jones app on an iPhone with a push notification that new collections are live" width="1040" height="1008" loading="lazy">
+</aside>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Automated push notifications turn your app into a channel that works around the clock. Each flow reaches one customer at the moment a message helps most, and costs nothing to send.</p>
+<p>Start with welcome, abandoned cart, back-in-stock and shipping updates, since they pay off fastest. Add the rest as your app grows. Keep every flow relevant and capped, and check what each one earns.</p>
+<p>Do that, and a few hours of setup will keep bringing customers back long after you’ve moved on to your next campaign.</p></div> <div class="mt-10 pt-6 border-t border-neutral-200"> <div class="share" data-astro-cid-xiyysuza> <span class="share-label" data-astro-cid-xiyysuza>Share</span> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications" target="_blank" rel="noopener" aria-label="Share on LinkedIn" class="share-btn" data-astro-cid-xiyysuza> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-xiyysuza><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8h4.52v14H.24V8zm7.52 0h4.34v1.92h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.52v-6.6c0-1.58-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.5V22H7.76V8z" data-astro-cid-xiyysuza></path></svg> </a> <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications&amp;text=12%20Automated%20Push%20Notifications%20That%20Drive%20Revenue%20on%20Autopilot" target="_blank" rel="noopener" aria-label="Share on X" class="share-btn" data-astro-cid-xiyysuza> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-xiyysuza><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" data-astro-cid-xiyysuza></path></svg> </a> <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.mobiloud.com%2Fblog%2Fautomated-push-notifications" target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn" data-astro-cid-xiyysuza> <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-astro-cid-xiyysuza><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z" data-astro-cid-xiyysuza></path></svg> </a> <button type="button" class="share-btn share-copy" data-url="https://www.mobiloud.com/blog/automated-push-notifications" aria-label="Copy link" data-copied-label="Link copied" data-astro-cid-xiyysuza> <svg class="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-xiyysuza><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" data-astro-cid-xiyysuza></path><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" data-astro-cid-xiyysuza></path></svg> <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-xiyysuza><path d="M20 6 9 17l-5-5" data-astro-cid-xiyysuza></path></svg> </button> </div>  <script type="module">document.querySelectorAll(".share-copy").forEach(e=>{e.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(e.dataset.url),e.classList.add("copied"),setTimeout(()=>e.classList.remove("copied"),1500)}catch{}})});</script> </div> <div class="mt-10"> <div class="flex gap-4"> <img src="/mobiloud-reviews/pr-268/blog-images/63acb8ced827c53c7b507cfd_andrew.avif" alt="Andrew Buck" width="56" height="56" class="w-14 h-14 rounded-full object-cover flex-shrink-0" loading="lazy"> <div class="min-w-0"> <p class="font-semibold text-neutral-900">Andrew Buck</p> <p class="text-sm text-neutral-500 mb-2">Head of Content</p> <p class="text-sm text-neutral-600 leading-relaxed">Andrew has a decade of experience creating digitally-native content, and currently runs all content operations for MobiLoud. He has written extensively on topics related to Shopify, Amazon, ecommerce and digital marketing, drawing on real-world experience in high-traffic retail and customer service. He has worked in and written about various industries, including ecommerce SaaS and high-ticket consumer brands, and has created content that has been referenced in thousands of publications, including Forbes, the New York Times, and many more leading publishers.</p> <div class="flex gap-3 mt-2 text-sm"> <a href="https://www.linkedin.com/in/andrew-buck-639818163/" target="_blank" rel="noopener" class="text-primary-700 hover:text-primary-800">LinkedIn</a>  </div> </div> </div> </div> <div class="mt-12 pt-8 border-t border-neutral-200"> <h2 class="font-display text-2xl text-neutral-900 mb-6">Frequently asked questions</h2> <div class="space-y-3"> <details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>What are automated push notifications?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">Automated push notifications are messages a push platform sends on its own when a set trigger happens, such as a customer abandoning a cart, a product coming back in stock or an order shipping. You build each flow once, and it then runs for every customer who triggers it.</p> </details><details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>What&#39;s the difference between automated push notifications and push campaigns?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">Automated push notifications go to one customer at a time, when they trigger a flow, while push campaigns go to a whole segment at a time your team chooses. Most stores use both: campaigns for new arrivals, sales and launches, and automated flows for welcomes, carts, restocks and order updates.</p> </details><details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>Which automated push notification earns the most?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">Abandoned cart reminders usually earn the most of any automated push notification, because they reach shoppers who were about to buy. For brands we studied for our benchmark report, abandoned cart push alone brought in $10,000 to $200,000+ over a 30-day period.</p> </details><details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>Do automated push notifications count toward how often you send?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">Automated push notifications mostly come on top of your weekly campaigns, because each customer only gets the ones they trigger. Transactional updates like shipping notices don&#39;t need to count at all, but cap your marketing flows so one customer can&#39;t get several reminders in a day.</p> </details><details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>How do you set up automated push notifications in Klaviyo?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">To set up automated push notifications in Klaviyo, connect your app&#39;s push to Klaviyo, then add a push notification step to flows such as abandoned cart, browse abandonment and win-back. A conditional split sends the push to customers who can receive it, and email or SMS to everyone else.</p> </details><details class="group rounded-xl border border-neutral-200 p-5"> <summary class="font-semibold text-neutral-900 cursor-pointer list-none flex justify-between items-center gap-4"> <span>Can you send automated push notifications without an app?</span> <span class="text-primary-700 transition-transform group-open:rotate-45 text-xl leading-none">+</span> </summary> <p class="mt-3 text-neutral-600 leading-relaxed">You can automate web push notifications from a website without an app, but they reach far fewer customers. On iPhone, web push only works for people who have added your site to their Home Screen, on iOS 16.4 or later, so reliable automated push on phones takes an app.</p> </details> </div> </div> </div> <!-- sticky TOC sidebar (desktop) --> <aside class="hidden lg:block"> <div class="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2"> <nav class="toc" aria-label="Table of contents" data-astro-cid-ymbpksfa><p class="toc-title" data-astro-cid-ymbpksfa>Table of contents</p><ul class="toc-list" data-astro-cid-ymbpksfa><li class data-astro-cid-ymbpksfa><a href="#what-are-automated-push-notifications" data-astro-cid-ymbpksfa>What Are Automated Push Notifications?</a></li><li class data-astro-cid-ymbpksfa><a href="#why-automate-your-push-notifications" data-astro-cid-ymbpksfa>Why Automate Your Push Notifications?</a></li><li class data-astro-cid-ymbpksfa><a href="#12-automated-push-notification-ideas-that-work" data-astro-cid-ymbpksfa>12 Automated Push Notification Ideas That Work</a></li><li class data-astro-cid-ymbpksfa><a href="#how-to-automate-your-push-notifications" data-astro-cid-ymbpksfa>How to Automate Your Push Notifications</a></li><li class data-astro-cid-ymbpksfa><a href="#use-mobiloud-to-build-an-app-and-drive-engagement-on-autopilot" data-astro-cid-ymbpksfa>Use MobiLoud to Build an App and Drive Engagement on Autopilot</a></li><li class data-astro-cid-ymbpksfa><a href="#final-thoughts" data-astro-cid-ymbpksfa>Final Thoughts</a></li></ul></nav> </div> </aside> </div>  </div> </article> <section class="bg-neutral-50 py-16 lg:py-20"> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <h2 class="font-display text-2xl text-neutral-900 mb-8 text-center">Related reading</h2> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:-translate-y-0.5 hover:shadow-xl "> <div class="block overflow-hidden bg-neutral-100 "> <img src="/mobiloud-reviews/pr-268/blog-images/6865a56bd5a999b763488f57_20250702T0913-ab4aef45-f419-4102-b0d8-c0e563e56e6e.webp" alt="Push notifications from Muscle Republic, Mr Porter and Sephora in an iPhone's Notification Center" width="800" height="450" loading="lazy" class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] aspect-[16/9]"> </div> <div class="flex flex-1 flex-col p-5 "> <a href="https://www.mobiloud.com/blog-category/ecommerce-apps/" class="relative z-10 mb-3 self-start text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-700 hover:text-primary-800"> Ecommerce </a> <h3 class="font-display text-neutral-900 leading-snug text-lg"> <a href="/mobiloud-reviews/pr-268/blog/push-notifications-for-ecommerce/" class="after:absolute after:inset-0 after:content-[''] hover:text-primary-800">Push Notifications for Ecommerce: Examples, Best Practices &amp; Strategy Guide</a> </h3>  <div class="mt-auto pt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500"> <time datetime="2024-07-11T04:08:50.391Z">July 11, 2024</time> <span>26 min read</span> </div> </div> </article><article class="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:-translate-y-0.5 hover:shadow-xl "> <div class="block overflow-hidden bg-neutral-100 "> <img src="/mobiloud-reviews/pr-268/blog-images/6a38f213d56b071a06ed9101_Fashion-push-notification-playbook-webp.webp" alt="How Fashion Brands Use Push Notifications to Drive Repeat Sales" width="800" height="450" loading="lazy" class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] aspect-[16/9]"> </div> <div class="flex flex-1 flex-col p-5 "> <a href="https://www.mobiloud.com/blog-category/push-notifications/" class="relative z-10 mb-3 self-start text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-700 hover:text-primary-800"> Push Notifications </a> <h3 class="font-display text-neutral-900 leading-snug text-lg"> <a href="/mobiloud-reviews/pr-268/blog/push-notifications-for-fashion-ecommerce/" class="after:absolute after:inset-0 after:content-[''] hover:text-primary-800">How Fashion Brands Use Push Notifications to Drive Repeat Sales</a> </h3>  <div class="mt-auto pt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500"> <time datetime="2026-06-22T08:28:44.032Z">June 22, 2026</time> <span>14 min read</span> </div> </div> </article><article class="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:-translate-y-0.5 hover:shadow-xl "> <div class="block overflow-hidden bg-neutral-100 "> <img src="/mobiloud-reviews/pr-268/blog-images/699d6890e1e5daee80acd08e_Abandoned-cart-push-notifications.webp" alt="Why Abandoned Cart Push Notifications Are Your Highest-ROI Recovery Channel" width="800" height="450" loading="lazy" class="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] aspect-[16/9]"> </div> <div class="flex flex-1 flex-col p-5 "> <a href="https://www.mobiloud.com/blog-category/push-notifications/" class="relative z-10 mb-3 self-start text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-700 hover:text-primary-800"> Push Notifications </a> <h3 class="font-display text-neutral-900 leading-snug text-lg"> <a href="/mobiloud-reviews/pr-268/blog/abandoned-cart-push-notifications/" class="after:absolute after:inset-0 after:content-[''] hover:text-primary-800">Why Abandoned Cart Push Notifications Are Your Highest-ROI Recovery Channel</a> </h3>  <div class="mt-auto pt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-neutral-500"> <time datetime="2026-02-24T07:16:31.820Z">February 24, 2026</time> <span>15 min read</span> </div> </div> </article> </div>  </div> </section><section id="book-consultation" data-hm-expand class="relative bg-neutral-900 py-28 lg:py-36 overflow-hidden" style="background: linear-gradient(135deg, #1a1a2e 0%, #171717 50%, #0f2016 100%)"> <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] radial-glow-primary opacity-50 pointer-events-none" aria-hidden="true"></div> <div class="absolute inset-0 dot-grid opacity-60 pointer-events-none" aria-hidden="true"></div> <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, transparent 55%, #171717 100%)" aria-hidden="true"></div> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">  <div class="relative max-w-3xl mx-auto text-center"> <h2 class="font-display text-display-2 text-white mb-6 leading-[1.05] text-balance">
+Get a <span class="stat-accent">free preview</span> of your app
+</h2> <p class="text-lg text-neutral-300 leading-relaxed mb-10 max-w-xl mx-auto">
+See how your store would look and feel as a mobile app, before deciding whether to build.
+</p> <div class="flex flex-wrap justify-center gap-3"> <a href="https://www.mobiloud.com/free-preview" target="_self" class="inline-flex items-center justify-center gap-2 font-semibold transition-[color,background-color,border-color,box-shadow,translate,scale] duration-200 ease-out active:scale-[0.98] motion-reduce:active:scale-100 px-8 py-4 text-lg rounded-2xl bg-primary-700 text-white shadow-btn hover:bg-primary-800 hover:-translate-y-0.5 hover:shadow-lg "> Start my free preview → </a>  </div> <p class="text-sm text-neutral-400 leading-relaxed mt-6 max-w-xl mx-auto text-balance">
+No credit card required.
+ </p> </div>  </div> </section> <footer class="bg-neutral-900 text-neutral-100 pt-20 pb-12"> <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-[50px]">   <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-14 mb-16"> <a href="https://www.capterra.com/p/181364/MobiLoud/" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-268/images/capterra-rating-badge_1.svg" alt="Capterra rating 4.7 out of 5 from 109 reviews" class="h-14 w-auto" loading="lazy"> </a> <a href="https://www.g2.com/products/mobiloud/reviews" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-268/images/G2-Review-Badge.svg" alt="G2 Users Love Us badge" class="h-16 w-auto" loading="lazy"> </a> <a href="https://www.producthunt.com/posts/mobiloud-2" target="_blank" rel="noopener" class="block"> <img src="/mobiloud-reviews/pr-268/images/producthunt-product-of-the-day.svg" alt="Product Hunt - Product of the Day, 2nd" class="h-14 w-auto" loading="lazy"> </a> </div>   <div data-nosnippet class="relative bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/60 rounded-2xl px-8 py-10 lg:px-12 lg:py-12 mb-20 max-w-5xl mx-auto overflow-hidden"> <div class="absolute -top-24 -right-24 w-72 h-72 radial-glow-primary opacity-50 pointer-events-none" aria-hidden="true"></div> <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"> <div class="lg:max-w-md"> <p class="text-xs font-bold uppercase tracking-wider text-primary-400 mb-2">Retention Edge newsletter</p> <p class="font-display text-2xl text-white leading-snug">
+Get weekly insights on retention and growth. Subscribe now.
+</p> </div> <div class="w-full lg:w-auto lg:flex-shrink-0 lg:min-w-[380px]"> <!-- loading="lazy" is load-bearing here, not a tidy-up. The footer is
+               on every page, and this one embed pulled in four third-party
+               hosts (the newsletter platform, a bot-defence script, a second
+               API host and Google Fonts) for about 284 KB on every page load,
+               whether or not anyone scrolled this far. Measured 2026-09-01:
+               those four appear on exactly the 18 page types carrying this
+               footer and on none of the 4 that use a different one. Deferring
+               the frame defers everything inside it. --> <p class="text-sm text-white">Form submissions are disabled on staging.</p> </div> </div> </div>  <div data-nosnippet class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 text-sm"> <div> <p class="font-semibold text-white mb-4">Company</p> <ul class="space-y-2.5"> <li><a href="/mobiloud-reviews/pr-268/about" class="text-neutral-400 hover:text-white transition-colors">About MobiLoud</a></li><li><a href="https://www.mobiloud.com/contact" class="text-neutral-400 hover:text-white transition-colors">Contact Us</a></li><li><a href="https://www.mobiloud.com/case-studies" class="text-neutral-400 hover:text-white transition-colors">Case Studies</a></li><li><a href="https://www.mobiloud.com/reviews" class="text-neutral-400 hover:text-white transition-colors">Reviews</a></li><li><a href="/mobiloud-reviews/pr-268/blog" class="text-neutral-400 hover:text-white transition-colors">Blog</a></li><li><a href="https://www.mobiloud.com/press" class="text-neutral-400 hover:text-white transition-colors">Press</a></li><li><a href="https://www.mobiloud.com/comparisons" class="text-neutral-400 hover:text-white transition-colors">Comparisons</a></li><li><a href="https://www.mobiloud.com/use-cases" class="text-neutral-400 hover:text-white transition-colors">Use Cases</a></li><li><a href="https://www.mobiloud.com/how-it-works" class="text-neutral-400 hover:text-white transition-colors">How It Works</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Product</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/pricing" class="text-neutral-400 hover:text-white transition-colors">Pricing</a></li><li><a href="/mobiloud-reviews/pr-268/answers" class="text-neutral-400 hover:text-white transition-colors">Buyer Answers</a></li><li><a href="https://www.mobiloud.com/docs" class="text-neutral-400 hover:text-white transition-colors">Documentation</a></li><li><a href="https://www.mobiloud.com/faqs" class="text-neutral-400 hover:text-white transition-colors">Help Center</a></li><li><a href="https://www.mobiloud.com/free-preview" class="text-neutral-400 hover:text-white transition-colors">Test Your App for Free</a></li><li><a href="https://www.mobiloud.com/demo" class="text-neutral-400 hover:text-white transition-colors">Book a Demo</a></li> </ul>  <p class="font-semibold text-white mt-8 mb-4">Customer Case Studies</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/customers/john-varvatos" class="text-neutral-400 hover:text-white transition-colors">John Varvatos</a></li><li><a href="https://www.mobiloud.com/customers/jack-jones" class="text-neutral-400 hover:text-white transition-colors">Jack &amp; Jones</a></li><li><a href="https://www.mobiloud.com/customers/tadashi-shoji" class="text-neutral-400 hover:text-white transition-colors">Tadashi Shoji</a></li><li><a href="https://www.mobiloud.com/customers/vero-moda" class="text-neutral-400 hover:text-white transition-colors">Vero Moda</a></li><li><a href="https://www.mobiloud.com/customers/gourmet-gift-baskets" class="text-neutral-400 hover:text-white transition-colors">Gourmet Gift Baskets</a></li><li><a href="https://www.mobiloud.com/customers/pharmazone" class="text-neutral-400 hover:text-white transition-colors">Pharmazone</a></li><li><a href="https://www.mobiloud.com/customers/kiokii" class="text-neutral-400 hover:text-white transition-colors">Kiokii</a></li><li><a href="https://www.mobiloud.com/customers/sleefs" class="text-neutral-400 hover:text-white transition-colors">Sleefs</a></li><li><a href="https://www.mobiloud.com/case-studies" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Features</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/features" class="text-neutral-400 hover:text-white transition-colors">All Features</a></li><li><a href="https://www.mobiloud.com/features/push-notifications" class="text-neutral-400 hover:text-white transition-colors">Push Notifications</a></li><li><a href="https://www.mobiloud.com/features/retain-website-features" class="text-neutral-400 hover:text-white transition-colors">Retain Website Features</a></li><li><a href="https://www.mobiloud.com/features/real-time-sync" class="text-neutral-400 hover:text-white transition-colors">Real-Time Sync</a></li><li><a href="https://www.mobiloud.com/features/native-app-features" class="text-neutral-400 hover:text-white transition-colors">Native App Features</a></li><li><a href="https://www.mobiloud.com/features/in-app-exclusive-products-content" class="text-neutral-400 hover:text-white transition-colors">In-App Exclusive Products &amp; Content</a></li><li><a href="https://www.mobiloud.com/features/promotion" class="text-neutral-400 hover:text-white transition-colors">App Promotion</a></li><li><a href="https://www.mobiloud.com/features/analytics-cro" class="text-neutral-400 hover:text-white transition-colors">Analytics &amp; CRO</a></li><li><a href="https://www.mobiloud.com/features/multi-language-multi-currency-support" class="text-neutral-400 hover:text-white transition-colors">Multi-Language &amp; Multi-Currency Support</a></li><li><a href="https://www.mobiloud.com/integrations" class="text-neutral-400 hover:text-white transition-colors">Integrations</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Comparisons</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/comparisons/tapcart-vs-mobiloud" class="text-neutral-400 hover:text-white transition-colors">Tapcart vs MobiLoud</a></li><li><a href="https://www.mobiloud.com/comparisons/plobal-apps-alternative" class="text-neutral-400 hover:text-white transition-colors">Plobal Apps Alternative</a></li><li><a href="https://www.mobiloud.com/comparisons/shopney-alternative" class="text-neutral-400 hover:text-white transition-colors">Shopney Alternative</a></li><li><a href="https://www.mobiloud.com/comparisons/median-alternative" class="text-neutral-400 hover:text-white transition-colors">Median Alternative</a></li><li><a href="https://www.mobiloud.com/comparisons/mobiloud-vs-custom-development" class="text-neutral-400 hover:text-white transition-colors">MobiLoud vs Custom Development</a></li><li><a href="https://www.mobiloud.com/comparisons/mobiloud-vs-in-house-mobile-app-team" class="text-neutral-400 hover:text-white transition-colors">MobiLoud vs In-House Development</a></li><li><a href="https://www.mobiloud.com/comparisons" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Platforms</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/turn-shopify-store-into-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Shopify</a></li><li><a href="https://www.mobiloud.com/use-cases/shopify-plus-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Shopify Plus</a></li><li><a href="https://www.mobiloud.com/use-cases/bigcommerce-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">BigCommerce</a></li><li><a href="https://www.mobiloud.com/use-cases/adobe-commerce-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">Adobe Commerce</a></li><li><a href="https://www.mobiloud.com/use-cases/magento-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">Magento</a></li><li><a href="https://www.mobiloud.com/use-cases/wordpress-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">WordPress</a></li><li><a href="https://www.mobiloud.com/use-cases/woocommerce-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">WooCommerce</a></li><li><a href="https://www.mobiloud.com/use-cases/salesforce-commerce-cloud-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">Salesforce Commerce Cloud</a></li><li><a href="https://www.mobiloud.com/use-cases/prestashop-mobile-app-builder" class="text-neutral-400 hover:text-white transition-colors">PrestaShop</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">By Industry</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/ecommerce-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Ecommerce</a></li><li><a href="https://www.mobiloud.com/marketplaces" class="text-neutral-400 hover:text-white transition-colors">Marketplaces</a></li><li><a href="https://www.mobiloud.com/use-cases/fashion-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Fashion &amp; Apparel</a></li><li><a href="https://www.mobiloud.com/use-cases/beauty-cosmetics-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Beauty &amp; Cosmetics</a></li><li><a href="https://www.mobiloud.com/use-cases/supplements-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Supplements &amp; Nutrition</a></li><li><a href="https://www.mobiloud.com/use-cases/food-beverage-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Food &amp; Beverage</a></li><li><a href="https://www.mobiloud.com/use-cases/grocery-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Grocery</a></li><li><a href="https://www.mobiloud.com/use-cases/pharmacy-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Pharmacy</a></li><li><a href="https://www.mobiloud.com/use-cases/b2b-ecom-mobile-app" class="text-neutral-400 hover:text-white transition-colors">B2B</a></li><li><a href="https://www.mobiloud.com/industries" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Popular Resources</p> <ul class="space-y-2.5"> <li><a href="/mobiloud-reviews/pr-268/blog/how-much-does-it-cost-to-build-an-ecommerce-app" class="text-neutral-400 hover:text-white transition-colors">How Much Does it Cost to Build an App?</a></li><li><a href="/mobiloud-reviews/pr-268/blog/shopify-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Shopify Mobile App Development</a></li><li><a href="/mobiloud-reviews/pr-268/blog/magento-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Magento Mobile App Development</a></li><li><a href="/mobiloud-reviews/pr-268/blog/bigcommerce-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">BigCommerce Mobile App Development</a></li><li><a href="/mobiloud-reviews/pr-268/blog/enterprise-ecommerce-mobile-app-development" class="text-neutral-400 hover:text-white transition-colors">Enterprise Mobile App Development</a></li><li><a href="/mobiloud-reviews/pr-268/blog/push-notifications-for-ecommerce" class="text-neutral-400 hover:text-white transition-colors">Push Notifications for Ecommerce</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Frameworks</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/use-cases/react-mobile-app" class="text-neutral-400 hover:text-white transition-colors">React</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-javascript-to-apps" class="text-neutral-400 hover:text-white transition-colors">JavaScript</a></li><li><a href="https://www.mobiloud.com/use-cases/convert-a-laravel-web-app-to-a-native-mobile-app" class="text-neutral-400 hover:text-white transition-colors">Laravel</a></li><li><a href="https://www.mobiloud.com/use-cases/php-mobile-apps" class="text-neutral-400 hover:text-white transition-colors">PHP</a></li><li><a href="https://www.mobiloud.com/use-cases/next-js-mobile-apps" class="text-neutral-400 hover:text-white transition-colors">Next.js</a></li> </ul>  </div><div> <p class="font-semibold text-white mb-4">Free Tools</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/app-store-description-generator" class="text-neutral-400 hover:text-white transition-colors">AI App Store Description Generator</a></li><li><a href="https://www.mobiloud.com/tools/app-name-generator" class="text-neutral-400 hover:text-white transition-colors">AI App Name Generator</a></li><li><a href="https://www.mobiloud.com/ecom-app-revenue-calculator" class="text-neutral-400 hover:text-white transition-colors">Ecom App Revenue Calculator</a></li> </ul>  <p class="font-semibold text-white mt-8 mb-4">Reports</p> <ul class="space-y-2.5"> <li><a href="https://www.mobiloud.com/reports/ecommerce-benchmark-report" class="text-neutral-400 hover:text-white transition-colors">Ecom Mobile App Benchmark Report</a></li><li><a href="https://www.mobiloud.com/reports/ecommerce-push-notification-report" class="text-neutral-400 hover:text-white transition-colors">Ecom Push Notification Report</a></li><li><a href="https://www.mobiloud.com/reports/black-friday-mobile-app-playbook" class="text-neutral-400 hover:text-white transition-colors">Black Friday App Playbook</a></li><li><a href="https://www.mobiloud.com/reports" class="text-neutral-400 hover:text-white transition-colors">View all</a></li> </ul>  </div> </div>  <div class="h-px bg-neutral-700 my-12"></div>  <div data-nosnippet class="flex flex-col gap-6"> <a href="/mobiloud-reviews/pr-268/" class="block" aria-label="MobiLoud home"> <img src="/mobiloud-reviews/pr-268/branding/mobiloud-logo-white.svg" alt="MobiLoud" class="h-6 w-auto" loading="lazy"> </a> <div class="flex flex-col md:flex-row md:items-center justify-between gap-6"> <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-neutral-400"> <span>©2026 Fifty Pixels Ltd.</span> <a href="https://www.mobiloud.com/terms" class="hover:text-white transition-colors">Terms of Service</a> <a href="https://www.mobiloud.com/privacy" class="hover:text-white transition-colors">Privacy Policy</a> <a href="https://www.mobiloud.com/gdpr-compliance" class="hover:text-white transition-colors">GDPR Compliance</a> <a href="https://www.mobiloud.com/dpa" class="hover:text-white transition-colors">DPA</a> <a href="https://www.mobiloud.com/subprocessors" class="hover:text-white transition-colors">Subprocessors</a> </div> <div class="flex items-center gap-2.5"> <a href="https://twitter.com/mobiloud" target="_blank" rel="noopener" aria-label="Twitter" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg> </a><a href="https://www.facebook.com/mobiloudapp" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg> </a><a href="https://www.linkedin.com/company/mobiloud/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg> </a><a href="https://www.youtube.com/@Mobiloud" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-300 to-primary-700 flex items-center justify-center text-white hover:brightness-110 transition"> <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg> </a> </div> </div> <p class="text-xs text-neutral-400 max-w-3xl leading-relaxed">
+MobiLoud® is a registered trademark of Fifty Pixels, registered in the European and U.S. Patent and Trademark Office.
+</p> </div>  </div> </footer>  <!-- Hash link scroll + scroll reveal --> <script>
+    (function() {
+      var NAV_OFFSET = 88;
+      function getScrollTop(el) {
+        return Math.max(0, el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET);
+      }
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+        var target = document.getElementById(hash.slice(1));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: getScrollTop(target), behavior: 'smooth' });
+        setTimeout(function() {
+          window.scrollTo({ top: getScrollTop(target), behavior: 'smooth' });
+        }, 600);
+      });
+
+      // Scroll-reveal: only tag sections currently below the fold.
+      // Sections in viewport on load show immediately - no flash, no fade.
+      // The homepage runs its own staged reveal (HomeMotion.astro).
+      if (document.documentElement.hasAttribute('data-home-motion')) return;
+      var sections = document.querySelectorAll('main section, body > section');
+      var vpH = window.innerHeight;
+      var toReveal = [];
+      sections.forEach(function (s) {
+        var top = s.getBoundingClientRect().top;
+        // section is below the viewport bottom - hide and observe
+        if (top > vpH * 0.85) {
+          s.classList.add('reveal');
+          toReveal.push(s);
+        }
+      });
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        toReveal.forEach(function (s) { io.observe(s); });
+      } else {
+        toReveal.forEach(function (s) { s.classList.add('is-visible'); });
+      }
+    })();
+  </script> <script id="prh-data" type="application/json">{"pr":"268","route":"/mobiloud-reviews/pr-268/blog/automated-push-notifications/","label":"PR #268 · /mobiloud-reviews/pr-268/blog/automated-push-notifications/","headSha":"cd0ff3d9983f49fee63aea0e104c66ec440408a1","baseSha":"28f71f92f88557f888c6fb8a4b74b0572fa28944","changes":[{"type":"changed","before":"Once your app is live, our team works with you to make your push campaigns a success, helping you set up the rest of your flows in OneSignal or Klaviyo.","after":"Once your app is live, our team works with you to make your push campaigns a success, helping you set up the rest of your flows in OneSignal on every plan, or Klaviyo on Business and Enterprise.","tokens":[{"t":"same","v":"Once your app is live, our team works with you to make your push campaigns a success, helping you set up the rest of your flows in OneSignal "},{"t":"add","v":"on every plan, "},{"t":"same","v":"or Klaviyo "},{"t":"add","v":"on Business and Enterprise"},{"t":"same","v":"."}],"vp":["desktop","mobile"]}],"isNew":false}</script><script>// Opens collapsed content (closed <details>, accordion panels, hidden tabs) in REVIEW
+// copies and headless captures only. Never part of the site repo.
+// window.__prhReveal.all()      open every collapsed panel (used before text extraction)
+// window.__prhReveal.forEl(el)  open only the panels that contain el (used by the overlay)
+// window.__prhReveal.repin()     open those panels again if a site script closed them
+(function () {
+  'use strict';
+  if (window.__prhReveal) return;
+  var SKIP = 'header,nav,[role=dialog],[aria-modal="true"],[role=menu],[role=listbox],#prh-ui,#prh-layer,#prh-top';
+  var styled = false;
+  var pinned = new Set(); // panels opened for a change; kept open if site scripts close them again
+  function addStyle() {
+    if (styled) return; styled = true;
+    var s = document.createElement('style'); s.id = 'prh-reveal-css';
+    s.textContent = '[data-prh-open]{grid-template-rows:1fr!important;max-height:none!important;height:auto!important;visibility:visible!important;opacity:1!important;overflow:visible!important}' +
+      '[data-prh-open][hidden],[data-prh-open].hidden{display:block!important}' +
+      '[data-prh-open]>*,[data-prh-open]>*>*{opacity:1!important;visibility:visible!important;max-height:none!important}';
+    (document.head || document.documentElement).appendChild(s);
+  }
+  function triggerFor(a) {
+    if (a.id) { var t = document.querySelector('[aria-controls~="' + a.id.replace(/"/g, '\\"') + '"]'); if (t) return t; }
+    var p = a.parentElement; if (!p) return null;
+    for (var i = 0; i < p.children.length; i++) {
+      var c = p.children[i];
+      if (c !== a && c.hasAttribute('aria-expanded') && (c.tagName === 'BUTTON' || c.getAttribute('role') === 'button' || c.tagName === 'A')) return c;
+    }
+    return null;
+  }
+  function collapsible(a) {
+    if (!a || a.nodeType !== 1 || a === document.body || a === document.documentElement) return false;
+    if (a.closest(SKIP)) return false;
+    if (a.tagName === 'DETAILS') return !a.open;
+    if (a.getAttribute('role') === 'tabpanel') return true;
+    return !!triggerFor(a);
+  }
+  function open(a, pin) {
+    if (pin) pinned.add(a);
+    if (a.tagName === 'DETAILS') { a.open = true; return; }
+    addStyle();
+    a.setAttribute('data-prh-open', '');
+    if (getComputedStyle(a).display === 'none') a.style.setProperty('display', 'block', 'important');
+    var t = triggerFor(a);
+    if (t && t.getAttribute('aria-expanded') === 'false') t.setAttribute('aria-expanded', 'true');
+    if (a.classList.contains('faq-answer')) { a.classList.add('open'); var ar = t && t.querySelector('.faq-arrow'); if (ar) ar.classList.add('open'); }
+  }
+  function forEl(el) {
+    var n = 0;
+    for (var a = el && el.parentElement; a && a !== document.body; a = a.parentElement) {
+      if (collapsible(a)) { open(a, true); n++; }
+    }
+    return n;
+  }
+  function isClosed(a) {
+    if (a.tagName === 'DETAILS') return !a.open;
+    return !a.hasAttribute('data-prh-open') || getComputedStyle(a).display === 'none';
+  }
+  // Site scripts can close panels after the overlay ran (e.g. a module script that closes
+  // details on small screens, or on a media query change). Open pinned panels again.
+  function repin() {
+    var n = 0;
+    pinned.forEach(function (a) { if (a.isConnected && isClosed(a)) { open(a, false); n++; } });
+    return n;
+  }
+  // A reviewer who toggles a panel by hand is in charge of it from then on.
+  document.addEventListener('click', function (e) {
+    if (!e.isTrusted || !e.target.closest) return;
+    var s = e.target.closest('summary');
+    if (s && s.parentElement) pinned.delete(s.parentElement);
+    var t = e.target.closest('[aria-expanded]');
+    if (t) {
+      (t.getAttribute('aria-controls') || '').split(/\s+/).forEach(function (id) { var x = id && document.getElementById(id); if (x) pinned.delete(x); });
+      var p = t.parentElement; if (p) for (var i = 0; i < p.children.length; i++) pinned.delete(p.children[i]);
+    }
+  }, true);
+  function all() {
+    var c = new Set();
+    document.querySelectorAll('details:not([open]),[role=tabpanel]').forEach(function (e) { c.add(e); });
+    document.querySelectorAll('[aria-expanded]').forEach(function (t) {
+      (t.getAttribute('aria-controls') || '').split(/\s+/).forEach(function (id) { var e = id && document.getElementById(id); if (e) c.add(e); });
+      var p = t.parentElement; if (p) for (var i = 0; i < p.children.length; i++) if (p.children[i] !== t) c.add(p.children[i]);
+    });
+    var n = 0;
+    c.forEach(function (a) { if (collapsible(a)) { open(a); n++; } });
+    return n;
+  }
+  window.__prhReveal = { all: all, forEl: forEl, repin: repin, collapsible: collapsible };
+})();
+
+// Review overlay. Injected ONLY into copies under /workspace/web/review-builds/.
+// Never part of the site repo. Reads its data from <script id="prh-data">.
+(function () {
+  'use strict';
+  var D = JSON.parse(document.getElementById('prh-data').textContent);
+
+  // Forms are switched off: a review copy must never send a lead, booking or webhook.
+  var OFF_MSG = 'Forms are switched off in this review preview.';
+  function toast(msg) {
+    var t = document.getElementById('prh-toast');
+    if (!t) { t = document.createElement('div'); t.id = 'prh-toast'; t.style.cssText = 'position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:2147483647;background:#dc2626;color:#fff;font:600 14px/1.3 system-ui,-apple-system,sans-serif;padding:10px 14px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.3);max-width:90vw;text-align:center'; document.body.appendChild(t); }
+    t.textContent = msg; t.style.display = 'block'; clearTimeout(t.__h); t.__h = setTimeout(function () { t.style.display = 'none'; }, 3500);
+  }
+  var sameOrigin = function (u) { try { return new URL(u, location.href).origin === location.origin; } catch (e) { return false; } };
+  var realFetch = window.fetch;
+  window.fetch = function (input, init) {
+    var url = typeof input === 'string' ? input : (input && input.url) || String(input);
+    var method = ((init && init.method) || (input && input.method) || 'GET').toUpperCase();
+    if (method !== 'GET' && method !== 'HEAD') { toast(OFF_MSG); return Promise.reject(new Error(OFF_MSG)); }
+    return realFetch.apply(this, arguments);
+  };
+  var realOpen = XMLHttpRequest.prototype.open, realSend = XMLHttpRequest.prototype.send;
+  XMLHttpRequest.prototype.open = function (m) { this.__prhBlock = String(m).toUpperCase() !== 'GET'; return realOpen.apply(this, arguments); };
+  XMLHttpRequest.prototype.send = function () { if (this.__prhBlock) { toast(OFF_MSG); return; } return realSend.apply(this, arguments); };
+  if (navigator.sendBeacon) navigator.sendBeacon = function () { return true; };
+  document.addEventListener('submit', function (e) { e.preventDefault(); e.stopImmediatePropagation(); toast(OFF_MSG); }, true);
+
+  var COLORS = { changed: '#d97706', added: '#16a34a', moved: '#2563eb', removed: '#dc2626', visual: '#7c3aed' };
+  var norm = function (s) { return (s || '').replace(/\s+/g, ' ').trim(); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var OWN = function (el) { return el.closest && el.closest('#prh-ui,#prh-layer,#prh-top'); };
+  var claimed = new Set();
+
+  // ---------- find the element for a block key ----------
+  function isShown(el) { return el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden'; }
+  // text of the element itself, without child elements (extractBlocks' "own" blocks, e.g. a <p> that starts with a label <span>)
+  function ownText(el) { var t = []; for (var k = el.firstChild; k; k = k.nextSibling) if (k.nodeType === 3) t.push(k.data); return norm(t.join(' ')); }
+  function findText(key, preferShown, tag, anyEl) {
+    if (!key) return null;
+    var probe = key.slice(0, 24);
+    var all = document.body.querySelectorAll('*');
+    var hits = [], own = [], hidden = [];
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (/^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE|svg)$/i.test(el.tagName) || OWN(el)) continue;
+      var tc = el.textContent;
+      if (!tc || tc.length < key.length * 0.6 || norm(tc).indexOf(probe) < 0) continue;
+      if (norm(el.innerText) === key) hits.push(el);
+      else {
+        if (ownText(el) === key) own.push(el);
+        if (el.closest('details:not([open])')) hidden.push(el);
+      }
+    }
+    // text inside a closed <details> has no innerText until opened: open, test, close again if no match
+    if (!hits.length && window.__prhReveal) {
+      for (var j = 0; j < hidden.length && !hits.length; j++) {
+        var d = [], a2;
+        for (a2 = hidden[j].parentElement; a2; a2 = a2.parentElement) if (a2.tagName === 'DETAILS' && !a2.open) d.push(a2);
+        d.forEach(function (x) { x.open = true; });
+        var cand = [hidden[j]].concat(Array.prototype.slice.call(hidden[j].querySelectorAll('*')));
+        cand.forEach(function (c) { if (norm(c.innerText) === key) hits.push(c); });
+        if (!hits.length) d.forEach(function (x) { x.open = false; });
+      }
+    }
+    if (!hits.length) hits = own;
+    // deepest match wins (no matching descendant)
+    hits = hits.filter(function (el) { return !hits.some(function (o) { return o !== el && el.contains(o); }); });
+    // The same text can sit in a desktop table and in mobile cards (only one is shown per width).
+    // Prefer an element no other change took, then the recorded tag, then one shown at this width
+    // (a change seen only at the other width may stay hidden here; review.json lists its widths).
+    var free = function (e) { return anyEl || !claimed.has(e); };
+    var tagOk = function (e) { return !tag || e.tagName.toLowerCase() === tag; };
+    var tests = preferShown
+      ? [[free, tagOk, isShown], [free, tagOk], [free, isShown], [free], [isShown], []]
+      : [[free, tagOk], [free], []];
+    for (var t = 0; t < tests.length; t++) {
+      var f = tests[t], m = hits.filter(function (e) { return f.every(function (fn) { return fn(e); }); });
+      if (m.length) return m[0];
+    }
+    return null;
+  }
+  function findMedia(stem) {
+    if (!stem) return null;
+    var els = document.querySelectorAll('img,video,picture source');
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i];
+      var src = (e.currentSrc || e.getAttribute('src') || e.getAttribute('srcset') || '');
+      if (src.indexOf('/' + stem + '.') >= 0) return e.tagName === 'SOURCE' ? e.parentElement : e;
+    }
+    return null;
+  }
+
+  // ---------- wrap added words in <mark> ----------
+  function reEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\</body>'); }
+  function phrase(s) { return s.trim().split(/\s+/).filter(Boolean).map(reEsc).join('\\s*'); }
+  function markRanges(el, tokens) {
+    var nodes = [], full = '';
+    var tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    while (tw.nextNode()) { nodes.push({ n: tw.currentNode, start: full.length }); full += tw.currentNode.data; }
+    var keep = tokens.filter(function (t) { return t.t !== 'del' && t.v.trim(); });
+    var spans = [];
+    try {
+      var src = keep.map(function (t) { return '(' + phrase(t.v) + ')'; }).join('\\s*');
+      var m = new RegExp(src, 'd').exec(full);
+      if (m && m.indices) keep.forEach(function (t, i) { if (t.t === 'add') spans.push(m.indices[i + 1]); });
+    } catch (e) {}
+    if (!spans.length) { // fallback: sequential search for each added phrase
+      var from = 0;
+      keep.forEach(function (t) {
+        var re = new RegExp(phrase(t.v), 'g'); re.lastIndex = from;
+        var h = re.exec(full); if (!h) return;
+        from = h.index + h[0].length;
+        if (t.t === 'add') spans.push([h.index, from]);
+      });
+    }
+    var segs = [];
+    spans.forEach(function (sp) {
+      nodes.forEach(function (x) {
+        var a = Math.max(sp[0], x.start), b = Math.min(sp[1], x.start + x.n.data.length);
+        if (b > a) segs.push({ n: x.n, a: a - x.start, b: b - x.start });
+      });
+    });
+    segs.sort(function (p, q) { return p.n === q.n ? q.a - p.a : 0; });
+    var marks = [];
+    segs.forEach(function (s) {
+      if (!s.n.parentNode) return;
+      if (s.b < s.n.data.length) s.n.splitText(s.b);
+      var mid = s.a > 0 ? s.n.splitText(s.a) : s.n;
+      var mk = document.createElement('mark'); mk.className = 'prh-add';
+      mid.parentNode.insertBefore(mk, mid); mk.appendChild(mid); marks.push(mk);
+    });
+    return marks.length;
+  }
+
+  // ---------- build UI ----------
+  // Module scripts run after this inline script, and some close panels on small screens,
+  // so matching and opening panels waits for DOMContentLoaded (after module scripts ran).
+  function init() {
+  var css = document.createElement('style');
+  css.textContent = [
+    '#prh-top{position:relative;z-index:2147483646;background:#111;color:#fff;font:600 14px/1.35 system-ui,-apple-system,sans-serif;padding:10px 14px;text-align:center}',
+    '#prh-top b{color:#ffe066}',
+    '#ml-preview-badge{display:none!important}',
+    '#prh-top small{display:block;font-weight:400;opacity:.85;margin-top:2px}',
+    'mark.prh-add{background:#ffe066!important;color:#111!important;border-radius:2px;box-shadow:0 0 0 2px #ffe066;-webkit-text-fill-color:#111!important}',
+    '.prh-target{outline:3px solid var(--prh-c)!important;outline-offset:4px!important;border-radius:3px}',
+    '.prh-target.prh-new{background-color:rgba(255,224,102,.35)!important}',
+    '.prh-target.prh-box.prh-new{background-color:rgba(255,224,102,.16)!important}',
+    '.prh-pulse{animation:prhPulse 1.2s ease 2}',
+    '@keyframes prhPulse{50%{outline-offset:10px;outline-width:6px}}',
+    'html.prh-off mark.prh-add{background:transparent!important;box-shadow:none!important;color:inherit!important;-webkit-text-fill-color:inherit!important}',
+    'html.prh-off .prh-target{outline:none!important}html.prh-off .prh-target.prh-new{background-color:transparent!important}',
+    'html.prh-off #prh-layer{display:none}',
+    '#prh-layer{position:absolute;left:0;top:0;width:0;height:0;z-index:2147483645}',
+    '.prh-badge{position:absolute;font:700 12px/1 system-ui,-apple-system,sans-serif;color:#fff;padding:5px 7px;border-radius:999px;cursor:pointer;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.3);border:0}',
+    '.prh-note{position:absolute;width:min(420px,calc(100vw - 24px));box-sizing:border-box;background:#fff;color:#222;font:14px/1.45 system-ui,-apple-system,sans-serif;border:2px solid #dc2626;border-radius:8px;padding:8px 10px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:none}',
+    '.prh-note.open{display:block}',
+    '.prh-note .h{font-weight:700;font-size:12px;color:#dc2626;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}',
+    '.prh-note del{color:#b91c1c;background:#fee2e2;text-decoration:line-through;margin-right:4px}',
+    '.prh-note ins{text-decoration:none;background:#ffe066}',
+    '#prh-ui{position:fixed;left:50%;transform:translateX(-50%);bottom:max(12px,env(safe-area-inset-bottom));z-index:2147483647;display:flex;align-items:center;gap:6px;background:#111;color:#fff;border-radius:999px;padding:6px;font:600 14px/1 system-ui,-apple-system,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:calc(100vw - 16px)}',
+    '#prh-ui button{all:unset;cursor:pointer;background:#2b2b2b;color:#fff;border-radius:999px;padding:9px 12px;font:600 14px/1 system-ui,-apple-system,sans-serif;white-space:nowrap}',
+    '#prh-ui button:active{background:#444}',
+    '#prh-ui .count{padding:0 6px;white-space:nowrap}',
+    '#prh-ui .tag{background:#ffe066;color:#111;border-radius:999px;padding:9px 10px;white-space:nowrap}',
+    '@media (max-width:520px){#prh-ui .tag{display:none}#prh-ui button{padding:9px 10px}}'
+  ].join('\n');
+  document.head.appendChild(css);
+
+  var top = document.createElement('div');
+  top.id = 'prh-top';
+  top.innerHTML = 'Review preview, not the live site. ' + esc(D.label) +
+    '<small><b>Yellow</b> is new text and outlines mark what changed. Tap a <b>Was</b> or <b>Removed</b> badge to see the old text. Use the arrows at the bottom to step through.</small>';
+  document.body.insertBefore(top, document.body.firstChild);
+
+  var layer = document.createElement('div'); layer.id = 'prh-layer';
+  document.documentElement.appendChild(layer);
+
+  var items = []; // {n, el, color, badge, note, change}
+  function findItem(it) { return it.media ? findMedia(it.stem) : findText(it.key, true, it.tag); }
+  function mark(el, color, isNew) {
+    el.classList.add('prh-target'); el.style.setProperty('--prh-c', color);
+    if (isNew) el.classList.add('prh-new');
+  }
+  // One outline around a whole new block when the new elements share a parent that holds little else.
+  function commonBox(els) {
+    var a = els[0].parentElement;
+    while (a && !els.every(function (e) { return a.contains(e); })) a = a.parentElement;
+    if (!a || a === document.body || a === document.documentElement || a.tagName === 'MAIN') return null;
+    var own = els.reduce(function (n, e) { return n + norm(e.innerText || e.alt || '').length; }, 0);
+    var all = norm(a.innerText || '').length;
+    return all <= own * 1.35 + 40 ? a : null;
+  }
+  D.changes.forEach(function (c) {
+    var el = null, color = COLORS[c.type], label = '', noteHtml = null, extra = [];
+    if (c.type === 'added' || c.type === 'moved') {
+      c.afters.forEach(function (a) { var e = findItem(a); if (e && !claimed.has(e)) { e.__prhMoved = !!a.moved; extra.push(e); } });
+      el = extra[0] || null;
+      label = c.type === 'moved' ? 'Moved here' : c.afters.length > 2 ? 'New section' : 'New';
+    } else if (c.type === 'removed') {
+      el = findText(c.anchorAfter, true, null, true) || null;
+      label = 'Removed here';
+      noteHtml = '<div class="h">Removed from the page</div>' + c.befores.map(function (b) {
+        return '<div style="margin:2px 0"><del>' + esc(b.media ? 'Image: ' + b.stem.replace(/^[0-9a-f]{12,}[-_]?/i, '').replace(/[-_]+/g, ' ') : b.key) + '</del></div>';
+      }).join('');
+    } else if (c.media) {
+      el = findMedia(c.afterMedia); color = COLORS.visual; label = 'Image changed';
+    } else {
+      el = findText(c.after, true);
+      var hasDel = c.tokens && c.tokens.some(function (t) { return t.t === 'del' && t.v.trim(); });
+      label = hasDel ? 'Was' : 'Changed';
+      if (hasDel) noteHtml = '<div class="h">Before and after</div>' + c.tokens.map(function (t) { return t.t === 'del' ? '<del>' + esc(t.v) + '</del>' : t.t === 'add' ? '<ins>' + esc(t.v) + '</ins>' : esc(t.v); }).join('');
+    }
+    if (!el || (c.type !== 'removed' && claimed.has(el))) return;
+    // a change inside a collapsed accordion, closed <details> or hidden tab: open its container
+    if (window.__prhReveal) { window.__prhReveal.forEl(el); extra.forEach(function (e) { window.__prhReveal.forEl(e); }); }
+    if (extra.length) {
+      // Group neighbouring new elements into one outlined block where a parent holds little else.
+      var runs = [], run = [];
+      extra.forEach(function (e) {
+        if (c.type === 'added' && !e.__prhMoved && run.length && commonBox(run.concat([e]))) run.push(e);
+        else { if (run.length) runs.push(run); run = [e]; }
+      });
+      if (run.length) runs.push(run);
+      runs.forEach(function (r, i) {
+        var b = r.length >= 2 ? commonBox(r) : null;
+        r.forEach(function (e) { claimed.add(e); });
+        if (b) { claimed.add(b); b.classList.add('prh-box'); mark(b, color, true); if (i === 0) el = b; }
+        else r.forEach(function (e) { mark(e, e.__prhMoved ? COLORS.moved : color, !e.__prhMoved && !(e.tagName === 'IMG' || e.tagName === 'VIDEO')); });
+      });
+    }
+    else if (c.type !== 'removed') { claimed.add(el); mark(el, color, false); if (!c.media && c.tokens) markRanges(el, c.tokens); }
+    var n = items.length + 1;
+    var badge = document.createElement('button');
+    badge.className = 'prh-badge'; badge.style.background = color;
+    badge.textContent = n + ' · ' + label;
+    var note = null;
+    if (noteHtml) {
+      note = document.createElement('div'); note.className = 'prh-note'; note.innerHTML = noteHtml;
+      layer.appendChild(note);
+      note.addEventListener('click', function () { note.classList.remove('open'); });
+      badge.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); note.classList.toggle('open'); place(); });
+    } else badge.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); });
+    layer.appendChild(badge);
+    items.push({ n: n, el: el, color: color, badge: badge, note: note, change: c });
+  });
+
+  function place() {
+    var vw = document.documentElement.clientWidth;
+    var taken = []; // badge boxes already placed, to avoid overlaps
+    items.forEach(function (it) {
+      if (!it.el) return;
+      var shown = isShown(it.el);
+      it.badge.style.display = shown ? '' : 'none';
+      if (it.note && !shown) it.note.classList.remove('open');
+      if (!shown) return;
+      var r = it.el.getBoundingClientRect();
+      var x = r.left + scrollX, y = (it.change.type === 'removed' ? r.bottom : r.top) + scrollY;
+      var bw = it.badge.offsetWidth || 90;
+      var bx = Math.max(4, Math.min(vw - bw - 4, x - 4));
+      var by = Math.max(4, y - (it.change.type === 'removed' ? -6 : 30));
+      for (var guard = 0; guard < 20; guard++) {
+        var hit = taken.filter(function (t) { return bx < t.x + t.w + 6 && bx + bw + 6 > t.x && by < t.y + 26 && by + 26 > t.y; })[0];
+        if (!hit) break;
+        if (hit.x + hit.w + 8 + bw <= vw - 4) bx = hit.x + hit.w + 8; else by = hit.y + 28;
+      }
+      taken.push({ x: bx, y: by, w: bw });
+      it.badge.style.left = bx + 'px'; it.badge.style.top = by + 'px';
+      if (it.note) {
+        var nw = Math.min(420, vw - 24);
+        it.note.style.left = Math.max(12, Math.min(vw - nw - 12, bx)) + 'px';
+        it.note.style.top = (by + 30) + 'px';
+      }
+    });
+  }
+
+  // ---------- bottom bar ----------
+  var ui = document.createElement('div'); ui.id = 'prh-ui';
+  ui.innerHTML = '<span class="tag">Review preview</span><button data-a="prev" aria-label="Previous change">&#9664;</button><span class="count"></span><button data-a="next" aria-label="Next change">&#9654;</button><button data-a="toggle">Hide</button>';
+  document.body.appendChild(ui);
+  var count = ui.querySelector('.count'), toggleBtn = ui.querySelector('[data-a=toggle]');
+  var cur = -1;
+  function nav() { return items.filter(function (it) { return it.el && isShown(it.el); }); }
+  function showCount() {
+    var v = nav(), total = items.length;
+    var pos = cur >= 0 ? v.indexOf(items[cur]) + 1 : 0;
+    count.textContent = v.length ? (pos ? pos + ' of ' + v.length : v.length + ' change' + (v.length === 1 ? '' : 's')) : 'No changes here';
+    if (v.length < total) count.title = (total - v.length) + ' change(s) not shown at this screen width';
+  }
+  function go(dir) {
+    var v = nav(); if (!v.length) return;
+    var p = cur >= 0 ? v.indexOf(items[cur]) : -1;
+    p = p < 0 ? (dir > 0 ? 0 : v.length - 1) : (p + dir + v.length) % v.length;
+    var it = v[p]; cur = items.indexOf(it);
+    document.documentElement.classList.remove('prh-off'); toggleBtn.textContent = 'Hide';
+    items.forEach(function (o) { if (o.note) o.note.classList.remove('open'); });
+    if (it.note) it.note.classList.add('open');
+    it.el.scrollIntoView({ behavior: 'smooth', block: it.el.getBoundingClientRect().height > window.innerHeight * 0.8 ? 'start' : 'center' });
+    // Images above can load while scrolling and push the target away, so check again and settle on it.
+    [800, 1600].forEach(function (ms) { setTimeout(function () {
+      if (items[cur] !== it) return;
+      var r = it.el.getBoundingClientRect(), vh = window.innerHeight;
+      if (r.bottom < 60 || r.top > vh - 90 || Math.abs((r.top + Math.min(r.height, vh) / 2) - vh / 2) > vh * 0.3) it.el.scrollIntoView({ behavior: 'auto', block: r.height > vh ? 'start' : 'center' });
+      place();
+    }, ms); });
+    it.el.classList.remove('prh-pulse'); void it.el.offsetWidth; it.el.classList.add('prh-pulse');
+    setTimeout(place, 400); showCount();
+  }
+  ui.addEventListener('click', function (e) {
+    var a = e.target.closest('button'); if (!a) return;
+    if (a.dataset.a === 'next') go(1); else if (a.dataset.a === 'prev') go(-1);
+    else { var off = document.documentElement.classList.toggle('prh-off'); a.textContent = off ? 'Show' : 'Hide'; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'j' || e.key === 'ArrowRight' && e.altKey) go(1); if (e.key === 'k' || e.key === 'ArrowLeft' && e.altKey) go(-1); });
+
+  var repin = function () { if (window.__prhReveal && window.__prhReveal.repin) window.__prhReveal.repin(); };
+  place(); showCount();
+  window.addEventListener('resize', function () { setTimeout(function () { repin(); place(); showCount(); }, 50); });
+  window.addEventListener('load', function () { repin(); place(); showCount(); });
+  setInterval(function () { repin(); place(); }, 1000);
+  window.__prh = { items: items, place: place, go: go };
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script></body> </html>
